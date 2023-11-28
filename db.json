@@ -3,7 +3,8 @@
         {
             "id":1,
             "title":"HOW TO WIN FRIEND AND INFLUENCE PEOPLE",
-            "price":20000
+            "price":20000,
+            "stok":4
         }
     ]
 }
