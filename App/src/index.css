@@ -1,3 +1,14 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,200&display=swap');
+
+@font-face{
+    font-family: unica;
+    src:url('./assets/font/Unica77 LL.ttf') format('truetype')
+}
+
+@font-face{
+    font-family: franklin;
+    src: url('./assets/font/Franklin Gothic Heavy Regular.ttf') format('truetype')
+}
