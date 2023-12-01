@@ -1,13 +1,13 @@
-import './App.css'
-import Admin from './page/admin'
-import Login from './page/login'
+import "./App.css";
+import Admin from "./page/admin";
+import Login from "./page/login";
 
 function App() {
   return (
     <>
-      <Admin/>
+      <Admin />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
