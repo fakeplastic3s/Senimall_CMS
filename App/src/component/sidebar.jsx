@@ -33,8 +33,8 @@ export default function Sidebar() {
 
   return (
     <div className="min-h-screen bg-[#EEEEEE] w-[18%]">
-      <img src="../public/sidebar_component/people.png" className="mx-auto mt-10 w-10 lg:w-24" alt="" />
-      <p className="font-unica text-sm text-center mt-3 font-semibold">Admin 1</p>
+      <img src="../public/sidebar_component/people.png" className="mx-auto mt-10 w-10 lg:w-24 transition-all transition-300" alt="" />
+      <p className="font-unica  text-xs lg:text-base text-center mt-3 font-semibold">Admin 1</p>
       <img src="../public/sidebar_component/Senimall_logo.png" alt="" className="mx-auto mt-8 w-[60%]" />
 
       {/* menu */}
@@ -44,14 +44,14 @@ export default function Sidebar() {
             return (
               <li key={items.id} onClick={() => handleSetMenu(items.id)} className="flex py-3 px-5 rounded-l-xl justify-start items-stretch gap-4 cursor-pointer">
                 <img src={items.image1} alt="" className="h-[20px] w-[20px]" />
-                <span className="font-unica hidden lg:block">{items.name}</span>
+                <span className="font-unica hidden lg:block transition-all transition-300">{items.name}</span>
               </li>
             );
           } else {
             return (
               <li key={items.id} onClick={() => handleSetMenu(items.id)} className="flex justify-start items-stretch gap-4 bg-[#183D3D] cursor-pointer py-3 px-5 rounded-l-xl">
                 <img src={items.image2} alt="" className="h-[20px] w-[20px]" />
-                <span className="font-unica text-white hidden lg:block">{items.name}</span>
+                <span className="font-unica text-white hidden lg:block transition-all transition-300">{items.name}</span>
               </li>
             );
           }
