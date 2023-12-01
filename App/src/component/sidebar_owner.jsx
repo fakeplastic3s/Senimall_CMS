@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export default function Sidebar() {
+export default function SidebarOwner() {
   const [menu, setMenu] = useState([
     {
       id: 1,
@@ -11,16 +11,9 @@ export default function Sidebar() {
     },
     {
       id: 2,
-      name: "Artwork",
-      image1: "/sidebar_component/artwork.svg",
-      image2: "/sidebar_component/artwork2.svg",
-      status: "unclicked",
-    },
-    {
-      id: 3,
-      name: "Submissions",
-      image1: "/sidebar_component/mail.svg",
-      image2: "/sidebar_component/mail2.svg",
+      name: "Users",
+      image1: "/sidebar_component/users.svg",
+      image2: "/sidebar_component/users2.svg",
       status: "unclicked",
     },
   ]);
