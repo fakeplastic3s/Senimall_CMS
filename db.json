@@ -1,10 +1,29 @@
 {
-    "post":[
+    "artwork_list":[
         {
             "id":1,
-            "title":"HOW TO WIN FRIEND AND INFLUENCE PEOPLE",
-            "price":20000,
-            "stok":10
+            "title":"Penangkapan Pangeran Diponegoro",
+            "Artis":"Raden Saleh"
+        },
+        {
+            "id":2,
+            "title":"The Starry Night",
+            "Artis":"Vincent Van Gogh"
+        },
+        {
+            "id":3,
+            "title":"Guernica",
+            "Artis":"Pablo Picasso"
+        },
+        {
+            "id":4,
+            "title":"The Birth Of Adam",
+            "Artis":"Michelangelo Buonarroti"
+        },
+        {
+            "id":5,
+            "title":"City Night",
+            "Artis":"Georgia O'Keefie"
         }
     ]
 }

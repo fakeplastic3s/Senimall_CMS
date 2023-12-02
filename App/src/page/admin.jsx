@@ -1,3 +1,4 @@
+import Artwork from "../component/artwork";
 import Sidebar from "../component/sidebar";
 import Content from "../component/content";
 
