@@ -1,35 +1,27 @@
-import React from "react"
-import { useState } from "react"
+import React, { useEffect } from "react"
+import { useState } from "react";
+import axios from 'axios'
 
 export default function ArtworkList() {
 
-    const [art, setArt] = useState([
-        {
-            id: 1,
-            title: 'Penangkapan Pangeran Diponegoro',
-            Artis: 'Raden Saleh'
-        },
-        {
-            id: 2,
-            title: 'The Starry Night',
-            Artis: 'Vincent Van Gogh'
-        },
-        {
-            id: 3,
-            title: 'Guernica',
-            Artis: 'Pablo Picasso'
-        },
-        {
-            id: 4,
-            title: 'The Birth Of Adam',
-            Artis: 'Michelangelo Buonarroti'
-        },
-        {
-            id: 5,
-            title: 'City Night',
-            Artis: "Georgia O'Keefie"
-        },
-    ])
+    const [art, setArt] = useState([])
+
+    async function getArtworkList (){
+        try{
+            const  data  = await axios.get('http://localhost:3000/artwork_list');
+            setArt(data.data)
+            console.log(data.data)
+            // console.log(art)
+        }
+        catch (error){
+            console.log(error)
+        }
+    }
+
+    useEffect(()=>{
+        getArtworkList()
+    },[])
+    // getArtworkList()
 
     return (
         <div className="bg-[#EEEEEE] rounded-xl mt-5 min-h-[80vh]">
@@ -56,7 +48,7 @@ export default function ArtworkList() {
                                 <tr key={items.id} className="h-1 border-b border-[#5C8374]">
                                     <td><input type="checkbox" /></td>
                                     <td className="font-franklin text-left w-[45%] px-4">{items.title}</td>
-                                    <td className="text-left">{items.Artis}</td>
+                                    <td className="text-left w-[30%]">{items.Artis}</td>
                                     <td className="flex justify-center gap-2 py-2">
                                         <img src="/artwork_component/del.svg" alt="" className="bg-[#FF4343] hover:bg-red-600 rounded-md px-2 py-2 cursor-pointer" />
                                         <img src="/artwork_component/Vector (2).svg" alt="" className="bg-[#5C8374] hover:bg-[#2d8659] rounded-md px-2 py-2 cursor-pointer" />
