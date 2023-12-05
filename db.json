@@ -33,5 +33,42 @@
       "description": "dfaertadafd",
       "image": "C:\\fakepath\\kampusmerdeka.png"
     }
+  ],
+  "admin":[
+    {
+      "id":1,
+      "name": "Ghania Safiqa Raisa",
+      "username":"fiqa",
+      "password": "admin01",
+      "role":"admin"
+    },
+    {
+      "id":2,
+      "name": "Dzulfaton Yahya",
+      "username":"dzulfan",
+      "password": "admin02",
+      "role":"admin"
+    },
+    {
+      "id":3,
+      "name": "Kanira Erliana Azwa Zalea",
+      "username":"kanira",
+      "password": "admin03",
+      "role":"admin"
+    },
+    {
+      "id":4,
+      "name": "Yossi Nordiansah",
+      "username":"yossi",
+      "password": "yossi",
+      "role":"admin"
+    },
+    {
+      "id":5,
+      "name": "Hafid Firman Febrian",
+      "username":"hafidz",
+      "password": "owner01",
+      "role":"owner"
+    }
   ]
 }
