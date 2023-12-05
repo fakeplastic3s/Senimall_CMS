@@ -1,3 +1,4 @@
+import Content from "../component/content";
 import Sidebar from "../component/sidebar";
 import { Outlet, useLocation } from "react-router-dom";
 
@@ -9,7 +10,8 @@ export default function Admin() {
   return (
         <div className="w-full min-h-screen flex ">
           <Sidebar name={adminName}/>
-          <Outlet/>
+          <Content/>
+          {/* <Outlet/> */}
         </div>
   );
 }
