@@ -1,8 +1,35 @@
 import { useRef, useState } from "react";
+import axios from 'axios';
+import { useNavigate } from "react-router-dom";
 
 export default function Login() {
+
+  const navigate = useNavigate()
   const [showPassword, setShowPassword] = useState(true);
-  const passwordType = useRef();
+  const [userName, setUserName] = useState('');
+  const [password, setPassword] = useState('')
+  const passwordType = useRef(); 
+
+  const handleLogin = async (e) => {
+    
+    e.preventDefault()
+
+    try{
+      const respon = await axios.get(`http://localhost:3000/admin?username=${userName}&&password=${password}`);
+      const data =  respon.data[0];
+
+      if(data){
+        alert('Login Berhasil')
+        data.role === 'owner'? navigate('/owner', {state:data.name}) : navigate('/admin', {state:data.name})
+      }
+      else{
+        alert('Username dan Password tidak cocok')
+      }
+    }
+    catch (error){
+      console.log(error)
+    }
+  }
 
   const handleShowPassword = () => {
     setShowPassword(!showPassword);
@@ -13,21 +40,24 @@ export default function Login() {
     <div className="w-full h-screen relative">
       <div className="bg-[#EEEEEE] w-[552px] h-[457px] rounded-3xl absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 border-2 border-[#393E46]">
         <img src="../public/login_page/Senimall_logo.svg" className="mx-auto mt-10" alt="" />
-        <form action="" className="mt-5 w-3/4 mx-auto">
+
+
+        <form action="" className="mt-5 w-3/4 mx-auto" onSubmit={handleLogin}>
           {/* Input Email */}
           <div className="flex">
             <label htmlFor="email" className=" flex mb-3 items-center gap-3">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-7 h-7">
+              {/* <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-7 h-7">
                 <path
                   stroke-linecap="round"
                   stroke-linejoin="round"
                   d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"
                 />
-              </svg>
-              <p className="text-2xl font-medium text-[#393E46]">E-Mail</p>
+              </svg> */}
+              <img src="/login_page/usernameicon.svg" alt="icon artis" className="w-6" />
+              <p className="text-2xl font-medium text-[#393E46]">Username</p>
             </label>
           </div>
-          <input type="email" id="email" className="block text-lg w-full py-2 px-3 h-10 border-2 outline-none border-[#393E46] bg-transparent rounded-xl" />
+          <input type="text" id="email" onChange={e=>setUserName(e.target.value)} className="block text-lg w-full py-2 px-3 h-10 border-2 outline-none border-[#393E46] bg-transparent rounded-xl" />
 
           {/* Input Password */}
           <div className="flex mt-5">
@@ -43,7 +73,7 @@ export default function Login() {
             </label>
           </div>
           <div className="border-2 border-[#393E46] rounded-xl flex items-center h-10 ">
-            <input ref={passwordType} type="password" id="password" className="block text-lg w-11/12 py-2 px-3 outline-none bg-transparent rounded-xl" />
+            <input ref={passwordType} type="password" onChange={e=>setPassword(e.target.value)} id="password" className="block text-lg w-11/12 py-2 px-3 outline-none bg-transparent rounded-xl" />
 
             {showPassword ? (
               <svg onClick={handleShowPassword} width="23" height="23" viewBox="0 0 30 20" xmlns="http://www.w3.org/2000/svg">
