@@ -1,8 +1,13 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function Sidebar(props) {
-
   const {name} = props;
+  const navigate = useNavigate()
+
+  const handleLogout = () => {
+    navigate('/')
+  }
 
   const [menu, setMenu] = useState([
     {
@@ -62,12 +67,10 @@ export default function Sidebar(props) {
           })}
         </ul>
       </div>
-      <div>
-        <button className="bg-[#EEEEEE] flex items-center justify-center gap-3 py-[2px] px-4 mb-5 w-[200px] rounded-lg">
+        <button onClick={handleLogout} className="bg-[#EEEEEE] flex items-center justify-center gap-3 py-[2px] px-4 mb-5 w-[200px] rounded-lg">
           <img src="/sidebar_component/logout.svg" alt="" className="h-[15px]" />
           <span className="font-unica mt-1">Logout</span>
         </button>
-      </div>
     </div>
   );
 }

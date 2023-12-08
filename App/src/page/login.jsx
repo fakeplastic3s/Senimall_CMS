@@ -27,6 +27,7 @@ export default function Login() {
 
     try {
       const respon = await axios.get(`http://localhost:3000/admin?username=${userName}&&password=${password}`);
+
       const data = respon.data[0];
 
       if (data) {
@@ -62,18 +63,12 @@ export default function Login() {
           {/* Input Email */}
           <div className="flex">
             <label htmlFor="email" className=" flex mb-3 items-center gap-3">
-              {/* <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-7 h-7">
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"
-                />
-              </svg> */}
               <img src="/login_page/usernameicon.svg" alt="icon artis" className="w-6" />
               <p className="text-2xl font-medium text-[#393E46]">Username</p>
             </label>
           </div>
-          <input type="text" id="email" onChange={(e) => setUserName(e.target.value)} className="block text-lg w-full py-2 px-3 h-10 border-2 outline-none border-[#393E46] bg-transparent rounded-xl" />
+
+          <input type="text" id="email" required onChange={(e) => setUserName(e.target.value)} className="block text-lg w-full py-2 px-3 h-10 border-2 outline-none border-[#393E46] bg-transparent rounded-xl" />
 
           {/* Input Password */}
           <div className="flex mt-5">
@@ -89,7 +84,7 @@ export default function Login() {
             </label>
           </div>
           <div className="border-2 border-[#393E46] rounded-xl flex items-center h-10 ">
-            <input ref={passwordType} type="password" onChange={(e) => setPassword(e.target.value)} id="password" className="block text-lg w-11/12 py-2 px-3 outline-none bg-transparent rounded-xl" />
+            <input ref={passwordType} required type="password" onChange={(e) => setPassword(e.target.value)} id="password" className="block text-lg w-11/12 py-2 px-3 outline-none bg-transparent rounded-xl" />
 
             {showPassword ? (
               <svg onClick={handleShowPassword} width="23" height="23" viewBox="0 0 30 20" xmlns="http://www.w3.org/2000/svg">
