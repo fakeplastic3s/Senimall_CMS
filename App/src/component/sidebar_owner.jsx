@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 
 export default function SidebarOwner(props) {
   const { name } = props;
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const [menu, setMenu] = useState([
     {
@@ -23,8 +23,9 @@ export default function SidebarOwner(props) {
   ]);
 
   const handleLogout = () => {
-    navigate('/')
-  }
+    navigate("/");
+    localStorage.removeItem("token");
+  };
 
   const handleSetMenu = (id) => {
     if (menu.find((items) => items.id === id)) {
