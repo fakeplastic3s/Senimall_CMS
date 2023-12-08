@@ -1,6 +1,7 @@
 export default function Content() {
+
   return (
-    <div className="min-h-screen w-[82%] px-5 md:px-10 py-16">
+    <div className="min-h-screen w-[82%] px-5 md:px-10 pt-16">
       <h1 className="text-2xl font-extrabold text-[#232931] mb-9">Dashboard</h1>
 
       <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-rows-3 gap-5 justify-items-center">
