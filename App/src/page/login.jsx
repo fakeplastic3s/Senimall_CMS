@@ -18,7 +18,7 @@ export default function Login() {
     } else if (token === "admin") {
       navigate("/admin");
     } else {
-      navigate("/login");
+      navigate("/");
     }
   }, [token]);
 

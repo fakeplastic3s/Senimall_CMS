@@ -12,7 +12,7 @@ export default function Admin() {
     } else if (token === "admin") {
       navigate("/admin");
     } else {
-      navigate("/login");
+      navigate("/");
     }
   }, [token]);
   const name = useLocation();
