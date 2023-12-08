@@ -13,7 +13,7 @@ export default function Artwork(props) {
             <h1 className="font-franklin text-4xl">Artwork</h1>
             {/* <ArtworkList/> */}
             {/* <Add_Artwork /> */}
-            <DetailArtwork/>
+            {/* <DetailArtwork/> */}
         </div>
     )
 }

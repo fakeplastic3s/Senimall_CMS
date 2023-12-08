@@ -41,7 +41,7 @@ export default function Add_Artwork() {
 
     return (
         <div>
-            <form action="" className="bg-[#EEEEEE] min-h-screen mt-8 rounded-2xl py-6 px-8">
+            <form action="" className="bg-[#EEEEEE] min-h-screen mt-8 rounded-2xl py-6 px-8 w-full">
                 <label htmlFor="title" className="mb-7 block">
                     <p className="font-unica text-lg">Title</p>
                     <input type="text" name='title' id="title" onChange={handleInput} className="w-full outline-none border-2 rounded-lg bg-transparent px-2 py-1 border-[#393E46]" />
@@ -92,7 +92,7 @@ export default function Add_Artwork() {
                 </label>
                 <label htmlFor="image" className="w-full block mb-7">
                     <p className="font-unica text-lg">Image</p>
-                    <input type="file" id="image" name='image' onChange={handleInput} className="outline-none border-2 rounded-lg bg-transparent px-2 py-1 border-[#393E46]" />
+                    <input type="link" id="image" name='image' onChange={handleInput} className="outline-none border-2 rounded-lg bg-transparent px-2 py-1 border-[#393E46]" />
                 </label>
                 <button onClick={handleSubmit} type='button' className="bg-[#183D3D] flex justify-center items-stretch gap-3 w-full py-1 rounded-lg">
                      <img src="/artwork_component/Vector (4).svg" alt="" className="w-4" />
