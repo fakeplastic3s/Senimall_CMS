@@ -1,35 +1,52 @@
-import { useRef, useState } from "react";
-import axios from 'axios';
+import { useRef, useState, useEffect } from "react";
+import axios from "axios";
 import { useNavigate } from "react-router-dom";
+// import { useHi } from "react-router-dom";
 
 export default function Login() {
-
-  const navigate = useNavigate()
+  // const history = useHistory();
+  const navigate = useNavigate();
   const [showPassword, setShowPassword] = useState(true);
-  const [userName, setUserName] = useState('');
-  const [password, setPassword] = useState('')
-  const passwordType = useRef(); 
+  const [userName, setUserName] = useState("");
+  const [password, setPassword] = useState("");
+  const passwordType = useRef();
+
+  const token = localStorage.getItem("token"); // Ubah sesuai dengan cara penyimpanan token Anda
+  useEffect(() => {
+    if (token === "owner") {
+      navigate("/owner");
+    } else if (token === "admin") {
+      navigate("/admin");
+    } else {
+      navigate("/login");
+    }
+  }, [token]);
 
   const handleLogin = async (e) => {
-    
-    e.preventDefault()
+    e.preventDefault();
 
-    try{
+    try {
       const respon = await axios.get(`http://localhost:3000/admin?username=${userName}&&password=${password}`);
-      const data =  respon.data[0];
+      const data = respon.data[0];
 
-      if(data){
-        alert('Login Berhasil')
-        data.role === 'owner'? navigate('/owner', {state:data.name}) : navigate('/admin', {state:data.name})
+      if (data) {
+        alert("Login Berhasil");
+        // data.role === "owner" ? navigate("/owner", { state: data.name }) : navigate("/admin", { state: data.name });
+        // localStorage.setItem("token", data.role);
+        if (data.role === "owner") {
+          navigate("/owner", { state: data.name });
+          localStorage.setItem("token", data.role);
+        } else {
+          navigate("/admin", { state: data.name });
+          localStorage.setItem("token", data.role);
+        }
+      } else {
+        alert("Username dan Password tidak cocok");
       }
-      else{
-        alert('Username dan Password tidak cocok')
-      }
+    } catch (error) {
+      console.log(error);
     }
-    catch (error){
-      console.log(error)
-    }
-  }
+  };
 
   const handleShowPassword = () => {
     setShowPassword(!showPassword);
@@ -40,7 +57,6 @@ export default function Login() {
     <div className="w-full h-screen relative">
       <div className="bg-[#EEEEEE] w-[552px] h-[457px] rounded-3xl absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 border-2 border-[#393E46]">
         <img src="../public/login_page/Senimall_logo.svg" className="mx-auto mt-10" alt="" />
-
 
         <form action="" className="mt-5 w-3/4 mx-auto" onSubmit={handleLogin}>
           {/* Input Email */}
@@ -57,7 +73,7 @@ export default function Login() {
               <p className="text-2xl font-medium text-[#393E46]">Username</p>
             </label>
           </div>
-          <input type="text" id="email" onChange={e=>setUserName(e.target.value)} className="block text-lg w-full py-2 px-3 h-10 border-2 outline-none border-[#393E46] bg-transparent rounded-xl" />
+          <input type="text" id="email" onChange={(e) => setUserName(e.target.value)} className="block text-lg w-full py-2 px-3 h-10 border-2 outline-none border-[#393E46] bg-transparent rounded-xl" />
 
           {/* Input Password */}
           <div className="flex mt-5">
@@ -73,7 +89,7 @@ export default function Login() {
             </label>
           </div>
           <div className="border-2 border-[#393E46] rounded-xl flex items-center h-10 ">
-            <input ref={passwordType} type="password" onChange={e=>setPassword(e.target.value)} id="password" className="block text-lg w-11/12 py-2 px-3 outline-none bg-transparent rounded-xl" />
+            <input ref={passwordType} type="password" onChange={(e) => setPassword(e.target.value)} id="password" className="block text-lg w-11/12 py-2 px-3 outline-none bg-transparent rounded-xl" />
 
             {showPassword ? (
               <svg onClick={handleShowPassword} width="23" height="23" viewBox="0 0 30 20" xmlns="http://www.w3.org/2000/svg">
