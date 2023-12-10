@@ -1,8 +1,7 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-export default function Sidebar(props) {
-  const { name } = props;
+export default function Sidebar({name, sendDataMenu}) {
   const navigate = useNavigate();
 
   const handleLogout = () => {
@@ -38,7 +37,19 @@ export default function Sidebar(props) {
     if (menu.find((items) => items.id === id)) {
       setMenu(menu.map((item) => (item.id === id ? { ...item, status: "clicked" } : { ...item, status: "unclicked" })));
     }
+    sendDataMenu(menuClicked.name)
   };
+
+  useEffect(()=>{
+    sendDataMenu(menuClicked.name)
+  },[menu])
+
+  const menuClicked = menu.find(items=>{
+    if (items.status === 'clicked'){
+      return true;
+    }
+  })
+
 
   return (
     <div className="min-h-screen bg-[#EEEEEE] w-[18%] flex flex-col justify-between">

@@ -1,7 +1,6 @@
 import SidebarOwner from "../component/sidebar_owner";
-import { Outlet, useLocation } from "react-router-dom";
+import { Outlet, useLocation, useNavigate } from "react-router-dom";
 import { useEffect } from "react";
-import { useNavigate } from "react-router-dom";
 
 export default function Owner() {
   const name = useLocation();
