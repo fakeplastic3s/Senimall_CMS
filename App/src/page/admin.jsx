@@ -10,14 +10,13 @@ export default function Admin() {
     if (token === "owner") {
       navigate("/owner");
     } else if (token === "admin") {
-      navigate("/admin");
+      navigate("/admin", { state: name.state });
     } else {
       navigate("/");
     }
   }, [token]);
   const name = useLocation();
   const adminName = name.state;
-  console.log(adminName);
   return (
     <div className="w-full min-h-screen flex ">
       <Sidebar name={adminName} />

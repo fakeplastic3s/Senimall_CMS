@@ -68,7 +68,7 @@ export default function Sidebar(props) {
           })}
         </ul>
       </div>
-      <button onClick={handleLogout} className="flex py-3 px-5 rounded-l-xl justify-center gap-4 cursor-pointer items-center my-auto">
+      <button onClick={handleLogout} className="flex py-3 px-5 rounded-l-xl justify-center gap-4 cursor-pointer items-center mu-auto">
         <img src="/sidebar_component/logout.svg" alt="" className="h-[20px] w-[20px]" />
         <span className="font-unica hidden lg:block transition-all transition-300">Logout</span>
       </button>
