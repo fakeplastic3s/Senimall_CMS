@@ -7,11 +7,12 @@ export default function Owner() {
   const ownerName = name.state;
   const navigate = useNavigate();
   const token = localStorage.getItem("token");
+  console.log(ownerName);
   useEffect(() => {
     if (token === "owner") {
-      navigate("/owner");
+      navigate("/owner", { state: name.state });
     } else if (token === "admin") {
-      navigate("/admin");
+      navigate("/admin", { state: name.state });
     } else {
       navigate("/login");
     }
