@@ -7,7 +7,10 @@ import { useEffect, useState } from "react";
 
 export default function Admin() {
 
+  const name = useLocation();
+  
   const [menu, setMenu] = useState('Dashboard');
+  const [adminName, setAdminName] = useState('Dashboard');
   const navigate = useNavigate();
   const token = localStorage.getItem("token"); // Ubah sesuai dengan cara penyimpanan token Anda
   function receiveMenuData(data){
@@ -24,21 +27,29 @@ export default function Admin() {
     }
   }, [token]);
 
-  const name = useLocation();
-  const adminName = name.state;
+  useEffect(()=>{
+    setAdminName(name.state)
+  },[])
 
 
+  useEffect(()=>{
+    if(menu === 'Dashboard'){
+      navigate('dashboard')
+    }
+    else if(menu === 'Artwork'){
+      navigate('artwork')
+    }
+    else{
+      navigate('submission')
+    }
+  },[menu])
 
-  console.log(menu)
 
   return (
 
-    <div className="w-full min-h-screen flex ">
+    <div className="w-full min-h-screen flex gap-2">
       <Sidebar name={adminName} sendDataMenu={receiveMenuData} />
-      <p>{menu}</p>
-
-      {/* <Content /> */}
-      {/* <Outlet/> */}
+      <Outlet/>
     </div>
 
   );
