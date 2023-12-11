@@ -1,10 +1,12 @@
 import "./App.css";
-import Artwork from "./component/artwork";
-import Content from "./component/content";
-import Submission from "./component/submission";
 import Admin from "./page/admin";
 import Login from "./page/login";
 import Owner from "./page/owner";
+import Content from "./component/content";
+import Artwork from "./component/artwork";
+import Submission from "./component/content";
+import DashboardOwner from "./component/owner/dashboard";
+import UsersOwner from "./component/owner/users";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
