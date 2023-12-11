@@ -22,6 +22,10 @@ export default function ArtworkList() {
   }, []);
   // getArtworkList()
 
+  const artworkCount = art.map((art) => {
+    return art;
+  });
+
   return (
     <Card className="max-w ">
       <div className="flex justify-between items-center ">
