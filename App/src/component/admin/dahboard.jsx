@@ -1,10 +1,9 @@
 export default function Content() {
-
   return (
-    <div className="min-h-screen w-[82%] px-5 md:px-10 pt-16">
-      <h1 className="text-2xl font-extrabold text-[#232931] mb-9">Dashboard</h1>
+    <>
+      <h1 className="font-franklin text-4xl  text-[#232931] mb-9">Dashboard</h1>
 
-      <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-rows-3 gap-5 justify-items-center">
+      <div className="flex flex-wrap  justify-between items-center gap-5">
         <div className="card  scale-75 md:scale-90 lg:scale-100 transition-all transition-300">
           <div className="flex justify-between items-center bg-[#EEEEEE] w-[300px] h-[150px]  rounded-[30px] ">
             <div className="flex flex-col justify-center mx-auto items-center">
@@ -39,6 +38,6 @@ export default function Content() {
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }

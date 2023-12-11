@@ -1,6 +1,3 @@
-import Add_Artwork from "../component/add_artworks";
-import Content from "../component/content";
-import ArtworkList from "../component/artwork_list";
 import Sidebar from "../component/sidebar";
 import { Outlet, useLocation, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
@@ -43,7 +40,9 @@ export default function Admin() {
   return (
     <div className="w-full min-h-screen flex gap-2">
       <Sidebar name={adminName} sendDataMenu={receiveMenuData} />
-      <Outlet />
+      <div className="min-h-screen w-[82%] px-5 md:px-10 pt-16">
+        <Outlet />
+      </div>
     </div>
   );
 }
