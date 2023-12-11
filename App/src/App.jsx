@@ -12,13 +12,17 @@ function App() {
     <>
       <Router>
         <Routes>
-          <Route path='/' Component={Login}/>
-          <Route path='/admin' Component={Admin}>
-            <Route path="dashboard" Component={Content}/>
-            <Route path="artwork" Component={Artwork}/>
-            <Route path="submission" Component={Submission}/>
+          <Route path="/" Component={Login} />
+          <Route path="/admin" Component={Admin}>
+            <Route path="dashboard" Component={Content} />
+            <Route path="artwork" Component={Artwork} />
+            <Route path="submission" Component={Submission} />
           </Route>
-          <Route path='/owner' Component={Owner}/>
+          <Route path="/owner" Component={Owner}>
+            <Route path="/owner" Component={DashboardOwner} />
+            <Route path="/owner/Dashboard" Component={DashboardOwner} />
+            <Route path="/owner/Users" Component={UsersOwner} />
+          </Route>
         </Routes>
       </Router>
     </>
