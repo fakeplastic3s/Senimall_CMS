@@ -1,4 +1,5 @@
 import Content from "../component/content";
+import Artwork from "../component/artwork";
 import Sidebar from "../component/sidebar";
 import { Outlet, useLocation, useNavigate } from "react-router-dom";
 import { useEffect } from "react";
@@ -20,7 +21,7 @@ export default function Admin() {
   return (
     <div className="w-full min-h-screen flex ">
       <Sidebar name={adminName} />
-      <Content />
+      <Artwork />
       {/* <Outlet/> */}
     </div>
   );
