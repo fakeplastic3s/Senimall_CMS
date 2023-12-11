@@ -14,7 +14,7 @@ export default function Owner() {
     } else if (token === "admin") {
       navigate("/admin", { state: name.state });
     } else {
-      navigate("/login");
+      navigate("/");
     }
   }, [token]);
   return (
