@@ -10,7 +10,7 @@ export default function ArtworkList() {
     try {
       const data = await axios.get("http://localhost:3000/artwork_list");
       setArt(data.data);
-      console.log(data.data);
+      // console.log(data.data);
       // console.log(art)
     } catch (error) {
       console.log(error);
@@ -21,10 +21,6 @@ export default function ArtworkList() {
     getArtworkList();
   }, []);
   // getArtworkList()
-
-  const artworkCount = art.map((art) => {
-    return art;
-  });
 
   return (
     <Card className="max-w ">

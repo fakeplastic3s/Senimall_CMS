@@ -1,13 +1,13 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 
-export default function Content() {
+export default function Dashboard() {
   const [art, setArt] = useState([]);
   async function getArtworkList() {
     try {
       const data = await axios.get("http://localhost:3000/artwork_list");
       setArt(data.data);
-      console.log(data.data);
+      // console.log(data.data);
       // console.log(art)
     } catch (error) {
       console.log(error);
