@@ -8,7 +8,6 @@ export default function Owner() {
   const ownerName = name.state;
   const navigate = useNavigate();
   const token = localStorage.getItem("token");
-  console.log(ownerName);
   useEffect(() => {
     if (token === "owner") {
       navigate("/owner", { state: name.state });
@@ -22,7 +21,10 @@ export default function Owner() {
     <>
       <div className="w-full min-h-screen flex ">
         <SidebarOwner name={ownerName} />
-        <Outlet />
+
+        <div className="min-h-screen w-[82%] px-5 md:px-10 pt-16">
+          <Outlet />
+        </div>
       </div>
     </>
   );
