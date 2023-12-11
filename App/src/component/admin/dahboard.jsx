@@ -25,7 +25,7 @@ export default function Dashboard() {
     <>
       <h1 className="font-franklin text-4xl  text-[#232931] mb-9">Dashboard</h1>
 
-      <div className="flex flex-wrap  justify-between items-center gap-5">
+      <div className="flex flex-wrap  justify-around items-center gap-5">
         <div className="card  scale-75 md:scale-90 lg:scale-100 transition-all transition-300">
           <div className="flex justify-between items-center bg-[#EEEEEE] w-[300px] h-[150px]  rounded-[30px] ">
             <div className="flex flex-col justify-center mx-auto items-center">
