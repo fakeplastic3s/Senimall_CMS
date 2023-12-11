@@ -54,7 +54,7 @@ export default function Sidebar({ name, sendDataMenu }) {
     <div className="min-h-screen bg-[#EEEEEE] w-[18%] flex flex-col justify-between">
       <div>
         <img src="../public/sidebar_component/people.png" className="mx-auto mt-10 w-10 lg:w-20 transition-all transition-300" alt="" />
-        <p className="font-unica  text-xs lg:text-base text-center mt-3 font-semibold">{name}</p>
+        <p className="font-unica  text-xs lg:text-base text-center mt-3 ">{name}</p>
         <img src="../public/sidebar_component/Senimall_logo.png" alt="" className="mx-auto mt-8 w-[50%]" />
 
         {/* menu */}
