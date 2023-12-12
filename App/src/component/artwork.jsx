@@ -11,8 +11,8 @@ export default function Artwork(props) {
                 <span className="font-unica mt-1">Back</span>
             </button>
             <h1 className="font-franklin text-4xl">Artwork</h1>
-            <ArtworkList/>
-            {/* <Add_Artwork /> */}
+            {/* <ArtworkList/> */}
+            <Add_Artwork />
             {/* <DetailArtwork/> */}
         </div>
     )
