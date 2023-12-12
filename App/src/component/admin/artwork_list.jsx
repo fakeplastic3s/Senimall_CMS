@@ -4,9 +4,9 @@ import axios from "axios";
 import { Card, Table } from "flowbite-react";
 import { useNavigate, redirect } from "react-router-dom";
 
-export default function ArtworkList({sendDataAddButton}) {
+export default function ArtworkList({ sendDataAddButton }) {
   const [art, setArt] = useState([]);
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   async function getArtworkList() {
     try {
@@ -23,9 +23,9 @@ export default function ArtworkList({sendDataAddButton}) {
     getArtworkList();
   }, []);
 
-  const handleAddArtworkList = ()=>{
-    navigate('/admin/artwork/artwork-add')
-  }
+  const handleAddArtworkList = () => {
+    navigate("/admin/artwork/artwork-add");
+  };
   // getArtworkList()
 
   return (
