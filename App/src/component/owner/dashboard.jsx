@@ -23,7 +23,7 @@ export default function Dashboard() {
   }, []);
   return (
     <>
-      <h1 className="text-2xl font-extrabold text-[#232931] mb-9">Dashboard</h1>
+      <h1 className="font-franklin text-4xl  text-[#232931] mb-9">Dashboard</h1>
 
       <div className="flex flex-wrap  justify-between items-center gap-5">
         <div className="card  scale-75 md:scale-90 lg:scale-100 transition-all transition-300">

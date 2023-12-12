@@ -3,7 +3,7 @@
     {
       "id": 1,
       "title": "Penangkapan Pangeran Diponegoro",
-      "Artis": "Raden Saleh",
+      "Artist": "Raden Saleh",
       "price": 7000000,
       "category": "Nature",
       "material": "Oil in Canvas",
@@ -14,7 +14,7 @@
     {
       "id": 2,
       "title": "Full lorem",
-      "Artis": "Raden Saleh",
+      "Artist": "Raden Saleh",
       "price": 7000000,
       "category": "Nature",
       "material": "Oil in Canvas",
@@ -24,7 +24,7 @@
     },
     {
       "id": "9403d7b5-51c3-4a10-a348-75092c50ad98",
-      "title": "fdafadf",                 
+      "title": "fdafadf",
       "Artist": "dfadfa",
       "price": "fadfa",
       "category": "minimalism",
@@ -32,43 +32,76 @@
       "size": "fafadfa",
       "description": "dfaertadafd",
       "image": "C:\\fakepath\\kampusmerdeka.png"
+    },
+    {
+      "id": "96abc610-4472-4847-8f7b-15ff809cbb80",
+      "title": "ABC",
+      "Artist": "avd",
+      "price": "20000000",
+      "category": "rantasy",
+      "material": "zcvzvc",
+      "size": "20 x 20 cm",
+      "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perferendis deleniti officiis, alias nisi ab aliquam rem saepe. Praesentium harum dolores porro cupiditate aut fuga, delectus quis aliquid at. Facere, nam.",
+      "image": "C:\\fakepath\\19366.jpg"
+    },
+    {
+      "id": "5a3e23e8-e471-4e02-a607-0e928a3d119a",
+      "title": "bougenville",
+      "Artist": "Hartono",
+      "price": "60000000",
+      "category": "street art",
+      "material": "oil in canvas",
+      "size": "120 x 50 cm",
+      "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perferendis deleniti officiis, alias nisi ab aliquam rem saepe. Praesentium harum dolores porro cupiditate aut fuga, delectus quis aliquid at. Facere, nam.",
+      "image": "C:\\fakepath\\19366.jpg"
+    },
+    {
+      "id": "51c053cd-81d4-46b0-bc19-1acdfc6e524e",
+      "title": "asdsad",
+      "Artist": "asdasd",
+      "price": "123123",
+      "category": "portrait",
+      "material": "adad",
+      "size": "123123",
+      "description": "adadasd",
+      "image": "C:\\fakepath\\Border-Avatar-8.png"
     }
   ],
-  "admin":[
+  "admin": [
     {
-      "id":1,
+      "id": 1,
       "name": "Ghania Safiqa Raisa",
-      "username":"fiqa",
+      "username": "fiqa",
       "password": "admin01",
-      "role":"admin"
+      "role": "admin"
     },
     {
-      "id":2,
+      "id": 2,
       "name": "Dzulfaton Yahya",
-      "username":"dzulfan",
+      "username": "dzulfan",
       "password": "admin02",
-      "role":"admin"
+      "role": "admin"
     },
     {
-      "id":3,
+      "id": 3,
       "name": "Kanira Erliana Azwa Zalea",
-      "username":"kanira",
+      "username": "kanira",
       "password": "admin03",
-      "role":"admin"
+      "role": "admin"
     },
     {
-      "id":4,
+      "id": 4,
       "name": "Yossi Nordiansah",
-      "username":"yossi",
+      "username": "yossi",
       "password": "yossi",
-      "role":"admin"
+      "role": "admin"
     },
     {
-      "id":5,
+      "id": 5,
       "name": "Hafid Firman Febrian",
-      "username":"hafidz",
+      "username": "hafidz",
       "password": "owner01",
-      "role":"owner"
+      "role": "owner"
     }
   ]
 }

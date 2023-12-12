@@ -2,12 +2,14 @@ import "./App.css";
 import Admin from "./page/admin";
 import Login from "./page/login";
 import Owner from "./page/owner";
-import Content from "./component/content";
-import Artwork from "./component/artwork";
-import Submission from "./component/content";
+import DashboardAdmin from "./component/admin/dahboard";
+import Artwork from "./component/admin/artwork";
+import Submission from "./component/admin/dahboard";
 import DashboardOwner from "./component/owner/dashboard";
 import UsersOwner from "./component/owner/users";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import ArtworkList from "./component/admin/artwork_list";
+import Add_Artwork from "./component/admin/add_artworks";
 
 function App() {
   return (
@@ -16,12 +18,15 @@ function App() {
         <Routes>
           <Route path="/" Component={Login} />
           <Route path="/admin" Component={Admin}>
-            <Route path="dashboard" Component={Content} />
-            <Route path="artwork" Component={Artwork} />
+            <Route path="dashboard" Component={DashboardAdmin} />
+            <Route path="artwork" Component={Artwork}>
+              <Route path="artwork-list" Component={ArtworkList} />
+              <Route path="artwork-add" Component={Add_Artwork} />
+            </Route>
             <Route path="submission" Component={Submission} />
           </Route>
           <Route path="/owner" Component={Owner}>
-            <Route path="/owner" Component={DashboardOwner} />
+            <Route path="/owner" Component={DashboardOwner}/>
             <Route path="/owner/Dashboard" Component={DashboardOwner} />
             <Route path="/owner/Users" Component={UsersOwner} />
           </Route>

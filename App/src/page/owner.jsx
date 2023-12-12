@@ -14,7 +14,7 @@ export default function Owner() {
     } else if (token === "admin") {
       navigate("/admin", { state: name.state });
     } else {
-      navigate("/login");
+      navigate("/");
     }
   }, [token]);
   return (
@@ -22,7 +22,7 @@ export default function Owner() {
       <div className="w-full min-h-screen flex ">
         <SidebarOwner name={ownerName} />
 
-        <div className="min-h-screen w-[82%] px-5 md:px-10 pt-16">
+        <div className="min-h-screen w-[82%]  ms-auto px-5 md:px-10 py-16">
           <Outlet />
         </div>
       </div>
