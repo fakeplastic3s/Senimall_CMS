@@ -68,7 +68,7 @@ export default function Login() {
             </label>
           </div>
 
-          <input type="text" id="email" required onChange={(e) => setUserName(e.target.value)} className="block text-lg w-full py-2 px-3 h-10 border-2 outline-none border-[#393E46] bg-transparent rounded-xl" />
+          <input type="text" id="text" required onChange={(e) => setUserName(e.target.value)} className="block text-lg w-full py-2 px-3 h-10 border-2 outline-none border-[#393E46]  focus:border-[#393E46] focus:ring-0 bg-transparent rounded-xl" />
 
           {/* Input Password */}
           <div className="flex mt-5">
@@ -84,7 +84,7 @@ export default function Login() {
             </label>
           </div>
           <div className="border-2 border-[#393E46] rounded-xl flex items-center h-10 ">
-            <input ref={passwordType} required type="password" onChange={(e) => setPassword(e.target.value)} id="password" className="block text-lg w-11/12 py-2 px-3 outline-none bg-transparent rounded-xl" />
+            <input ref={passwordType} required type="password" onChange={(e) => setPassword(e.target.value)} id="password" className="block text-lg w-11/12 py-2 px-3 border-none focus:border-none focus:ring-0 outline-transparent bg-transparent rounded-xl"/>
 
             {showPassword ? (
               <svg onClick={handleShowPassword} width="23" height="23" viewBox="0 0 30 20" xmlns="http://www.w3.org/2000/svg">

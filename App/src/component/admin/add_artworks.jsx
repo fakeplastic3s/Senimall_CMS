@@ -1,8 +1,12 @@
 import { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 import axios from "axios";
+import { useNavigate } from 'react-router-dom'
 
 export default function Add_Artwork() {
+
+  const navigate = useNavigate()
+
   const [payload, setPayload] = useState({
     id: uuidv4(),
   });
@@ -35,11 +39,14 @@ export default function Add_Artwork() {
     } catch (error) {
       console.log(error);
     }
+
+    navigate('/admin/artwork/artwork-list')
+
   }
 
   return (
-    <div>
-      <form action="" className="bg-[#EEEEEE] min-h-screen mt-8 rounded-2xl py-6 px-8">
+    
+      <form action="" className="bg-[#EEEEEE] min-h-screen mt-8 rounded-2xl py-6 px-7">
         <label htmlFor="title" className="mb-7 block">
           <p className="font-unica text-lg">Title</p>
           <input type="text" name="title" id="title" onChange={handleInput} className="w-full outline-none border-2 rounded-lg bg-transparent px-2 py-1 border-[#393E46]" />
@@ -97,6 +104,6 @@ export default function Add_Artwork() {
           <span className="font-unica text-white pt-1 ">Submit</span>
         </button>
       </form>
-    </div>
+  
   );
 }

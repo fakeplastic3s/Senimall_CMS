@@ -6,9 +6,10 @@ export default function Admin() {
   const name = useLocation();
 
   const [menu, setMenu] = useState("Dashboard");
-  const adminName = name.state;
+  const [adminName, setAdminName] = useState(name.state)
   const navigate = useNavigate();
   const token = localStorage.getItem("token"); // Ubah sesuai dengan cara penyimpanan token Anda
+  
   function receiveMenuData(data) {
     setMenu(data);
   }
