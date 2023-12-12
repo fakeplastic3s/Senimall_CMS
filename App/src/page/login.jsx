@@ -1,15 +1,16 @@
 import { useRef, useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-// import { useHi } from "react-router-dom";
+import Swal from "sweetalert2";
+import withReactContent from "sweetalert2-react-content";
 
 export default function Login() {
-  // const history = useHistory();
   const navigate = useNavigate();
   const [showPassword, setShowPassword] = useState(true);
   const [userName, setUserName] = useState("");
   const [password, setPassword] = useState("");
   const passwordType = useRef();
+  const MySwal = withReactContent(Swal);
 
   const token = localStorage.getItem("token"); // Ubah sesuai dengan cara penyimpanan token Anda
   useEffect(() => {
@@ -31,7 +32,6 @@ export default function Login() {
       const data = respon.data[0];
 
       if (data) {
-        alert("Login Berhasil");
         // data.role === "owner" ? navigate("/owner", { state: data.name }) : navigate("/admin", { state: data.name });
         // localStorage.setItem("token", data.role);
         if (data.role === "owner") {
@@ -42,7 +42,11 @@ export default function Login() {
           localStorage.setItem("token", data.role);
         }
       } else {
-        alert("Username dan Password tidak cocok");
+        MySwal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: "Username dan Password tidak cocok!",
+        });
       }
     } catch (error) {
       console.log(error);
@@ -68,7 +72,13 @@ export default function Login() {
             </label>
           </div>
 
-          <input type="text" id="text" required onChange={(e) => setUserName(e.target.value)} className="block text-lg w-full py-2 px-3 h-10 border-2 outline-none border-[#393E46]  focus:border-[#393E46] focus:ring-0 bg-transparent rounded-xl" />
+          <input
+            type="text"
+            id="text"
+            required
+            onChange={(e) => setUserName(e.target.value)}
+            className="block text-lg w-full py-2 px-3 h-10 border-2 outline-none border-[#393E46]  focus:border-[#393E46] focus:ring-0 bg-transparent rounded-xl"
+          />
 
           {/* Input Password */}
           <div className="flex mt-5">
@@ -84,7 +94,14 @@ export default function Login() {
             </label>
           </div>
           <div className="border-2 border-[#393E46] rounded-xl flex items-center h-10 ">
-            <input ref={passwordType} required type="password" onChange={(e) => setPassword(e.target.value)} id="password" className="block text-lg w-11/12 py-2 px-3 border-none focus:border-none focus:ring-0 outline-transparent bg-transparent rounded-xl"/>
+            <input
+              ref={passwordType}
+              required
+              type="password"
+              onChange={(e) => setPassword(e.target.value)}
+              id="password"
+              className="block text-lg w-11/12 py-2 px-3 border-none focus:border-none focus:ring-0 outline-transparent bg-transparent rounded-xl"
+            />
 
             {showPassword ? (
               <svg onClick={handleShowPassword} width="23" height="23" viewBox="0 0 30 20" xmlns="http://www.w3.org/2000/svg">

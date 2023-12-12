@@ -1,11 +1,10 @@
 import { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 import axios from "axios";
-import { useNavigate } from 'react-router-dom'
+import { useNavigate } from "react-router-dom";
 
 export default function Add_Artwork() {
-
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const [payload, setPayload] = useState({
     id: uuidv4(),
@@ -40,12 +39,15 @@ export default function Add_Artwork() {
       console.log(error);
     }
 
-    navigate('/admin/artwork/artwork-list')
-
+    navigate("/admin/artwork/artwork-list");
   }
 
   return (
-    
+    <>
+      <button className="bg-[#EEEEEE] flex items-center justify-center gap-3 py-[2px] px-4 mb-5 w-[100px] rounded-lg">
+        <img src="/artwork_component/Vector (3).svg" alt="" className="h-[15px]" />
+        <span className="font-unica mt-1">Back</span>
+      </button>
       <form action="" className="bg-[#EEEEEE] min-h-screen mt-8 rounded-2xl py-6 px-7">
         <label htmlFor="title" className="mb-7 block">
           <p className="font-unica text-lg">Title</p>
@@ -104,6 +106,6 @@ export default function Add_Artwork() {
           <span className="font-unica text-white pt-1 ">Submit</span>
         </button>
       </form>
-  
+    </>
   );
 }

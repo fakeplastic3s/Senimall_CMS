@@ -54,6 +54,17 @@
       "size": "120 x 50 cm",
       "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perferendis deleniti officiis, alias nisi ab aliquam rem saepe. Praesentium harum dolores porro cupiditate aut fuga, delectus quis aliquid at. Facere, nam.",
       "image": "C:\\fakepath\\19366.jpg"
+    },
+    {
+      "id": "51c053cd-81d4-46b0-bc19-1acdfc6e524e",
+      "title": "asdsad",
+      "Artist": "asdasd",
+      "price": "123123",
+      "category": "portrait",
+      "material": "adad",
+      "size": "123123",
+      "description": "adadasd",
+      "image": "C:\\fakepath\\Border-Avatar-8.png"
     }
   ],
   "admin": [

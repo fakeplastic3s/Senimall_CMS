@@ -1,10 +1,12 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { NavLink } from "react-router-dom";
+import Swal from "sweetalert2";
+import withReactContent from "sweetalert2-react-content";
 
 export default function SidebarOwner(props) {
   const { name } = props;
   const navigate = useNavigate();
+  const MySwal = withReactContent(Swal);
 
   const [menu, setMenu] = useState([
     {
@@ -24,8 +26,21 @@ export default function SidebarOwner(props) {
   ]);
 
   const handleLogout = () => {
-    navigate("/");
-    localStorage.removeItem("token");
+    MySwal.fire({
+      title: "Peringatan!",
+      text: "Apakah Anda yakin ingin keluar?",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      cancelButtonText: "Batal",
+      confirmButtonText: "Ya, Keluar!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        navigate("/");
+        localStorage.removeItem("token");
+      }
+    });
   };
 
   const handleSetMenu = (id) => {
@@ -36,7 +51,7 @@ export default function SidebarOwner(props) {
   };
 
   return (
-    <div className="min-h-screen bg-[#EEEEEE] w-[18%] flex flex-col justify-between">
+    <div className="min-h-screen bg-[#EEEEEE] w-[18%] flex flex-col justify-between fixed">
       <div>
         <img src="../public/sidebar_component/people.png" className="mx-auto mt-10 w-10 lg:w-20 transition-all transition-300" alt="" />
         <p className="font-unica  text-xs lg:text-base text-center mt-3">{name}</p>
