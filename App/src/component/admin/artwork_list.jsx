@@ -2,9 +2,11 @@ import React, { useEffect } from "react";
 import { useState } from "react";
 import axios from "axios";
 import { Card, Table } from "flowbite-react";
+import { useNavigate, redirect } from "react-router-dom";
 
-export default function ArtworkList() {
+export default function ArtworkList({sendDataAddButton}) {
   const [art, setArt] = useState([]);
+  const navigate = useNavigate()
 
   async function getArtworkList() {
     try {
@@ -20,13 +22,17 @@ export default function ArtworkList() {
   useEffect(() => {
     getArtworkList();
   }, []);
+
+  const handleAddArtworkList = ()=>{
+    navigate('/admin/artwork/artwork-add')
+  }
   // getArtworkList()
 
   return (
     <Card className="max-w ">
       <div className="flex justify-between items-center ">
         <h1 className="font-semibold font-unica">Artwork List</h1>
-        <button className="flex justify-between py-2 px-4 gap-5 items-center bg-[#4ECCA3] rounded-2xl">
+        <button onClick={handleAddArtworkList} className="flex justify-between py-2 px-4 gap-5 items-center bg-[#4ECCA3] rounded-2xl">
           <img src="/artwork_component/Vector (1).svg" alt="" className="h-4" />
           <span className="font-unica text-white mt-1">Add</span>
         </button>
@@ -45,7 +51,7 @@ export default function ArtworkList() {
               return (
                 <Table.Row key={items.id} className="bg-white dark:border-gray-700 dark:bg-gray-800">
                   <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">{items.title}</Table.Cell>
-                  <Table.Cell>{items.Artis}</Table.Cell>
+                  <Table.Cell>{items.Artist}</Table.Cell>
                   <Table.Cell className="flex gap-3 items-center">
                     {/* Pencil Icon */}
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="green" className="w-4 h-4">
