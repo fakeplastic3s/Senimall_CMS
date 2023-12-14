@@ -25,13 +25,13 @@ export default function Login() {
 
   const handleLogin = async (e) => {
     e.preventDefault();
-  
+
     try {
-      const response = await axios.get(`http://localhost:5173/admin?username=${userName}&&password=${password}`);
+      const response = await axios.get(`http://localhost:3000/admin?username=${userName}&&password=${password}`);
       const data = response.data[0];
-    
-      console.log("Login Data:", data);
-  
+
+      console.log(data);
+
       if (data) {
         if (data.role === "owner") {
           console.log("Logging in as owner...");
@@ -53,7 +53,6 @@ export default function Login() {
       console.log("Login Error:", error);
     }
   };
-  
 
   const handleShowPassword = () => {
     setShowPassword(!showPassword);
