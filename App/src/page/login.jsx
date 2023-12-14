@@ -25,19 +25,20 @@ export default function Login() {
 
   const handleLogin = async (e) => {
     e.preventDefault();
-
+  
     try {
-      const respon = await axios.get(`http://localhost:3000/admin?username=${userName}&&password=${password}`);
-
-      const data = respon.data[0];
-
+      const response = await axios.get(`http://localhost:5173/admin?username=${userName}&&password=${password}`);
+      const data = response.data[0];
+    
+      console.log("Login Data:", data);
+  
       if (data) {
-        // data.role === "owner" ? navigate("/owner", { state: data.name }) : navigate("/admin", { state: data.name });
-        // localStorage.setItem("token", data.role);
         if (data.role === "owner") {
+          console.log("Logging in as owner...");
           navigate("/owner", { state: data.name });
           localStorage.setItem("token", data.role);
         } else {
+          console.log("Logging in as admin...");
           navigate("/admin", { state: data.name });
           localStorage.setItem("token", data.role);
         }
@@ -49,9 +50,10 @@ export default function Login() {
         });
       }
     } catch (error) {
-      console.log(error);
+      console.log("Login Error:", error);
     }
   };
+  
 
   const handleShowPassword = () => {
     setShowPassword(!showPassword);
