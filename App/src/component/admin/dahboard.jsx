@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import Footer from "../footer";
 
 export default function Dashboard() {
   const [art, setArt] = useState([]);
@@ -59,6 +60,7 @@ export default function Dashboard() {
             </div>
           </div>
         </div>
+        <Footer/>
       </div>
     </>
   );

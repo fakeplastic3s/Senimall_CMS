@@ -3,6 +3,7 @@ import Add_Artwork from "./add_artworks";
 import ArtworkList from "./artwork_list";
 import DetailArtwork from "./detail_artwork";
 import { useNavigate, Outlet } from "react-router-dom";
+import Footer from "../footer";
 
 export default function Artwork(props) {
   const navigate = useNavigate();
