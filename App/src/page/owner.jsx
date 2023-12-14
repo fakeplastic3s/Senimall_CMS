@@ -2,6 +2,7 @@ import SidebarOwner from "../component/sidebar_owner";
 import { Outlet, useLocation } from "react-router-dom";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import Footer from "../component/footer";
 
 export default function Owner() {
   const name = useLocation();
@@ -24,6 +25,7 @@ export default function Owner() {
 
         <div className="min-h-screen w-[82%]  ms-auto px-5 md:px-10 py-16">
           <Outlet />
+          <Footer />
         </div>
       </div>
     </>

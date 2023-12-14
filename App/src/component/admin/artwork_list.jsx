@@ -70,15 +70,7 @@ export default function ArtworkList({ sendDataAddButton }) {
                   </svg>
 
                   {/* Trash Icon */}
-                  <svg
-                    onClick={() => handleDeleteArtwork(item.id)}
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    strokeWidth={1.5}
-                    stroke="red"
-                    className="w-4 h-4 cursor-pointer"
-                  >
+                  <svg onClick={() => handleDeleteArtwork(item.id)} xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="red" className="w-4 h-4 cursor-pointer">
                     <path
                       strokeLinecap="round"
                       strokeLinejoin="round"
@@ -88,7 +80,7 @@ export default function ArtworkList({ sendDataAddButton }) {
 
                   {/* still doesn't work! */}
                   {/* Eye Icon */}
-                  <Link to={`/admin/artwork-detail/${items.id}`}>
+                  <Link to={`/admin/artwork-detail/${item.id}`}>
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-4 h-4">
                       <path
                         strokeLinecap="round"
@@ -98,7 +90,6 @@ export default function ArtworkList({ sendDataAddButton }) {
                       <path strokeLinecap="round" strokeLinejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                     </svg>
                   </Link>
-
                 </Table.Cell>
               </Table.Row>
             ))}

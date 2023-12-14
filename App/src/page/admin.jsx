@@ -1,6 +1,7 @@
 import Sidebar from "../component/sidebar";
 import { Outlet, useLocation, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
+import Footer from "../component/footer";
 
 export default function Admin() {
   const name = useLocation();
@@ -40,6 +41,7 @@ export default function Admin() {
       <Sidebar name={adminName} sendDataMenu={receiveMenuData} />
       <div className="min-h-screen w-[82%] ms-auto px-5 md:px-10 py-16">
         <Outlet />
+        <Footer />
       </div>
     </div>
   );
