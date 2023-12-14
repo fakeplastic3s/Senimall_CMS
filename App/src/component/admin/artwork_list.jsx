@@ -5,7 +5,6 @@ import { Card, Table } from "flowbite-react";
 import { useNavigate, redirect } from "react-router-dom";
 import { Link } from "react-router-dom";
 
-
 // ... (other imports)
 
 export default function ArtworkList({ sendDataAddButton }) {
