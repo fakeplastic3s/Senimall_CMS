@@ -44,7 +44,7 @@ export default function Add_Artwork() {
 
   return (
     <>
-      <button className="bg-[#EEEEEE] flex items-center justify-center gap-3 py-[2px] px-4 mb-5 w-[100px] rounded-lg">
+      <button onClick={()=>navigate('/admin/artwork/artwork-list')} className="bg-[#EEEEEE] flex items-center justify-center gap-3 py-[2px] px-4 mb-5 w-[100px] rounded-lg">
         <img src="/artwork_component/Vector (3).svg" alt="" className="h-[15px]" />
         <span className="font-unica mt-1">Back</span>
       </button>

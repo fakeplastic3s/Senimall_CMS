@@ -10,6 +10,7 @@ import UsersOwner from "./component/owner/users";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import ArtworkList from "./component/admin/artwork_list";
 import Add_Artwork from "./component/admin/add_artworks";
+import Edit_Artwork from "./component/admin/edit_artwork";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
             <Route path="artwork" Component={Artwork}>
               <Route path="artwork-list" Component={ArtworkList} />
               <Route path="artwork-add" Component={Add_Artwork} />
+              <Route path="edit-artworklist/:id" Component={Edit_Artwork} />
             </Route>
             <Route path="submission" Component={Submission} />
           </Route>

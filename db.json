@@ -103,5 +103,10 @@
       "password": "owner01",
       "role": "owner"
     }
+  ],
+  "artist":[
+    {
+      
+    }
   ]
 }

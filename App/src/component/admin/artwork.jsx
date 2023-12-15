@@ -9,8 +9,6 @@ export default function Artwork(props) {
   const [add, setAdd] = useState("list");
   const [isAdd, setIsAdd] = useState(true);
 
-  console.log(add);
-
   useEffect(() => {
     // receiveAdd();
     if (add === "list") {
