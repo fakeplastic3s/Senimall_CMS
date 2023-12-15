@@ -27,17 +27,18 @@ export default function Login() {
     e.preventDefault();
 
     try {
-      const respon = await axios.get(`http://localhost:3000/admin?username=${userName}&&password=${password}`);
+      const response = await axios.get(`http://localhost:3000/admin?username=${userName}&&password=${password}`);
+      const data = response.data[0];
 
-      const data = respon.data[0];
+      console.log(data);
 
       if (data) {
-        // data.role === "owner" ? navigate("/owner", { state: data.name }) : navigate("/admin", { state: data.name });
-        // localStorage.setItem("token", data.role);
         if (data.role === "owner") {
+          console.log("Logging in as owner...");
           navigate("/owner", { state: data.name });
           localStorage.setItem("token", data.role);
         } else {
+          console.log("Logging in as admin...");
           navigate("/admin", { state: data.name });
           localStorage.setItem("token", data.role);
         }
@@ -49,7 +50,7 @@ export default function Login() {
         });
       }
     } catch (error) {
-      console.log(error);
+      console.log("Login Error:", error);
     }
   };
 

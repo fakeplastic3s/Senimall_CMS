@@ -6,9 +6,12 @@ import { useNavigate } from "react-router-dom";
 export default function Add_Artwork() {
   const navigate = useNavigate();
 
-  const [payload, setPayload] = useState({
-    id: uuidv4(),
-  });
+  const [payload, setPayload] = useState({ id: uuidv4() });
+
+  const generateNewId = () => {
+    setPayload({ ...payload, id: uuidv4() });
+  };
+
 
   const handleInput = (e) => {
     const { name, value } = e.target;
@@ -18,9 +21,14 @@ export default function Add_Artwork() {
     });
   };
 
-  // console.log(payload)
+  const handleBackButtonClick = () => {
+    navigate("/admin/artwork/artwork-list");
+  };
 
-  async function handleSubmit() {
+  const handleSubmit = async (e) => {
+    e.preventDefault(); // Prevent the default form submission behavior
+    generateNewId();
+
     const newPayload = {
       id: payload.id,
       title: payload.title,
@@ -34,17 +42,19 @@ export default function Add_Artwork() {
     };
 
     try {
-      await axios.post("http://localhost:3000/artwork_list", newPayload);
+      await axios.post("http://localhost:5173/artwork_list", { artwork_list: [newPayload, ...existingData] });
+      navigate("/admin/artwork/artwork-list");
     } catch (error) {
       console.log(error);
     }
-
-    navigate("/admin/artwork/artwork-list");
-  }
+  };
 
   return (
     <>
-      <button onClick={()=>navigate('/admin/artwork/artwork-list')} className="bg-[#EEEEEE] flex items-center justify-center gap-3 py-[2px] px-4 mb-5 w-[100px] rounded-lg">
+      <button
+        className="bg-[#EEEEEE] flex items-center justify-center gap-3 py-[2px] px-4 mb-5 w-[100px] rounded-lg"
+        onClick={handleBackButtonClick}
+      >
         <img src="/artwork_component/Vector (3).svg" alt="" className="h-[15px]" />
         <span className="font-unica mt-1">Back</span>
       </button>
@@ -98,12 +108,19 @@ export default function Add_Artwork() {
           <textarea type="text" id="deskripsi" name="description" onChange={handleInput} rows="10" className="w-full outline-none border-2 rounded-lg bg-transparent px-2 py-1 border-[#393E46]" />
         </label>
         <label htmlFor="image" className="w-full block mb-7">
-          <p className="font-unica text-lg">Image</p>
-          <input type="file" id="image" name="image" onChange={handleInput} className="outline-none border-2 rounded-lg bg-transparent px-2 py-1 border-[#393E46]" />
+          <p className="font-unica text-lg">Image (PNG, JPG)</p>
+          <input
+            type="file"
+            id="image"
+            name="image"
+            accept=".png, .jpg, .jpeg"
+            onChange={handleInput}
+            className="outline-none border-2 rounded-lg bg-transparent px-2 py-1 border-[#393E46]"
+          />
         </label>
-        <button onClick={handleSubmit} type="button" className="bg-[#183D3D] flex justify-center items-stretch gap-3 w-full py-1 rounded-lg">
+        <button type="submit" className="bg-[#183D3D] flex justify-center items-stretch gap-3 w-full py-1 rounded-lg">
           <img src="/artwork_component/Vector (4).svg" alt="" className="w-4" />
-          <span className="font-unica text-white pt-1 ">Submit</span>
+          <span className="font-unica text-white pt-1 " onChange={handleSubmit} >Submit</span>
         </button>
       </form>
     </>
