@@ -34,17 +34,6 @@
       "image": "C:\\fakepath\\kampusmerdeka.png"
     },
     {
-      "id": "96abc610-4472-4847-8f7b-15ff809cbb80",
-      "title": "ABC",
-      "Artist": "avd",
-      "price": "20000000",
-      "category": "rantasy",
-      "material": "zcvzvc",
-      "size": "20 x 20 cm",
-      "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perferendis deleniti officiis, alias nisi ab aliquam rem saepe. Praesentium harum dolores porro cupiditate aut fuga, delectus quis aliquid at. Facere, nam.",
-      "image": "C:\\fakepath\\19366.jpg"
-    },
-    {
       "id": "5a3e23e8-e471-4e02-a607-0e928a3d119a",
       "title": "bougenville",
       "Artist": "Hartono",
@@ -93,9 +82,7 @@
       "role": "owner"
     }
   ],
-  "artist":[
-    {
-      
-    }
+  "artist": [
+    {}
   ]
 }

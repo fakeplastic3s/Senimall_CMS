@@ -12,7 +12,6 @@ export default function Add_Artwork() {
     setPayload({ ...payload, id: uuidv4() });
   };
 
-
   const handleInput = (e) => {
     const { name, value } = e.target;
     setPayload({
@@ -42,7 +41,7 @@ export default function Add_Artwork() {
     };
 
     try {
-      await axios.post("http://localhost:5173/artwork_list", { artwork_list: [newPayload, ...existingData] });
+      await axios.post("http://localhost:3000/artwork_list", { artwork_list: [newPayload, ...existingData] });
       navigate("/admin/artwork/artwork-list");
     } catch (error) {
       console.log(error);
