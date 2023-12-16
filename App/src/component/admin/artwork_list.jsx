@@ -4,8 +4,6 @@ import axios from "axios";
 import { Card, Table } from "flowbite-react";
 import { useNavigate, redirect } from "react-router-dom";
 
-// ... (other imports)
-
 export default function ArtworkList({ sendDataAddButton }) {
   const [art, setArt] = useState([]);
   const navigate = useNavigate();
@@ -13,9 +11,9 @@ export default function ArtworkList({ sendDataAddButton }) {
   async function getArtworkList() {
     try {
       const data = await axios.get("http://localhost:3000/artwork_list");
-      console.log(data.data); // Check if data is received
+      console.log(data.data); // Check if data is diterima
       setArt(data.data);
-      console.log(art); // Check if state is updated
+      console.log(art); // Check if state is update
     } catch (error) {
       console.log(error);
     }
@@ -29,10 +27,15 @@ export default function ArtworkList({ sendDataAddButton }) {
     navigate("/admin/artwork/artwork-add");
   };
 
+  const handleEditArtwork = (id) => {
+    // Redirect ke "edit_artwork.jsx"
+    navigate(`/admin/artwork/edit_artwork/${id}`);
+  };
+
   const handleDeleteArtwork = async (id) => {
     try {
       await axios.delete(`http://localhost:3000/artwork_list/${id}`);
-      // Refresh the artwork list after deletion
+      // Refresh the artwork list setelah delete
       getArtworkList();
     } catch (error) {
       console.log(error);
@@ -64,7 +67,15 @@ export default function ArtworkList({ sendDataAddButton }) {
                 <Table.Cell>{item.Artist}</Table.Cell>
                 <Table.Cell className="flex gap-3 items-center">
                   {/* Pencil Icon */}
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="green" className="w-4 h-4">
+                  <svg
+                    onClick={() => handleEditArtwork(item.id)}
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth={1.5}
+                    stroke="green"
+                    className="w-4 h-4 cursor-pointer"
+                  >
                     <path strokeLinecap="round" strokeLinejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L6.832 19.82a4.5 4.5 0 01-1.897 1.13l-2.685.8.8-2.685a4.5 4.5 0 011.13-1.897L16.863 4.487zm0 0L19.5 7.125" />
                   </svg>
 
