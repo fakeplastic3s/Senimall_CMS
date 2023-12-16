@@ -1,17 +1,6 @@
 {
   "artwork_list": [
     {
-      "id": 1,
-      "title": "Penangkapan Pangeran Diponegoro",
-      "Artist": "Raden Saleh",
-      "price": 7000000,
-      "category": "Nature",
-      "material": "Oil in Canvas",
-      "size": "120 cm x 80 cm",
-      "description": "Pada 13 Januari 1808, ia dipromosikan menjadi kolonel dan diangkat menjadi ajudan gubernur jenderal Albertus Henricus Wise. 11 April 1809 dipromosikan menjadi sersan dan diangkat menjadi komandan divisi di Semarang. 20 Januari 1810 menjadi Kepala Staf Umum Angkatan Laut Kerajaan dan Kolonial di Batavia. 1 September 1810 dipindahkan ke layanan Prancis. 10 Agustus 1811 diangkat menjadi Kepala Staf Umum Tentara Kerajaan Hindia Belanda.",
-      "image": "/foto_lukisan/Hendrik_Merkus_Baron_de_Kock_by_Cornelis_Kruseman.jpg"
-    },
-    {
       "id": 2,
       "title": "Full lorem",
       "Artist": "Raden Saleh",
@@ -23,6 +12,7 @@
       "image": "/foto_lukisan/Hendrik_Merkus_Baron_de_Kock_by_Cornelis_Kruseman.jpg"
     },
     {
+<<<<<<< HEAD
       "id": "9403d7b5-51c3-4a10-a348-75092c50ad98",
       "title": "fdafadf",
       "Artist": "dfadfa",
@@ -32,6 +22,17 @@
       "size": "fafadfa",
       "description": "dfaertadafd",
       "image": "C:\\fakepath\\kampusmerdeka.png"
+=======
+      "id": "96abc610-4472-4847-8f7b-15ff809cbb80",
+      "title": "ABC",
+      "Artist": "avd",
+      "price": "20000000",
+      "category": "rantasy",
+      "material": "zcvzvc",
+      "size": "20 x 20 cm",
+      "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perferendis deleniti officiis, alias nisi ab aliquam rem saepe. Praesentium harum dolores porro cupiditate aut fuga, delectus quis aliquid at. Facere, nam.",
+      "image": "C:\\fakepath\\19366.jpg"
+>>>>>>> 1fa640abdbc873d89f31b6b4b1f87a2525948a8e
     },
     {
       "id": "5a3e23e8-e471-4e02-a607-0e928a3d119a",
