@@ -20,7 +20,7 @@ export default function Admin() {
       navigate("/owner", { state: name.state });
     } else if (token === "admin") {
       navigate("/admin", { state: name.state });
-      console.log(adminName);
+      // console.log(adminName);
     } else {
       navigate("/");
     }
