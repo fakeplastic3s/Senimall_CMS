@@ -32,6 +32,27 @@
       "size": "120 x 50 cm",
       "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perferendis deleniti officiis, alias nisi ab aliquam rem saepe. Praesentium harum dolores porro cupiditate aut fuga, delectus quis aliquid at. Facere, nam.",
       "image": "C:\\fakepath\\19366.jpg"
+    },
+    {
+      "id": "09b6cf52-37e2-41a2-9d6c-5376fc23a4bd",
+      "title": "Harry Potter",
+      "Artist": "Fiqa",
+      "price": "2000000",
+      "material": "Canvas",
+      "size": "200",
+      "description": "ini mahal",
+      "image": "C:\\fakepath\\IMG_0052.JPG"
+    },
+    {
+      "id": "faa493f5-d79c-463f-97bd-f56598edbf2a",
+      "title": "Horse",
+      "Artist": "Ghania S.",
+      "price": "4000000",
+      "category": "photography",
+      "material": "Photo",
+      "size": "500x1000",
+      "description": "kudaaaa",
+      "image": "C:\\fakepath\\IMG_0052.JPG"
     }
   ],
   "admin": [
