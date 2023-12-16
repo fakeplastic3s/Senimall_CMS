@@ -8,7 +8,6 @@ import Footer from "../footer";
 export default function Artwork(props) {
   const navigate = useNavigate();
   const [add, setAdd] = useState("list");
-  const [isAdd, setIsAdd] = useState(true);
 
   useEffect(() => {
     // receiveAdd();

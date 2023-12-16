@@ -12,7 +12,6 @@
       "image": "/foto_lukisan/Hendrik_Merkus_Baron_de_Kock_by_Cornelis_Kruseman.jpg"
     },
     {
-<<<<<<< HEAD
       "id": "9403d7b5-51c3-4a10-a348-75092c50ad98",
       "title": "fdafadf",
       "Artist": "dfadfa",
@@ -22,17 +21,6 @@
       "size": "fafadfa",
       "description": "dfaertadafd",
       "image": "C:\\fakepath\\kampusmerdeka.png"
-=======
-      "id": "96abc610-4472-4847-8f7b-15ff809cbb80",
-      "title": "ABC",
-      "Artist": "avd",
-      "price": "20000000",
-      "category": "rantasy",
-      "material": "zcvzvc",
-      "size": "20 x 20 cm",
-      "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perferendis deleniti officiis, alias nisi ab aliquam rem saepe. Praesentium harum dolores porro cupiditate aut fuga, delectus quis aliquid at. Facere, nam.",
-      "image": "C:\\fakepath\\19366.jpg"
->>>>>>> 1fa640abdbc873d89f31b6b4b1f87a2525948a8e
     },
     {
       "id": "5a3e23e8-e471-4e02-a607-0e928a3d119a",
@@ -44,6 +32,17 @@
       "size": "120 x 50 cm",
       "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perferendis deleniti officiis, alias nisi ab aliquam rem saepe. Praesentium harum dolores porro cupiditate aut fuga, delectus quis aliquid at. Facere, nam.",
       "image": "C:\\fakepath\\19366.jpg"
+    },
+    {
+      "id": "c9bafade-4a96-42f7-8ae0-55c0cf1b4cf2",
+      "title": "Mona Lisaaaaaaa",
+      "Artist": "Leonardo Da Vincieeeee",
+      "price": "2000000000",
+      "category": "photography",
+      "material": "oil in canvas",
+      "size": "120 x 60 cm",
+      "description": "Nama atau judul lukisan Mona Lisa berasal dari biografi Giorgio Vasari tentang Leonardo da Vinci, yang terbit 31 tahun setelah ia meninggal dunia. Di dalam buku ini disebutkan bahwa wanita dalam lukisan ini adalah Lisa Gherardini",
+      "image": "C:\\fakepath\\logout (2).png"
     }
   ],
   "admin": [

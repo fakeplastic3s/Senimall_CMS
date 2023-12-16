@@ -3,8 +3,7 @@ import { useState } from "react";
 import axios from "axios";
 import { Card, Table } from "flowbite-react";
 
-import { useNavigate, redirect } from "react-router-dom";
-import { Link } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
 export default function ArtworkList({ sendDataAddButton }) {
   const [art, setArt] = useState([]);
@@ -14,9 +13,7 @@ export default function ArtworkList({ sendDataAddButton }) {
   async function getArtworkList() {
     try {
       const data = await axios.get("http://localhost:3000/artwork_list");
-      console.log(data.data); // Check if data is received
       setArt(data.data);
-      console.log(art); // Check if state is updated
     } catch (error) {
       console.log(error);
     }
@@ -67,9 +64,12 @@ export default function ArtworkList({ sendDataAddButton }) {
                 <Table.Cell>{item.Artist}</Table.Cell>
                 <Table.Cell className="flex gap-3 items-center">
                   {/* Pencil Icon */}
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="green" className="w-4 h-4">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L6.832 19.82a4.5 4.5 0 01-1.897 1.13l-2.685.8.8-2.685a4.5 4.5 0 011.13-1.897L16.863 4.487zm0 0L19.5 7.125" />
-                  </svg>
+
+                  <Link to={`/admin/artwork/edit-artworklist/${item.id}`}>
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="green" className="w-4 h-4">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L6.832 19.82a4.5 4.5 0 01-1.897 1.13l-2.685.8.8-2.685a4.5 4.5 0 011.13-1.897L16.863 4.487zm0 0L19.5 7.125" />
+                    </svg>
+                  </Link>
 
                   {/* Trash Icon */}
                   <svg onClick={() => handleDeleteArtwork(item.id)} xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="red" className="w-4 h-4 cursor-pointer">
