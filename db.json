@@ -2,25 +2,14 @@
   "artwork_list": [
     {
       "id": 2,
-      "title": "Full lorem",
+      "title": "Full lorem tes",
       "Artist": "Raden Saleh",
       "price": 7000000,
-      "category": "Nature",
+      "category": "landscape",
       "material": "Oil in Canvas",
       "size": "120 cm x 80 cm",
       "description": "Pada 13 Januari 1808, ia dipromosikan menjadi kolonel dan diangkat menjadi ajudan gubernur jenderal Albertus Henricus Wise. 11 April 1809 dipromosikan menjadi sersan dan diangkat menjadi komandan divisi di Semarang. 20 Januari 1810 menjadi Kepala Staf Umum Angkatan Laut Kerajaan dan Kolonial di Batavia. 1 September 1810 dipindahkan ke layanan Prancis. 10 Agustus 1811 diangkat menjadi Kepala Staf Umum Tentara Kerajaan Hindia Belanda.",
       "image": "/foto_lukisan/Hendrik_Merkus_Baron_de_Kock_by_Cornelis_Kruseman.jpg"
-    },
-    {
-      "id": "9403d7b5-51c3-4a10-a348-75092c50ad98",
-      "title": "fdafadf",
-      "Artist": "dfadfa",
-      "price": "fadfa",
-      "category": "minimalism",
-      "material": "dfadfa",
-      "size": "fafadfa",
-      "description": "dfaertadafd",
-      "image": "C:\\fakepath\\kampusmerdeka.png"
     },
     {
       "id": "5a3e23e8-e471-4e02-a607-0e928a3d119a",
@@ -32,17 +21,6 @@
       "size": "120 x 50 cm",
       "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perferendis deleniti officiis, alias nisi ab aliquam rem saepe. Praesentium harum dolores porro cupiditate aut fuga, delectus quis aliquid at. Facere, nam.",
       "image": "C:\\fakepath\\19366.jpg"
-    },
-    {
-      "id": "c9bafade-4a96-42f7-8ae0-55c0cf1b4cf2",
-      "title": "Mona Lisaaaaaaa",
-      "Artist": "Leonardo Da Vincieeeee",
-      "price": "2000000000",
-      "category": "photography",
-      "material": "oil in canvas",
-      "size": "120 x 60 cm",
-      "description": "Nama atau judul lukisan Mona Lisa berasal dari biografi Giorgio Vasari tentang Leonardo da Vinci, yang terbit 31 tahun setelah ia meninggal dunia. Di dalam buku ini disebutkan bahwa wanita dalam lukisan ini adalah Lisa Gherardini",
-      "image": "C:\\fakepath\\logout (2).png"
     }
   ],
   "admin": [
