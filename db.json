@@ -2,25 +2,14 @@
   "artwork_list": [
     {
       "id": 2,
-      "title": "Full lorem",
+      "title": "Full lorem tes",
       "Artist": "Raden Saleh",
       "price": 7000000,
-      "category": "Nature",
+      "category": "landscape",
       "material": "Oil in Canvas",
       "size": "120 cm x 80 cm",
       "description": "Pada 13 Januari 1808, ia dipromosikan menjadi kolonel dan diangkat menjadi ajudan gubernur jenderal Albertus Henricus Wise. 11 April 1809 dipromosikan menjadi sersan dan diangkat menjadi komandan divisi di Semarang. 20 Januari 1810 menjadi Kepala Staf Umum Angkatan Laut Kerajaan dan Kolonial di Batavia. 1 September 1810 dipindahkan ke layanan Prancis. 10 Agustus 1811 diangkat menjadi Kepala Staf Umum Tentara Kerajaan Hindia Belanda.",
       "image": "/foto_lukisan/Hendrik_Merkus_Baron_de_Kock_by_Cornelis_Kruseman.jpg"
-    },
-    {
-      "id": "96abc610-4472-4847-8f7b-15ff809cbb80",
-      "title": "ABC",
-      "Artist": "avd",
-      "price": "20000000",
-      "category": "rantasy",
-      "material": "zcvzvc",
-      "size": "20 x 20 cm",
-      "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perferendis deleniti officiis, alias nisi ab aliquam rem saepe. Praesentium harum dolores porro cupiditate aut fuga, delectus quis aliquid at. Facere, nam.",
-      "image": "C:\\fakepath\\19366.jpg"
     },
     {
       "id": "5a3e23e8-e471-4e02-a607-0e928a3d119a",
@@ -64,6 +53,39 @@
       "size": "500x1000",
       "description": "pantai",
       "image": "/foto_lukisan/IMG_3506.jpg"
+    },
+    {
+      "id": "4b1b6c78-1b62-485d-8697-dbc07616e564",
+      "title": "Harry Potter",
+      "Artist": "Raden Saleh",
+      "price": "6700000",
+      "category": "still life",
+      "material": "Canvas",
+      "size": "500x1000",
+      "description": "mahall bangett",
+      "image": "C:\\fakepath\\IMG_3506.jpg"
+    },
+    {
+      "id": "3462c666-5079-4e78-acf8-d5b975fdfe28",
+      "title": "2023 Sehat",
+      "Artist": "Picasso",
+      "price": "20000099",
+      "category": "cubism",
+      "material": "Photo",
+      "size": "500x1000",
+      "description": "Ini gambar langka",
+      "image": {}
+    },
+    {
+      "id": "5cf2f7b0-1846-4b92-8fa6-0e51b7e409ff",
+      "title": "Pelabuhan ",
+      "Artist": "Raden Saleh",
+      "price": "6700000",
+      "category": "photography",
+      "material": "Photo",
+      "size": "700x1000",
+      "description": "foto kapal di laut",
+      "image": {}
     }
   ],
   "admin": [
@@ -102,5 +124,8 @@
       "password": "owner01",
       "role": "owner"
     }
+  ],
+  "artist": [
+    {}
   ]
 }

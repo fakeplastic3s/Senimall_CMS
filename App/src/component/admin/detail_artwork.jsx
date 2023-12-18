@@ -1,48 +1,95 @@
 import { useEffect, useState } from "react";
-import axios from 'axios';
+import axios from "axios";
+import { Card } from "flowbite-react";
+import { Navigate, useParams } from "react-router-dom";
 
 export default function DetailArtwork() {
+  const [art, setArt] = useState();
+  const { id } = useParams();
+  const [loadData, setLoadData] = useState({
+    id: id,
+    title: "",
+    Artist: "",
+    price: "",
+    category: "",
+    material: "",
+    size: "",
+    description: "",
+    image: null,
+  });
 
-    const [art, setArt] = useState();
+  async function getArtworkList(){
+      try{
+          const data = await axios.get('http://localhost:3000/artwork_list')
+          setArt(data.data)
+          console.log(art[0].image)
+          console.log(data.data[0])
+      }
+      catch(error){
+          console(error)
+      }
+  }
 
-    // async function getArtworkList(){
-    //     try{
-    //         const data = await axios.get('http://localhost:3000/artwork_list')
-    //         setArt(data.data)
-    //         // console.log(art[0].image)
-    //         // console.log(data.data[0])
-    //     }
-    //     catch(error){
-    //         console(error)
-    //     }
-    // }
+  useEffect(()=>{
+      getArtworkList();
+  },[])
 
-    // useEffect(()=>{
-    //     getArtworkList();
-    // },[])
+  async function load() {
+    try {
+      const data = await axios.get(`http://localhost:3000/artwork_list?id=${id}`);
+      setLoadData({
+        ...loadData,
+        title: data.data[0].title,
+        Artist: data.data[0].Artist,
+        price: data.data[0].price,
+        category: data.data[0].category,
+        material: data.data[0].material,
+        size: data.data[0].size,
+        description: data.data[0].description,
+        image: data.data[0].image,
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  }
 
-    return (
-        <div className="w-full bg-[#EEEEEE] mt-6 px-14 py-5 rounded-xl">
-            <h1 className="font-unica mb-5">Artwork Detail</h1>
-            <div className="flex gap-3 mb-5 items-center" >
-                <img src="/foto_lukisan/Hendrik_Merkus_Baron_de_Kock_by_Cornelis_Kruseman.jpg" alt="abc" className="w-1/2 max-h-[300px] object-contain" />
-                <div className="font-unica">
-                    <p className="font-bold">Title</p>
-                    <p className="mb-2">Penangkapan Pangeran Diponegoro</p>
-                    <p className="font-bold">Artist</p>
-                    <p className="mb-2">Raden Saleh</p>
-                    <p className="font-bold">Price</p>
-                    <p className="mb-2">Rp. 1.000.000</p>
-                    <p className="font-bold">Category</p>
-                    <p className="mb-2">Realism</p>
-                    <p className="font-bold">Material</p>
-                    <p className="mb-2">Oil in Canvas</p>
-                    <p className="font-bold">Size</p>
-                    <p className="mb-2">120 cm x 80 cm</p>
-                </div>
-            </div>
-            <p className="font-unica font-bold">Description</p>
-            <p className="font-unica">Pada 13 Januari 1808, ia dipromosikan menjadi kolonel dan diangkat menjadi ajudan gubernur jenderal Albertus Henricus Wise. 11 April 1809 dipromosikan menjadi sersan dan diangkat menjadi komandan divisi di Semarang. 20 Januari 1810 menjadi Kepala Staf Umum Angkatan Laut Kerajaan dan Kolonial di Batavia. 1 September 1810 dipindahkan ke layanan Prancis. 10 Agustus 1811 diangkat menjadi Kepala Staf Umum Tentara Kerajaan Hindia Belanda.</p>
+  useEffect(() => {
+    load();
+  }, []);
+
+  const handleBackButtonClick = () => {
+    Navigate("/admin/artwork/artwork-list");
+  };
+
+  return (
+    <>
+      <button className="bg-[#EEEEEE] flex items-center justify-center gap-3 py-[2px] px-4 mb-5 w-[100px] rounded-lg" onClick={() => Navigate(-1)}>
+        <img src="/artwork_component/Vector (3).svg" alt="" className="h-[15px]" />
+        <span className="font-unica mt-1">Back</span>
+      </button>
+      <Card className="max-w ">
+        <div className="flex justify-between items-center ">
+          <h1 className="font-semibold font-unica">Detail Artwork</h1>
         </div>
-    )
+
+        <div className="flex gap-3 mb-5 items-center">
+          <img src="/foto_lukisan/Hendrik_Merkus_Baron_de_Kock_by_Cornelis_Kruseman.jpg" alt="abc" className="w-1/2 max-h-[300px] object-contain" />
+          <div className="font-unica">
+            <p className="font-bold">Title</p>
+            <p className="mb-2">{loadData.title}</p>
+            <p className="font-bold">Artist</p>
+            <p className="mb-2">{loadData.Artist}</p>
+            <p className="font-bold">Price</p>
+            <p className="mb-2">Rp {loadData.price}</p>
+            <p className="font-bold">Category</p>
+            <p className="mb-2">{loadData.category}</p>
+            <p className="font-bold">Material</p>
+            <p className="mb-2">{loadData.material}</p>
+            <p className="font-bold">Size</p>
+            <p className="mb-2">{loadData.size}</p>
+          </div>
+        </div>
+      </Card>
+    </>
+  );
 }
