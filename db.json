@@ -34,16 +34,6 @@
       "image": "C:\\fakepath\\19366.jpg"
     },
     {
-      "id": "09b6cf52-37e2-41a2-9d6c-5376fc23a4bd",
-      "title": "Harry Potter",
-      "Artist": "Fiqa",
-      "price": "2000000",
-      "material": "Canvas",
-      "size": "200",
-      "description": "ini mahal",
-      "image": "C:\\fakepath\\IMG_0052.JPG"
-    },
-    {
       "id": "faa493f5-d79c-463f-97bd-f56598edbf2a",
       "title": "Horse",
       "Artist": "Ghania S.",
@@ -52,7 +42,28 @@
       "material": "Photo",
       "size": "500x1000",
       "description": "kudaaaa",
-      "image": "C:\\fakepath\\IMG_0052.JPG"
+      "image": "/foto_lukisan/IMG_0052.JPG"
+    },
+    {
+      "id": "062ea4cf-1f77-45e4-b14c-71994f2a39ba",
+      "title": "Becak",
+      "Artist": "Ghania S.",
+      "price": "3500000",
+      "category": "photography",
+      "material": "Photo",
+      "size": "500x1000",
+      "description": "malioboro",
+      "image": "/foto_lukisan/IMG_0110.JPG"
+    },
+    {
+      "id": "4ac0440c-5564-4138-94a8-00d892e9dd19",
+      "title": "Sunset",
+      "Artist": "Ghania S.",
+      "price": "6700000",
+      "material": "Photo",
+      "size": "500x1000",
+      "description": "pantai",
+      "image": "/foto_lukisan/IMG_3506.jpg"
     }
   ],
   "admin": [

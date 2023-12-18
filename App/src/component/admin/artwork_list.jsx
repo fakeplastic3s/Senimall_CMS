@@ -57,6 +57,7 @@ export default function ArtworkList({ sendDataAddButton }) {
           <Table.Head className="">
             <Table.HeadCell>Title</Table.HeadCell>
             <Table.HeadCell>Artist</Table.HeadCell>
+            <Table.HeadCell>Image</Table.HeadCell>
             <Table.HeadCell>
               <span className="sr-only">Action</span>
             </Table.HeadCell>
@@ -66,6 +67,10 @@ export default function ArtworkList({ sendDataAddButton }) {
               <Table.Row key={item.id} className="bg-white dark:border-gray-700 dark:bg-gray-800">
                 <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">{item.title}</Table.Cell>
                 <Table.Cell>{item.Artist}</Table.Cell>
+                <Table.Cell>
+                  {/* Image */}
+                  <img src={item.image} alt={item.title} className="w-8 h-8" />
+                </Table.Cell>
                 <Table.Cell className="flex gap-3 items-center">
                   {/* Pencil Icon */}
                   <svg
