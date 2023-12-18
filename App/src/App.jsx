@@ -14,7 +14,6 @@ import DetailArtwork from "./component/admin/detail_artwork";
 import Edit_Artwork from "./component/admin/edit_artwork";
 
 function App() {
-
   return (
     <>
       <Router>
@@ -25,13 +24,13 @@ function App() {
             <Route path="artwork" Component={Artwork}>
               <Route path="artwork-list" Component={ArtworkList} />
               <Route path="artwork-add" Component={Add_Artwork} />
-              <Route path="artwork-detail" Component={DetailArtwork} />
+              <Route path="artwork-detail/:id" Component={DetailArtwork} />
               <Route path="edit-artworklist/:id" Component={Edit_Artwork} />
             </Route>
             <Route path="submission" Component={Submission} />
           </Route>
           <Route path="/owner" Component={Owner}>
-            <Route path="/owner" Component={DashboardOwner}/>
+            <Route path="/owner" Component={DashboardOwner} />
             <Route path="/owner/Dashboard" Component={DashboardOwner} />
             <Route path="/owner/Users" Component={UsersOwner} />
           </Route>
