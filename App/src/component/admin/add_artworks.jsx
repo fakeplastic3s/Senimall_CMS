@@ -2,9 +2,48 @@ import { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import Swal from "sweetalert2"; 
 
 export default function Add_Artwork() {
   const navigate = useNavigate();
+
+  const [errors, setErrors] = useState({});
+
+  // Validate input
+  const validateForm = () => {
+    const newErrors = {};
+
+    if (!payload.title) {
+      newErrors.title = 'Title is required';
+    }
+
+    if (!payload.Artist) {
+      newErrors.Artist = 'Artist is required';
+    }
+  
+    if (!payload.price) {
+      newErrors.price = 'Price is required';
+    }
+  
+    if (!payload.material) {
+      newErrors.material = 'Material is required';
+    }
+  
+    if (!payload.size) {
+      newErrors.size = 'Size is required';
+    }
+    
+    if (!payload.description) {
+      newErrors.description = 'Description is required';
+    }
+    
+    // Validate other fields as needed
+
+    setErrors(newErrors);
+
+    // Return true if there are no errors, false otherwise
+    return Object.keys(newErrors).length === 0;
+  };
 
   const [payload, setPayload] = useState({ id: uuidv4() });
   const [imagePreview, setImagePreview] = useState(null);
@@ -44,6 +83,12 @@ export default function Add_Artwork() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    if (!validateForm()) {
+      // Form validation failed
+      return;
+    }
+
     generateNewId();
 
     const newPayload = {
@@ -72,6 +117,30 @@ export default function Add_Artwork() {
     navigate("/admin/artwork/artwork-list");
   };
 
+    // Confirmation modal for form submission success
+    const handleSuccessModalClose = () => {
+      Swal.fire({
+        text: "Form submitted successfully!",
+        icon: "success",
+        confirmButtonColor: "#183D3D",
+        confirmButtonText: "OK",
+      }).then(() => {
+        handleModalClose();
+      });
+    };
+  
+    // Confirmation modal for form submission error
+    const handleErrorModalClose = () => {
+      Swal.fire({
+        text: "An error occurred. Please try again later.",
+        icon: "error",
+        confirmButtonColor: "#183D3D",
+        confirmButtonText: "OK",
+      }).then(() => {
+        handleModalClose();
+      });
+    };
+
   return (
     <>
       <button className="bg-[#EEEEEE] flex items-center justify-center gap-3 py-[2px] px-4 mb-5 w-[100px] rounded-lg" onClick={handleBackButtonClick}>
@@ -81,16 +150,19 @@ export default function Add_Artwork() {
       <form action="" className="bg-[#EEEEEE] min-h-screen mt-8 rounded-2xl py-6 px-7">
         <label htmlFor="title" className="mb-7 block">
           <p className="font-unica text-lg">Title</p>
-          <input type="text" name="title" id="title" onChange={handleInput} className="w-full outline-none border-2 rounded-lg bg-transparent px-2 py-1 border-[#393E46]" />
+          <input type="text" name="title" id="title" onChange={handleInput} className={`w-full outline-none border-2 rounded-lg bg-transparent px-2 py-1 border-[#393E46] ${errors.title && 'border-red-500'}`} />
+          {errors.title && <p className="text-red-500">{errors.title}</p>}
         </label>
         <label htmlFor="Artist" className="mb-7 block">
           <p className="font-unica text-lg">Artist</p>
-          <input type="text" id="Artist" name="Artist" onChange={handleInput} className="w-full outline-none border-2 rounded-lg bg-transparent px-2 py-1 border-[#393E46]" />
+          <input type="text" id="Artist" name="Artist" onChange={handleInput} className={`w-full outline-none border-2 rounded-lg bg-transparent px-2 py-1 border-[#393E46] ${errors.Artist && 'border-red-500'}`} />
+          {errors.Artist && <p className="text-red-500">{errors.Artist}</p>}
         </label>
         <div className="flex justify-between mb-7">
           <label htmlFor="price" className="block w-[35%]">
             <p className="font-unica text-lg">Price</p>
-            <input type="text" id="price" name="price" onChange={handleInput} className="w-full outline-none border-2 rounded-lg bg-transparent px-2 py-1 border-[#393E46]" />
+            <input type="text" id="price" name="price" onChange={handleInput} className={`w-full outline-none border-2 rounded-lg bg-transparent px-2 py-1 border-[#393E46] ${errors.price && 'border-red-500'}`} />
+            {errors.price && <p className="text-red-500">{errors.price}</p>}
           </label>
           <label htmlFor="Category" className="w-[60%] block">
             <p className="font-unica text-lg">Category</p>
@@ -116,16 +188,19 @@ export default function Add_Artwork() {
         <div className="flex justify-between mb-7">
           <label htmlFor="material" className="block w-[35%]">
             <p className="font-unica text-lg">Material</p>
-            <input type="text" id="material" name="material" onChange={handleInput} className="w-full outline-none border-2 rounded-lg bg-transparent px-2 py-1 border-[#393E46]" />
+            <input type="text" id="material" name="material" onChange={handleInput} className={`w-full outline-none border-2 rounded-lg bg-transparent px-2 py-1 border-[#393E46] ${errors.material && 'border-red-500'}`} />
+            {errors.material && <p className="text-red-500">{errors.material}</p>}
           </label>
           <label htmlFor="size" className="w-[60%] block">
             <p className="font-unica text-lg">Size</p>
-            <input type="text" id="size" name="size" onChange={handleInput} className="w-full outline-none border-2 rounded-lg bg-transparent px-2 py-1 border-[#393E46]" />
+            <input type="text" id="size" name="size" onChange={handleInput} className={`w-full outline-none border-2 rounded-lg bg-transparent px-2 py-1 border-[#393E46] ${errors.size && 'border-red-500'}`} />
+            {errors.size && <p className="text-red-500">{errors.size}</p>}
           </label>
         </div>
         <label htmlFor="deskripsi" className="w-full block mb-7">
           <p className="font-unica text-lg">Description</p>
-          <textarea type="text" id="deskripsi" name="description" onChange={handleInput} rows="10" className="w-full outline-none border-2 rounded-lg bg-transparent px-2 py-1 border-[#393E46]" />
+          <textarea type="text" id="deskripsi" name="description" onChange={handleInput} rows="10" className={`w-full outline-none border-2 rounded-lg bg-transparent px-2 py-1 border-[#393E46] ${errors.description && 'border-red-500'}`} />
+          {errors.description && <p className="text-red-500">{errors.description}</p>}
         </label>
         <label htmlFor="image" className="w-full block mb-7">
           <p className="font-unica text-lg">Image (PNG, JPG)</p>
@@ -140,28 +215,10 @@ export default function Add_Artwork() {
         </button>
       </form>
       {/* Success Modal */}
-      {submitStatus === "success" && (
-        <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-black bg-opacity-50">
-          <div className="bg-white p-8 rounded-lg">
-            <p className="text-green-500 font-bold mb-4">Form submitted successfully!</p>
-            <button className="bg-[#183D3D] text-white px-4 py-2 rounded-lg" onClick={handleModalClose}>
-              OK
-            </button>
-          </div>
-        </div>
-      )}
+      {submitStatus === "success" && handleSuccessModalClose()}
 
       {/* Error Modal */}
-      {submitStatus === "error" && (
-        <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-black bg-opacity-50">
-          <div className="bg-white p-8 rounded-lg">
-            <p className="text-red-500 font-bold mb-4">An error occurred. Please try again later.</p>
-            <button className="bg-[#183D3D] text-white px-4 py-2 rounded-lg" onClick={handleModalClose}>
-              OK
-            </button>
-          </div>
-        </div>
-      )}
+      {submitStatus === "error" && handleErrorModalClose()}
     </>
   );
 }
