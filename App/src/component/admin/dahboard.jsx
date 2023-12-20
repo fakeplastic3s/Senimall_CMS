@@ -4,6 +4,8 @@ import Footer from "../footer";
 
 export default function Dashboard() {
   const [art, setArt] = useState([]);
+  const [submissions, setSubmissions] = useState([]);
+
   async function getArtworkList() {
     try {
       const data = await axios.get("http://localhost:3000/artwork_list");
@@ -15,12 +17,26 @@ export default function Dashboard() {
     }
   }
 
+  async function getSubmissionList() {
+    try {
+      const submissionData = await axios.get("http://localhost:3000/submission_list");
+      setSubmissions(submissionData.data);
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
   useEffect(() => {
     getArtworkList();
+    getSubmissionList();
   }, []);
 
   const artwork = art.map((art) => {
     return art;
+  });
+
+  const submission = submissions.map((art) => {
+    return submissions;
   });
   
   return (
@@ -53,7 +69,7 @@ export default function Dashboard() {
         <div className="card scale-75 md:scale-90 lg:scale-100 transition-all transition-300">
           <div className="flex justify-between items-center bg-[#EEEEEE] w-[300px] h-[150px] rounded-[30px]">
             <div className="flex flex-col justify-center mx-auto items-center">
-              <span className="text-[#232931] text-4xl font-extrabold">100</span>
+              <span className="text-[#232931] text-4xl font-extrabold">{submissions.length}</span>
               <span className="text-[#232931] text-[18px] font-base">Submissions</span>
             </div>
             <div className=" flex items-center justify-center bg-[#93B1A6] h-[150px] w-[150px] rounded-[30px] ">
