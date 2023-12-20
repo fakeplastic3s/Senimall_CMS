@@ -5,7 +5,7 @@ import DetailSubmission from "./detail_submission";
 import { useNavigate, Outlet } from "react-router-dom";
 import Footer from "../footer";
 
-export default function Artwork(props) {
+export default function Submission(props) {
   const navigate = useNavigate();
   const [add, setAdd] = useState("list");
 
@@ -20,7 +20,7 @@ export default function Artwork(props) {
 
   return (
     <div>
-      <h1 className="font-franklin text-4xl text-[#232931] mb-9">Artwork</h1>
+      <h1 className="font-franklin text-4xl text-[#232931] mb-9">Submission</h1>
       <Outlet />
       {/* <SubmissionList /> */}
       {/* <Add_Submission /> */}
