@@ -2,6 +2,7 @@ import { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import Swal from "sweetalert2"; 
 
 export default function Add_Artwork() {
   const navigate = useNavigate();
@@ -81,9 +82,8 @@ export default function Add_Artwork() {
   };
 
   const handleSubmit = async (e) => {
+    e.preventDefault();
 
-    e.preventDefault(); // Prevent the default form submission behavior
-    
     if (!validateForm()) {
       // Form validation failed
       return;
@@ -116,6 +116,30 @@ export default function Add_Artwork() {
     setSubmitStatus(null);
     navigate("/admin/artwork/artwork-list");
   };
+
+    // Confirmation modal for form submission success
+    const handleSuccessModalClose = () => {
+      Swal.fire({
+        text: "Form submitted successfully!",
+        icon: "success",
+        confirmButtonColor: "#183D3D",
+        confirmButtonText: "OK",
+      }).then(() => {
+        handleModalClose();
+      });
+    };
+  
+    // Confirmation modal for form submission error
+    const handleErrorModalClose = () => {
+      Swal.fire({
+        text: "An error occurred. Please try again later.",
+        icon: "error",
+        confirmButtonColor: "#183D3D",
+        confirmButtonText: "OK",
+      }).then(() => {
+        handleModalClose();
+      });
+    };
 
   return (
     <>
@@ -191,28 +215,10 @@ export default function Add_Artwork() {
         </button>
       </form>
       {/* Success Modal */}
-      {submitStatus === "success" && (
-        <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-black bg-opacity-50">
-          <div className="bg-white p-8 rounded-lg">
-            <p className="text-green-500 font-bold mb-4">Form submitted successfully!</p>
-            <button className="bg-[#183D3D] text-white px-4 py-2 rounded-lg" onClick={handleModalClose}>
-              OK
-            </button>
-          </div>
-        </div>
-      )}
+      {submitStatus === "success" && handleSuccessModalClose()}
 
       {/* Error Modal */}
-      {submitStatus === "error" && (
-        <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-black bg-opacity-50">
-          <div className="bg-white p-8 rounded-lg">
-            <p className="text-red-500 font-bold mb-4">An error occurred. Please try again later.</p>
-            <button className="bg-[#183D3D] text-white px-4 py-2 rounded-lg" onClick={handleModalClose}>
-              OK
-            </button>
-          </div>
-        </div>
-      )}
+      {submitStatus === "error" && handleErrorModalClose()}
     </>
   );
 }
