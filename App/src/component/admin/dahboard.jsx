@@ -22,6 +22,7 @@ export default function Dashboard() {
   const artwork = art.map((art) => {
     return art;
   });
+  
   return (
     <>
       <h1 className="font-franklin text-4xl  text-[#232931] mb-9">Dashboard</h1>
