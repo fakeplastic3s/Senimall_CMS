@@ -1,16 +1,64 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
-export default function Add_Artwork() {
+export default function AddArtwork() {
   const navigate = useNavigate();
 
   const [payload, setPayload] = useState({ id: uuidv4() });
+  const [artistName, setArtistName] = useState('')
 
-  const generateNewId = () => {
-    setPayload({ ...payload, id: uuidv4() });
-  };
+  // const generateNewId = () => {
+  //   setPayload({ ...payload, id: uuidv4() });
+  // };
+
+  const getArtistName = async () => {
+    try{
+      const data = await axios.get("http://localhost:3001/Artist");
+      setArtistName(data.data)
+      console.log(data.data)
+    }
+    catch(error){
+      console.log(error)
+    }
+  }
+
+  useEffect(()=>{
+    getArtistName()
+  },[])
+
+  const postDataArtist = async()=>{
+    const Artist = {
+      id: uuidv4(),
+      Name : payload.Artist
+    };
+
+    try {
+      await axios.post("http://localhost:3001/Artist", Artist);
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  const postDataArtwork = async()=>{
+    const newPayload = {
+      id: payload.id,
+      title: payload.title,
+      Artist: payload.Artist,
+      price: payload.price,
+      category: payload.category,
+      material: payload.material,
+      size: payload.size,
+      description: payload.description,
+      image: payload.image,
+    };
+    try {
+      await axios.post("http://localhost:3001/artwork_list", newPayload);
+    } catch (error) {
+      console.log(error);
+    }
+  }
 
   const handleInput = (e) => {
     const { name, value } = e.target;
@@ -24,33 +72,36 @@ export default function Add_Artwork() {
     navigate("/admin/artwork/artwork-list");
   };
 
+
+
+  // //post dataArtist
+
   const handleSubmit = async (e) => {
     e.preventDefault(); // Prevent the default form submission behavior
-    generateNewId();
 
-    const newPayload = {
-      id: payload.id,
-      title: payload.title,
-      Artist: payload.Artist,
-      price: payload.price,
-      category: payload.category,
-      material: payload.material,
-      size: payload.size,
-      description: payload.description,
-      image: payload.image,
-    };
 
-    try {
-      await axios.post("http://localhost:3000/artwork_list", newPayload);
-      navigate("/admin/artwork/artwork-list");
-    } catch (error) {
-      console.log(error);
+    if(artistName.length === 0){
+      await postDataArtwork();
+      await postDataArtist();
     }
+    else{
+      for (let a of artistName){
+        if(a.Name === payload.Artist){
+          await postDataArtwork()
+          console.log('data sama')
+        }
+        else{
+          postDataArtwork();
+          postDataArtist();
+          console.log('data beda')
+      }}
+    }
+    navigate("/admin/artwork/artwork-list");
   };
 
   return (
     <>
-      <button className="bg-[#EEEEEE] flex items-center justify-center gap-3 py-[2px] px-4 mb-5 w-[100px] rounded-lg" onClick={handleBackButtonClick}>
+      <button onClick={handleBackButtonClick} className="bg-[#EEEEEE] flex items-center justify-center gap-3 py-[2px] px-4 mb-5 w-[100px] rounded-lg" >
         <img src="/artwork_component/Vector (3).svg" alt="" className="h-[15px]" />
         <span className="font-unica mt-1">Back</span>
       </button>
@@ -101,13 +152,13 @@ export default function Add_Artwork() {
         </div>
         <label htmlFor="deskripsi" className="w-full block mb-7">
           <p className="font-unica text-lg">Description</p>
-          <textarea type="text" id="deskripsi" name="description" onChange={handleInput} rows="10" className="w-full outline-none border-2 rounded-lg bg-transparent px-2 py-1 border-[#393E46]" />
+          <textarea type="text" id="deskripsi" onChange={handleInput} name="description" rows="10" className="w-full outline-none border-2 rounded-lg bg-transparent px-2 py-1 border-[#393E46]" />
         </label>
         <label htmlFor="image" className="w-full block mb-7">
           <p className="font-unica text-lg">Image (PNG, JPG)</p>
-          <input type="file" id="image" name="image" accept=".png, .jpg, .jpeg" onChange={handleInput} className="outline-none border-2 rounded-lg bg-transparent px-2 py-1 border-[#393E46]" />
+          <input type="file" id="image" name="image" onChange={handleInput} accept=".png, .jpg, .jpeg" className="outline-none border-2 rounded-lg bg-transparent px-2 py-1 border-[#393E46]" />
         </label>
-        <button type="button" className="bg-[#183D3D] flex justify-center items-stretch gap-3 w-full py-1 rounded-lg" onClick={handleSubmit}>
+        <button onClick={handleSubmit} type="button" className="bg-[#183D3D] flex justify-center items-stretch gap-3 w-full py-1 rounded-lg">
           <img src="/artwork_component/Vector (4).svg" alt="" className="w-4" />
           <span className="font-unica text-white pt-1 ">Submit</span>
         </button>

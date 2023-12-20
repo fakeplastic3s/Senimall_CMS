@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 import axios from "axios";
-import { useLocation, useNavigate, useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 export default function Edit_Artwork() {
 
@@ -22,7 +22,7 @@ export default function Edit_Artwork() {
 
     async function load() {
         try {
-            const data = await axios.get(`http://localhost:3000/artwork_list?id=${id}`)
+            const data = await axios.get(`http://localhost:3001/artwork_list?id=${id}`)
             setLoadData({
                 ...loadData,
                 title:data.data[0].title,
@@ -61,7 +61,7 @@ export default function Edit_Artwork() {
 
     async function handleSubmit() {
         try {
-            await axios.put(`http://localhost:3000/artwork_list/${id}`, loadData);
+            await axios.put(`http://localhost:3001/artwork_list/${id}`, loadData);
         } catch (error) {
             console.log(error);
         }

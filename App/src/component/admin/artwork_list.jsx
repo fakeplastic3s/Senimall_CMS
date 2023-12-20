@@ -12,7 +12,7 @@ export default function ArtworkList({ sendDataAddButton }) {
 
   async function getArtworkList() {
     try {
-      const data = await axios.get("http://localhost:3000/artwork_list");
+      const data = await axios.get("http://localhost:3001/artwork_list");
       setArt(data.data);
     } catch (error) {
       console.log(error);
@@ -30,7 +30,7 @@ export default function ArtworkList({ sendDataAddButton }) {
 
   const handleDeleteArtwork = async (id) => {
     try {
-      await axios.delete(`http://localhost:3000/artwork_list/${id}`);
+      await axios.delete(`http://localhost:3001/artwork_list/${id}`);
       // Refresh the artwork list after deletion
       getArtworkList();
     } catch (error) {

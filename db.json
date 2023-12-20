@@ -1,48 +1,77 @@
 {
   "artwork_list": [
     {
-      "id": 2,
-      "title": "Full lorem",
-      "Artist": "Raden Saleh",
-      "price": 7000000,
-      "category": "Nature",
-      "material": "Oil in Canvas",
-      "size": "120 cm x 80 cm",
-      "description": "Pada 13 Januari 1808, ia dipromosikan menjadi kolonel dan diangkat menjadi ajudan gubernur jenderal Albertus Henricus Wise. 11 April 1809 dipromosikan menjadi sersan dan diangkat menjadi komandan divisi di Semarang. 20 Januari 1810 menjadi Kepala Staf Umum Angkatan Laut Kerajaan dan Kolonial di Batavia. 1 September 1810 dipindahkan ke layanan Prancis. 10 Agustus 1811 diangkat menjadi Kepala Staf Umum Tentara Kerajaan Hindia Belanda.",
-      "image": "/foto_lukisan/Hendrik_Merkus_Baron_de_Kock_by_Cornelis_Kruseman.jpg"
-    },
-    {
-      "id": "9403d7b5-51c3-4a10-a348-75092c50ad98",
-      "title": "fdafadf",
-      "Artist": "dfadfa",
-      "price": "fadfa",
-      "category": "minimalism",
-      "material": "dfadfa",
-      "size": "fafadfa",
-      "description": "dfaertadafd",
-      "image": "C:\\fakepath\\kampusmerdeka.png"
-    },
-    {
-      "id": "5a3e23e8-e471-4e02-a607-0e928a3d119a",
-      "title": "bougenville",
-      "Artist": "Hartono",
-      "price": "60000000",
-      "category": "street art",
-      "material": "oil in canvas",
-      "size": "120 x 50 cm",
-      "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perferendis deleniti officiis, alias nisi ab aliquam rem saepe. Praesentium harum dolores porro cupiditate aut fuga, delectus quis aliquid at. Facere, nam.",
-      "image": "C:\\fakepath\\19366.jpg"
-    },
-    {
-      "id": "c9bafade-4a96-42f7-8ae0-55c0cf1b4cf2",
-      "title": "Mona Lisaaaaaaa",
-      "Artist": "Leonardo Da Vincieeeee",
+      "id": "947de0de-6e42-4a8c-97a5-a47ff7aad6b1",
+      "title": "Mona Lis",
+      "Artist": 1,
       "price": "2000000000",
       "category": "photography",
       "material": "oil in canvas",
-      "size": "120 x 60 cm",
-      "description": "Nama atau judul lukisan Mona Lisa berasal dari biografi Giorgio Vasari tentang Leonardo da Vinci, yang terbit 31 tahun setelah ia meninggal dunia. Di dalam buku ini disebutkan bahwa wanita dalam lukisan ini adalah Lisa Gherardini",
+      "size": "120 x 50 cm",
+      "description": "Mona Lisa, Monalisa adalah lukisan minyak di atas kayu popular yang dibuat oleh Leonardo da Vinci pada abad ke-16. Lukisan ini sering dianggap sebagai salah satu lukisan paling terkenal di dunia dan hanya sedikit karya seni lain yang menjadi pusat perhatian, studi, mitologi, dan parodi.",
+      "image": "C:\\fakepath\\golang.png"
+    },
+    {
+      "id": "cf316df7-8e1d-4482-9758-1876def5ceef",
+      "title": "bdgbsfb",
+      "Artist": "Vincent Van Gogh",
+      "price": "20000000",
+      "material": "afafa",
+      "size": "fadfadf",
+      "description": "vsgravfargfbsbsht",
       "image": "C:\\fakepath\\logout (2).png"
+    },
+    {
+      "id": "0b1e96ad-29f7-4f1a-b956-5e9961f97dc5",
+      "title": "fferr",
+      "Artist": "Remon Salazar",
+      "price": "2000000000",
+      "material": "oil in canvas",
+      "size": "120 x 50 cm",
+      "description": "sdsdadfafa",
+      "image": "C:\\fakepath\\IMG_20231123_174309.jpg"
+    },
+    {
+      "id": "bed21ba5-766f-48bd-b25e-d2e623f8f0a4",
+      "title": "Resident Evil 4",
+      "Artist": "Leon Khannedy",
+      "price": "150000000",
+      "category": "surrealism",
+      "material": "oil in canvas",
+      "size": "120 x 50 cm",
+      "description": "uhf dufhad f",
+      "image": "C:\\fakepath\\IMG_20231123_163030.jpg"
+    },
+    {
+      "id": "c07edafb-ef03-4f12-a8e5-dfb44c7f27b6",
+      "title": "Resident Evil 4",
+      "Artist": "Leon Khannedy",
+      "price": "2000000000",
+      "category": "rantasy",
+      "material": "oil in canvas",
+      "size": "120 x 50 cm",
+      "description": "h hd ahu fhdaufhajd fh hdfuye jadfh ",
+      "image": "C:\\fakepath\\WhatsApp Image 2023-12-05 at 11.47.46.jpeg"
+    },
+    {
+      "id": "7821f94a-28ec-4592-9365-cdec117bd840",
+      "title": "fadfa",
+      "Artist": "Leonardo Da Vinci",
+      "price": "2000000000",
+      "material": "oil in canvas",
+      "size": "120 x 50 cm",
+      "description": "dfhafhdayf h udfhad8fy afh df adfyha 8",
+      "image": "C:\\fakepath\\logopb2.png"
+    },
+    {
+      "id": "65bd40a6-463b-4495-ba24-1b220000c6cd",
+      "title": "uhdf uad",
+      "Artist": "Leonardo Da Vinci",
+      "price": "150000000",
+      "material": "oil in canvas",
+      "size": "120 x 50 cm",
+      "description": "fdfadfag",
+      "image": "C:\\fakepath\\kok3.png"
     }
   ],
   "admin": [
@@ -83,6 +112,9 @@
     }
   ],
   "artist": [
-    {}
+    {
+      "id": "3b24f195-bbe5-4801-84ec-7dea46807d1a",
+      "Name": "Leonardo Da Vinci"
+    }
   ]
 }
