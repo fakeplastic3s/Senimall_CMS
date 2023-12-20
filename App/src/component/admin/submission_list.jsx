@@ -44,7 +44,7 @@ export default function SubmissionList({ sendDataAddButton }) {
                     image: submission.image,
                 });
 
-                // Delete submission from the submission_list apabila reject
+                // Delete submission dari submission_list apabila reject
                 await axios.delete(`http://localhost:3000/submission_list/${id}`);
 
                 // Refresh submission list
