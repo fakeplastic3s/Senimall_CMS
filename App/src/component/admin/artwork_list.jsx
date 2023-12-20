@@ -82,7 +82,6 @@ export default function ArtworkList({ sendDataAddButton }) {
                     />
                   </svg>
 
-                  {/* still doesn't work! */}
                   {/* Eye Icon */}
                   <Link to={`/admin/artwork/artwork-detail/${item.id}`}>
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-4 h-4">
