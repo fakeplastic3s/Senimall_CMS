@@ -75,17 +75,6 @@
       "size": "500x1000",
       "description": "Ini gambar langka",
       "image": {}
-    },
-    {
-      "id": "5cf2f7b0-1846-4b92-8fa6-0e51b7e409ff",
-      "title": "Pelabuhan ",
-      "Artist": "Raden Saleh",
-      "price": "6700000",
-      "category": "photography",
-      "material": "Photo",
-      "size": "700x1000",
-      "description": "foto kapal di laut",
-      "image": {}
     }
   ],
   "admin": [
