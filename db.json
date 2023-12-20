@@ -21,11 +21,20 @@
       "size": "120 x 50 cm",
       "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perferendis deleniti officiis, alias nisi ab aliquam rem saepe. Praesentium harum dolores porro cupiditate aut fuga, delectus quis aliquid at. Facere, nam.",
       "image": "C:\\fakepath\\19366.jpg"
+    },
+    {
+      "id": "f65a8a74-0aa8-47ae-9758-0d98ea18f0e0",
+      "title": "sss",
+      "Artist": "sss",
+      "price": "ssss",
+      "material": "sss",
+      "size": "sss",
+      "description": "sss",
+      "image": {}
     }
   ],
-    "submission_list": [
+  "submission_list": [
     {
-      "id": 2,
       "title": "Full lorem tes",
       "Artist": "Raden Saleh",
       "price": 7000000,
@@ -33,7 +42,8 @@
       "material": "Oil in Canvas",
       "size": "120 cm x 80 cm",
       "description": "Pada 13 Januari 1808, ia dipromosikan menjadi kolonel dan diangkat menjadi ajudan gubernur jenderal Albertus Henricus Wise. 11 April 1809 dipromosikan menjadi sersan dan diangkat menjadi komandan divisi di Semarang. 20 Januari 1810 menjadi Kepala Staf Umum Angkatan Laut Kerajaan dan Kolonial di Batavia. 1 September 1810 dipindahkan ke layanan Prancis. 10 Agustus 1811 diangkat menjadi Kepala Staf Umum Tentara Kerajaan Hindia Belanda.",
-      "image": "/foto_lukisan/Hendrik_Merkus_Baron_de_Kock_by_Cornelis_Kruseman.jpg"
+      "image": "/foto_lukisan/Hendrik_Merkus_Baron_de_Kock_by_Cornelis_Kruseman.jpg",
+      "id": 3
     }
   ],
   "admin": [
