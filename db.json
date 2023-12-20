@@ -75,6 +75,16 @@
       "size": "500x1000",
       "description": "Ini gambar langka",
       "image": {}
+    },
+    {
+      "id": "db8e1efd-eb94-4ff6-b869-2b7abcedf1b8",
+      "title": "Bumi",
+      "Artist": "Tere Liyeee",
+      "price": "8000000",
+      "material": "Canvas",
+      "size": "700x1000",
+      "description": "heloo",
+      "image": {}
     }
   ],
   "submission_list": [
@@ -93,19 +103,6 @@
       "id": 4,
       "title": "Eifell Tower",
       "Artist": "Kim S",
-      "price": 7000000,
-      "category": "landscape",
-      "material": "Oil in Canvas",
-      "size": "120 cm x 80 cm",
-      "description": "Pada 13 Januari 1808, ia dipromosikan menjadi kolonel dan diangkat menjadi ajudan gubernur jenderal Albertus Henricus Wise. 11 April 1809 dipromosikan menjadi sersan dan diangkat menjadi komandan divisi di Semarang. 20 Januari 1810 menjadi Kepala Staf Umum Angkatan Laut Kerajaan dan Kolonial di Batavia. 1 September 1810 dipindahkan ke layanan Prancis. 10 Agustus 1811 diangkat menjadi Kepala Staf Umum Tentara Kerajaan Hindia Belanda.",
-      "image": "/foto_lukisan/Hendrik_Merkus_Baron_de_Kock_by_Cornelis_Kruseman.jpg"
-    }
-  ],
-    "submission_list": [
-    {
-      "id": 2,
-      "title": "Full lorem tes",
-      "Artist": "Raden Saleh",
       "price": 7000000,
       "category": "landscape",
       "material": "Oil in Canvas",
