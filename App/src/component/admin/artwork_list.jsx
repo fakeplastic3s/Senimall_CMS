@@ -29,12 +29,15 @@ export default function ArtworkList({ sendDataAddButton }) {
   };
 
   const handleDeleteArtwork = async (id) => {
-    try {
-      await axios.delete(`http://localhost:3000/artwork_list/${id}`);
-      // Refresh the artwork list after deletion
-      getArtworkList();
-    } catch (error) {
-      console.log(error);
+    const shouldDelete = window.confirm("Are you sure you want to delete this Artwork?");
+
+    if (shouldDelete) {
+      try {
+        await axios.delete(`http://localhost:3000/artwork_list/${id}`);
+        getArtworkList();
+      } catch (error) {
+        console.log(error);
+      }
     }
   };
 

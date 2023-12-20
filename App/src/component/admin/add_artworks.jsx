@@ -45,17 +45,35 @@ export default function Add_Artwork() {
   };
 
   const [payload, setPayload] = useState({ id: uuidv4() });
+  const [imagePreview, setImagePreview] = useState(null);
+  const [submitStatus, setSubmitStatus] = useState(null); // New state variable
 
   const generateNewId = () => {
     setPayload({ ...payload, id: uuidv4() });
   };
 
   const handleInput = (e) => {
-    const { name, value } = e.target;
-    setPayload({
-      ...payload,
-      [name]: value,
-    });
+    const { name, value, files } = e.target;
+
+    if (name === "image" && files.length > 0) {
+      const selectedImage = files[0];
+      setPayload({
+        ...payload,
+        image: selectedImage,
+      });
+
+      // Preview Image
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        setImagePreview(reader.result);
+      };
+      reader.readAsDataURL(selectedImage);
+    } else {
+      setPayload({
+        ...payload,
+        [name]: value,
+      });
+    }
   };
 
   const handleBackButtonClick = () => {
@@ -63,6 +81,7 @@ export default function Add_Artwork() {
   };
 
   const handleSubmit = async (e) => {
+
     e.preventDefault(); // Prevent the default form submission behavior
     
     if (!validateForm()) {
@@ -86,10 +105,16 @@ export default function Add_Artwork() {
 
     try {
       await axios.post("http://localhost:3000/artwork_list", newPayload);
-      navigate("/admin/artwork/artwork-list");
+      setSubmitStatus("success");
     } catch (error) {
       console.log(error);
+      setSubmitStatus("error");
     }
+  };
+
+  const handleModalClose = () => {
+    setSubmitStatus(null);
+    navigate("/admin/artwork/artwork-list");
   };
 
   return (
@@ -156,12 +181,38 @@ export default function Add_Artwork() {
         <label htmlFor="image" className="w-full block mb-7">
           <p className="font-unica text-lg">Image (PNG, JPG)</p>
           <input type="file" id="image" name="image" accept=".png, .jpg, .jpeg" onChange={handleInput} className="outline-none border-2 rounded-lg bg-transparent px-2 py-1 border-[#393E46]" />
+          {imagePreview && (
+            <img src={imagePreview} alt="Image Preview" className="mt-2 w-32 h-32 object-cover rounded-lg" />
+          )}
         </label>
         <button type="button" className="bg-[#183D3D] flex justify-center items-stretch gap-3 w-full py-1 rounded-lg" onClick={handleSubmit}>
           <img src="/artwork_component/Vector (4).svg" alt="" className="w-4" />
           <span className="font-unica text-white pt-1 ">Submit</span>
         </button>
       </form>
+      {/* Success Modal */}
+      {submitStatus === "success" && (
+        <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-black bg-opacity-50">
+          <div className="bg-white p-8 rounded-lg">
+            <p className="text-green-500 font-bold mb-4">Form submitted successfully!</p>
+            <button className="bg-[#183D3D] text-white px-4 py-2 rounded-lg" onClick={handleModalClose}>
+              OK
+            </button>
+          </div>
+        </div>
+      )}
+
+      {/* Error Modal */}
+      {submitStatus === "error" && (
+        <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-black bg-opacity-50">
+          <div className="bg-white p-8 rounded-lg">
+            <p className="text-red-500 font-bold mb-4">An error occurred. Please try again later.</p>
+            <button className="bg-[#183D3D] text-white px-4 py-2 rounded-lg" onClick={handleModalClose}>
+              OK
+            </button>
+          </div>
+        </div>
+      )}
     </>
   );
 }
