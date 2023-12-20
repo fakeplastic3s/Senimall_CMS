@@ -36,10 +36,6 @@ export default function Add_Artwork() {
       newErrors.description = 'Description is required';
     }
     
-    if (!payload.image) {
-      newErrors.image = 'Image is required';
-    }
-    
     // Validate other fields as needed
 
     setErrors(newErrors);
