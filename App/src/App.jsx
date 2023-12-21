@@ -24,7 +24,7 @@ function App() {
             <Route path="dashboard" Component={DashboardAdmin} />
             <Route path="artwork" Component={Artwork}>
               <Route path="artwork-list" Component={ArtworkList} />
-              <Route path="artwork-add" Component={Add_Artwork} />
+              <Route path="artwork-add" Component={AddArtwork} />
               <Route path="artwork-detail/:id" Component={DetailArtwork} />
               <Route path="edit-artworklist/:id" Component={Edit_Artwork} />
             </Route>

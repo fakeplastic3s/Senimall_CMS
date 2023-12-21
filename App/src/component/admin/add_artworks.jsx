@@ -56,7 +56,7 @@ export default function AddArtwork() {
 
   const getArtistName = async () => {
     try{
-      const data = await axios.get("http://localhost:3001/Artist");
+      const data = await axios.get("http://localhost:3000/Artist");
       setArtistName(data.data)
       console.log(data.data)
     }
@@ -76,7 +76,7 @@ export default function AddArtwork() {
     };
 
     try {
-      await axios.post("http://localhost:3001/Artist", Artist);
+      await axios.post("http://localhost:3000/Artist", Artist);
     } catch (error) {
       console.log(error);
     }
@@ -95,7 +95,7 @@ export default function AddArtwork() {
       image: payload.image,
     };
     try {
-      await axios.post("http://localhost:3001/artwork_list", newPayload);
+      await axios.post("http://localhost:3000/artwork_list", newPayload);
     } catch (error) {
       console.log(error);
     }
