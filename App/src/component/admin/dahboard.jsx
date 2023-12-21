@@ -7,12 +7,14 @@ export default function Dashboard() {
   const [submissions, setSubmissions] = useState([]);
   const [artist, setArtist] = useState(0);
 
+  const [artist, setArtist] = useState(0);
+
+
+
   async function getArtworkList() {
     try {
       const data = await axios.get("http://localhost:3000/artwork_list");
       setArt(data.data);
-      // console.log(data.data);
-      // console.log(art)
     } catch (error) {
       console.log(error);
     }
@@ -31,12 +33,14 @@ export default function Dashboard() {
     try {
       const artistData = await axios.get("http://localhost:3000/Artwork_list");
 
+
       const sum = Object.keys(Object.groupBy(artistData.data, (e) => e.Artist)).length;
       setArtist(sum);
     } catch (error) {
       console.log(error);
     }
   }
+
 
   useEffect(() => {
     getArtworkList();
@@ -61,7 +65,9 @@ export default function Dashboard() {
           <div className="flex justify-between items-center bg-[#EEEEEE] w-[300px] h-[150px]  rounded-[30px] ">
             <div className="flex flex-col justify-center mx-auto items-center">
               <span className="text-[#232931] text-4xl font-extrabold">{artist}</span>
+
               <span className="text-[#232931] text-[18px] font-base">Artist</span>
+
             </div>
             <div className=" flex items-center justify-center bg-[#183D3D] h-[150px] w-[150px] rounded-[30px] ">
               <img src="../public/content_component/Artis.svg" alt="icon artis" className="h-[50px] ml-2" />

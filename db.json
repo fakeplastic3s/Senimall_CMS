@@ -1,6 +1,7 @@
 {
   "artwork_list": [
     {
+
       "id": 2,
       "title": "Full lorem tes",
       "Artist": "Raden Saleh",
@@ -21,9 +22,98 @@
       "size": "120 x 50 cm",
       "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perferendis deleniti officiis, alias nisi ab aliquam rem saepe. Praesentium harum dolores porro cupiditate aut fuga, delectus quis aliquid at. Facere, nam.",
       "image": "C:\\fakepath\\19366.jpg"
+    },
+    {
+      "id": "faa493f5-d79c-463f-97bd-f56598edbf2a",
+      "title": "Horse",
+      "Artist": "Ghania S.",
+      "price": "4000000",
+      "category": "photography",
+      "material": "Photo",
+      "size": "500x1000",
+      "description": "kudaaaa",
+      "image": "/foto_lukisan/IMG_0052.JPG"
+    },
+    {
+      "id": "062ea4cf-1f77-45e4-b14c-71994f2a39ba",
+      "title": "Becak",
+      "Artist": "Ghania S.",
+      "price": "3500000",
+      "category": "photography",
+      "material": "Photo",
+      "size": "500x1000",
+      "description": "malioboro",
+      "image": "/foto_lukisan/IMG_0110.JPG"
+    },
+    {
+      "id": "4ac0440c-5564-4138-94a8-00d892e9dd19",
+      "title": "Sunset",
+      "Artist": "Ghania S.",
+      "price": "6700000",
+      "material": "Photo",
+      "size": "500x1000",
+      "description": "pantai",
+      "image": "/foto_lukisan/IMG_3506.jpg"
+    },
+    {
+      "id": "4b1b6c78-1b62-485d-8697-dbc07616e564",
+      "title": "Harry Potter",
+      "Artist": "Raden Saleh",
+      "price": "6700000",
+      "category": "still life",
+      "material": "Canvas",
+      "size": "500x1000",
+      "description": "mahall bangett",
+      "image": "C:\\fakepath\\IMG_3506.jpg"
+    },
+    {
+      "id": "3462c666-5079-4e78-acf8-d5b975fdfe28",
+      "title": "2023 Sehat",
+      "Artist": "Picasso",
+      "price": "20000099",
+      "category": "cubism",
+      "material": "Photo",
+      "size": "500x1000",
+      "description": "Ini gambar langka",
+      "image": {}
+    },
+    {
+      "id": "db8e1efd-eb94-4ff6-b869-2b7abcedf1b8",
+      "title": "Bumi",
+      "Artist": "Tere Liyeee",
+      "price": "8000000",
+      "material": "Canvas",
+      "size": "700x1000",
+      "description": "heloo",
+      "image": {}
     }
   ],
-  "submission_list": [],
+
+  "submission_list": [
+    {
+      "id": 3,
+      "title": "Full lorem tes",
+      "Artist": "Raden Saleh",
+      "price": 7000000,
+      "category": "landscape",
+      "material": "Oil in Canvas",
+      "size": "120 cm x 80 cm",
+      "description": "Pada 13 Januari 1808, ia dipromosikan menjadi kolonel dan diangkat menjadi ajudan gubernur jenderal Albertus Henricus Wise. 11 April 1809 dipromosikan menjadi sersan dan diangkat menjadi komandan divisi di Semarang. 20 Januari 1810 menjadi Kepala Staf Umum Angkatan Laut Kerajaan dan Kolonial di Batavia. 1 September 1810 dipindahkan ke layanan Prancis. 10 Agustus 1811 diangkat menjadi Kepala Staf Umum Tentara Kerajaan Hindia Belanda.",
+      "image": "/foto_lukisan/Hendrik_Merkus_Baron_de_Kock_by_Cornelis_Kruseman.jpg"
+    },
+    {
+      "id": 4,
+      "title": "Eifell Tower",
+      "Artist": "Kim S",
+      "price": 7000000,
+      "category": "landscape",
+      "material": "Oil in Canvas",
+      "size": "120 cm x 80 cm",
+      "description": "Pada 13 Januari 1808, ia dipromosikan menjadi kolonel dan diangkat menjadi ajudan gubernur jenderal Albertus Henricus Wise. 11 April 1809 dipromosikan menjadi sersan dan diangkat menjadi komandan divisi di Semarang. 20 Januari 1810 menjadi Kepala Staf Umum Angkatan Laut Kerajaan dan Kolonial di Batavia. 1 September 1810 dipindahkan ke layanan Prancis. 10 Agustus 1811 diangkat menjadi Kepala Staf Umum Tentara Kerajaan Hindia Belanda.",
+      "image": "/foto_lukisan/Hendrik_Merkus_Baron_de_Kock_by_Cornelis_Kruseman.jpg"
+    }
+  ],
+
   "admin": [
     {
       "id": 1,
@@ -62,6 +152,9 @@
     }
   ],
   "artist": [
-    {}
+    {
+      "id": "3b24f195-bbe5-4801-84ec-7dea46807d1a",
+      "Name": "Leonardo Da Vinci"
+    }
   ]
 }
