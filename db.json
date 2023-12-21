@@ -1,6 +1,7 @@
 {
   "artwork_list": [
     {
+
       "id": 2,
       "title": "Full lorem tes",
       "Artist": "Raden Saleh",
@@ -74,6 +75,9 @@
     }
   ],
   "artist": [
-    {}
+    {
+      "id": "3b24f195-bbe5-4801-84ec-7dea46807d1a",
+      "Name": "Leonardo Da Vinci"
+    }
   ]
 }
