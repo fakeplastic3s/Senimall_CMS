@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { Card } from "flowbite-react";
-import { Navigate, useParams } from "react-router-dom";
+import { Navigate, useParams, useNavigate } from "react-router-dom";
 
 export default function DetailArtwork() {
   const [art, setArt] = useState();
   const { id } = useParams();
+  const navigate = useNavigate();
   const [loadData, setLoadData] = useState({
     id: id,
     title: "",
@@ -58,12 +59,12 @@ export default function DetailArtwork() {
   }, []);
 
   const handleBackButtonClick = () => {
-    Navigate("/admin/artwork/artwork-list");
+    navigate("/admin/artwork/artwork-list");
   };
 
   return (
     <>
-      <button className="bg-[#EEEEEE] flex items-center justify-center gap-3 py-[2px] px-4 mb-5 w-[100px] rounded-lg" onClick={() => Navigate(-1)}>
+      <button className="bg-[#EEEEEE] flex items-center justify-center gap-3 py-[2px] px-4 mb-5 w-[100px] rounded-lg" onClick={handleBackButtonClick}>
         <img src="/artwork_component/Vector (3).svg" alt="" className="h-[15px]" />
         <span className="font-unica mt-1">Back</span>
       </button>
