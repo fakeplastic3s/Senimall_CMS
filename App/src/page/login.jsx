@@ -27,7 +27,7 @@ export default function Login() {
     e.preventDefault();
 
     try {
-      const response = await axios.get(`http://localhost:3000/admin?username=${userName}&&password=${password}`);
+      const response = await axios.get(`http://localhost:5173/admin?username=${userName}&&password=${password}`);
       const data = response.data[0];
 
       console.log(data);

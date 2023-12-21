@@ -24,30 +24,15 @@ export default function SubmissionList({ sendDataAddButton }) {
         navigate("/admin/submission-add");
     };
 
-    const handleDeleteSubmission = async (id) => {
-        const shouldDelete = window.confirm("Are you sure you want to delete this Submission?");
-
-        if (shouldDelete) {
-            try {
-                await axios.delete(`http://localhost:3000/submission_list/${id}`);
-                getSubmissionList();
-            } catch (error) {
-                console.error(error);
-            }
-        }
-    };
-
-    // Add these functions to your component
-
     const handleAcceptSubmission = async (id) => {
         const shouldAccept = window.confirm("Are you sure you want to accept this submission?");
 
         if (shouldAccept) {
             try {
-                // Get the submission data
+                // Get submission data
                 const submission = submissions.find((item) => item.id === id);
 
-                // Move the submission data to the artwork_list
+                // Pindah data submission ke artwork_list
                 await axios.post("http://localhost:3000/artwork_list", {
                     title: submission.title,
                     Artist: submission.Artist,
@@ -59,10 +44,10 @@ export default function SubmissionList({ sendDataAddButton }) {
                     image: submission.image,
                 });
 
-                // Delete the submission from the submission_list
+                // Delete submission dari submission_list apabila reject
                 await axios.delete(`http://localhost:3000/submission_list/${id}`);
 
-                // Refresh the submission list
+                // Refresh submission list
                 getSubmissionList();
             } catch (error) {
                 console.error(error);
@@ -75,10 +60,10 @@ export default function SubmissionList({ sendDataAddButton }) {
 
         if (shouldReject) {
             try {
-                // Delete the submission from the submission_list
+                // Delete submission dari submission_list
                 await axios.delete(`http://localhost:3000/submission_list/${id}`);
 
-                // Refresh the submission list
+                // Refresh submission list
                 getSubmissionList();
             } catch (error) {
                 console.error(error);
