@@ -78,10 +78,14 @@ export default function SidebarOwner(props) {
           })}
         </ul>
       </div>
-      <button onClick={handleLogout} className="flex py-3 px-5 rounded-xl justify-center gap-4 cursor-pointer items-center mu-auto mb-4 bg-red-400 hover:bg-red-500">
-        <img src="/sidebar_component/logout.svg" alt="" className="h-[20px] w-[20px]" />
-        <span className="font-unica hidden lg:block transition-all transition-300">Logout</span>
-      </button>
+      <div>
+        <div className="mt-10 w-11/12 float-right flex flex-col justify-between gap-8">
+          <button onClick={handleLogout} className=" flex py-3 px-5 rounded-l-xl justify-center gap-4 cursor-pointer lg:justify-start items-stretch mu-auto mb-4 bg-[#D83F31] hover:bg-[#ba3529] text-[#EEEEEE]">
+            <img src="/sidebar_component/logout.svg" alt="" className="h-[20px] w-[20px]" />
+            <span className="font-unica hidden lg:block transition-all transition-300">Logout</span>
+          </button>
+        </div>
+      </div>
     </div>
   );
 }

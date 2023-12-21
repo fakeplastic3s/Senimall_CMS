@@ -29,12 +29,15 @@ export default function ArtworkList({ sendDataAddButton }) {
   };
 
   const handleDeleteArtwork = async (id) => {
-    try {
-      await axios.delete(`http://localhost:3001/artwork_list/${id}`);
-      // Refresh the artwork list after deletion
-      getArtworkList();
-    } catch (error) {
-      console.log(error);
+    const shouldDelete = window.confirm("Are you sure you want to delete this Artwork?");
+
+    if (shouldDelete) {
+      try {
+        await axios.delete(`http://localhost:3000/artwork_list/${id}`);
+        getArtworkList();
+      } catch (error) {
+        console.log(error);
+      }
     }
   };
 
@@ -57,7 +60,6 @@ export default function ArtworkList({ sendDataAddButton }) {
             </Table.HeadCell>
           </Table.Head>
           <Table.Body className="divide-y">
-
             {art.map((item) => (
               <Table.Row key={item.id} className="bg-white dark:border-gray-700 dark:bg-gray-800">
                 <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">{item.title}</Table.Cell>
@@ -80,9 +82,8 @@ export default function ArtworkList({ sendDataAddButton }) {
                     />
                   </svg>
 
-                  {/* still doesn't work! */}
                   {/* Eye Icon */}
-                  <Link to={`/admin/artwork-detail/${item.id}`}>
+                  <Link to={`/admin/artwork/artwork-detail/${item.id}`}>
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-4 h-4">
                       <path
                         strokeLinecap="round"
