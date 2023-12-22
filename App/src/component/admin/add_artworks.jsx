@@ -9,7 +9,7 @@ export default function AddArtwork() {
 
   const [errors, setErrors] = useState({});
   const [payload, setPayload] = useState();
-  const [submitStatus, setSubmitStatus] = useState('belum diganti'); // New state variable
+  const [submitStatus, setSubmitStatus] = useState(null); // New state variable
 
   const handleInput = (e) => {
     const { name, value } = e.target
