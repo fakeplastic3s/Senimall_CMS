@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { Card } from "flowbite-react";
-import { Navigate, useNavigate, useParams } from "react-router-dom";
+
+import { useParams, useNavigate } from "react-router-dom";
 
 export default function DetailArtwork() {
-
   const navigate = useNavigate();
   const [art, setArt] = useState();
   const { id } = useParams();
@@ -49,7 +49,7 @@ export default function DetailArtwork() {
 
   return (
     <>
-      <button onClick={handleBackButtonClick} className="bg-[#EEEEEE] flex items-center justify-center gap-3 py-[2px] px-4 mb-5 w-[100px] rounded-lg">
+      <button className="bg-[#EEEEEE] flex items-center justify-center gap-3 py-[2px] px-4 mb-5 w-[100px] rounded-lg" onClick={handleBackButtonClick}>
         <img src="/artwork_component/Vector (3).svg" alt="" className="h-[15px]" />
         <span className="font-unica mt-1">Back</span>
       </button>

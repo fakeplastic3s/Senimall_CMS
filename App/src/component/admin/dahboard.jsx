@@ -5,7 +5,8 @@ import Footer from "../footer";
 export default function Dashboard() {
   const [art, setArt] = useState([]);
   const [submissions, setSubmissions] = useState([]);
-  const [artist, setArtist] = useState(0)
+
+  const [artist, setArtist] = useState(0);
 
   async function getArtworkList() {
     try {
@@ -28,12 +29,13 @@ export default function Dashboard() {
   async function getArtistLength() {
     try {
       const artistData = await axios.get("http://localhost:3000/Artwork_list");
-      const sum = Object.keys(Object.groupBy(artistData.data, (e => e.Artist))).length
-      setArtist(sum)
+
+      const sum = Object.keys(Object.groupBy(artistData.data, (e) => e.Artist)).length;
+      setArtist(sum);
     } catch (error) {
       console.log(error);
     }
-  };
+  }
 
   useEffect(() => {
     getArtworkList();
@@ -48,7 +50,7 @@ export default function Dashboard() {
   const submission = submissions.map((art) => {
     return submissions;
   });
-  
+
   return (
     <>
       <h1 className="font-franklin text-4xl  text-[#232931] mb-9">Dashboard</h1>
