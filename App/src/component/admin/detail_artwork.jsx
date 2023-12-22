@@ -75,6 +75,10 @@ export default function DetailArtwork() {
             <p className="mb-2">{loadData.size}</p>
           </div>
         </div>
+        <div className="font-unica">
+                  <p className="font-bold">Description</p>
+                  <p className="text-gray-700">{loadData.description}</p>
+                </div>
       </Card>
     </>
   );

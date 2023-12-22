@@ -6,7 +6,9 @@ export default function Dashboard() {
   const [art, setArt] = useState([]);
   const [submissions, setSubmissions] = useState([]);
 
+
   const [artist, setArtist] = useState(0);
+
 
   async function getArtworkList() {
     try {
@@ -37,10 +39,21 @@ export default function Dashboard() {
     }
   }
 
+  async function getSubmissionList() {
+    try {
+      const submissionData = await axios.get("http://localhost:3000/submission_list");
+      setSubmissions(submissionData.data);
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
   useEffect(() => {
     getArtworkList();
     getSubmissionList();
+
     getArtistLength();
+
   }, []);
 
   const artwork = art.map((art) => {

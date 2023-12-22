@@ -10,13 +10,19 @@ import Swal from "sweetalert2";
 export default function ArtworkList({ sendDataAddButton }) {
   const [art, setArt] = useState([]);
   // const [id, setId] = useState();
+  const [currentPage, setCurrentPage] = useState(1);
+  const [itemsPerPage] = useState(5); // Change this to the desired number of items per page
+  const [searchTerm, setSearchTerm] = useState("");
   const navigate = useNavigate();
   const MySwal = withReactContent(Swal);
 
   async function getArtworkList() {
     try {
       const data = await axios.get("http://localhost:3000/artwork_list");
-      setArt(data.data);
+      const filteredArt = data.data.filter((item) =>
+        item.title.toLowerCase().includes(searchTerm.toLowerCase())
+      );
+      setArt(filteredArt);
     } catch (error) {
       console.log(error);
     }
@@ -24,7 +30,7 @@ export default function ArtworkList({ sendDataAddButton }) {
 
   useEffect(() => {
     getArtworkList();
-  }, []);
+  }, [currentPage, searchTerm]); // Reload when the current page changes
 
   const handleAddArtworkList = () => {
     // setMode('add');
@@ -57,6 +63,14 @@ export default function ArtworkList({ sendDataAddButton }) {
     }
   };
 
+  const indexOfLastItem = currentPage * itemsPerPage;
+  const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+  const currentArt = art.slice(indexOfFirstItem, indexOfLastItem);
+
+  const paginate = (pageNumber) => {
+    setCurrentPage(pageNumber);
+  };
+
   return (
     <Card className="max-w ">
       <div className="flex justify-between items-center ">
@@ -66,6 +80,14 @@ export default function ArtworkList({ sendDataAddButton }) {
           <span className="font-unica text-white mt-1">Add</span>
         </button>
       </div>
+      <input
+        type="text"
+        placeholder="Search by title"
+        value={searchTerm}
+        onChange={(e) => setSearchTerm(e.target.value)}
+        className="p-2 border border-gray-300 rounded"
+      />
+
       <div className="overflow-x-auto">
         <Table hoverable>
           <Table.Head className="">
@@ -76,7 +98,7 @@ export default function ArtworkList({ sendDataAddButton }) {
             </Table.HeadCell>
           </Table.Head>
           <Table.Body className="divide-y">
-            {art.map((item) => (
+            {currentArt.map((item) => (
               <Table.Row key={item.id} className="bg-white dark:border-gray-700 dark:bg-gray-800">
                 <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">{item.title}</Table.Cell>
                 <Table.Cell>{item.Artist}</Table.Cell>
@@ -114,7 +136,30 @@ export default function ArtworkList({ sendDataAddButton }) {
             ))}
           </Table.Body>
         </Table>
+        <Pagination itemsPerPage={itemsPerPage} totalItems={art.length} paginate={paginate} />
       </div>
     </Card>
   );
 }
+
+const Pagination = ({ itemsPerPage, totalItems, paginate }) => {
+  const pageNumbers = [];
+
+  for (let i = 1; i <= Math.ceil(totalItems / itemsPerPage); i++) {
+    pageNumbers.push(i);
+  }
+
+  return (
+    <nav>
+      <ul className="pagination">
+        {pageNumbers.map((number) => (
+          <li key={number} className="page-item">
+            <a onClick={() => paginate(number)} href="#" className="page-link">
+              {number}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </nav>
+  );
+};
