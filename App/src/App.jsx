@@ -13,6 +13,7 @@ import ArtworkList from "./component/admin/artwork_list";
 import AddArtwork from "./component/admin/add_artworks";
 import DetailArtwork from "./component/admin/detail_artwork";
 import Edit_Artwork from "./component/admin/edit_artwork";
+import Artist from "./page/artist";
 
 function App() {
   return (
@@ -36,6 +37,7 @@ function App() {
             <Route path="/owner/Dashboard" Component={DashboardOwner} />
             <Route path="/owner/Users" Component={UsersOwner} />
           </Route>
+          <Route path='/artist' Component={Artist}/>
         </Routes>
       </Router>
     </>

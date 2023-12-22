@@ -129,16 +129,11 @@ export default function AddArtwork() {
     navigate("/admin/artwork/artwork-list");
   };
 
-
-
   // //post dataArtist
 
   const handleSubmit = async (e) => {
 
     e.preventDefault(); // Prevent the default form submission behavior
-
-
-
 
     if(artistName.length === 0){
       await postDataArtwork();
@@ -259,7 +254,7 @@ export default function AddArtwork() {
         </label>
         <label htmlFor="image" className="w-full block mb-7">
           <p className="font-unica text-lg">Image (PNG, JPG)</p>
-          <input type="file" id="image" name="image" accept=".png, .jpg, .jpeg" onChange={handleInput} className="outline-none border-2 rounded-lg bg-transparent px-2 py-1 border-[#393E46]" />
+          <input type="text" id="image" name="image" accept=".png, .jpg, .jpeg" onChange={handleInput} className="outline-none border-2 rounded-lg bg-transparent px-2 py-1 border-[#393E46]" />
           {imagePreview && (
             <img src={imagePreview} alt="Image Preview" className="mt-2 w-32 h-32 object-cover rounded-lg" />
           )}

@@ -18,7 +18,11 @@ export default function Login() {
       navigate("/owner");
     } else if (token === "admin") {
       navigate("/admin");
-    } else {
+    } 
+    else if (token === "Artist"){
+      navigate("/artist");
+    }
+    else  {
       navigate("/");
     }
   }, [token]);
@@ -37,7 +41,13 @@ export default function Login() {
           console.log("Logging in as owner...");
           navigate("/owner", { state: data.name });
           localStorage.setItem("token", data.role);
-        } else {
+        }
+        else if(data.role === "Artist"){
+          console.log("Logging in as artist...");
+          navigate("/artist", { state: data.name });
+          localStorage.setItem("token", data.role);
+        }
+        else {
           console.log("Logging in as admin...");
           navigate("/admin", { state: data.name });
           localStorage.setItem("token", data.role);

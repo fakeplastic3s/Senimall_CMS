@@ -1,7 +1,6 @@
 {
   "artwork_list": [
     {
-
       "id": 2,
       "title": "Full lorem tes",
       "Artist": "Raden Saleh",
@@ -22,9 +21,30 @@
       "size": "120 x 50 cm",
       "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perferendis deleniti officiis, alias nisi ab aliquam rem saepe. Praesentium harum dolores porro cupiditate aut fuga, delectus quis aliquid at. Facere, nam.",
       "image": "C:\\fakepath\\19366.jpg"
+    },
+    {
+      "title": "LIFE and World War II",
+      "Artist": "Tom Lea",
+      "price": "2000000000",
+      "category": "realism",
+      "material": "oil in canvas",
+      "size": "120 x 50 cm",
+      "description": "Seorang marinir yang mukanya di cat sedang berpegangan pada sisi baja dari sebuah kapal dia menatap asap dari ledakan yang terjadi di sekitarnya. Tom Lea menuliskan, \"Selama satu jam kami dipaksa menuju pantai, matahari turun di langit yang mending seperti bola terbakar yang berwarna kelabu, aku melihat seorang marinir yang wajahnya di cat untuk menghutan, matanya siap untuk memantau, dan mulutnya siap untuk membunuh\"",
+      "id": 3
+    },
+    {
+      "title": "errr",
+      "Artist": "Raimon Salazar",
+      "price": "234400",
+      "category": "photography",
+      "material": "oil in canvas",
+      "size": "120 x 50 cm",
+      "description": "gfgsfgsvhuhndyj",
+      "image": "dfadfa",
+      "id": 4
     }
   ],
-    "submission_list": [
+  "submission_list": [
     {
       "id": 2,
       "title": "Full lorem tes",
@@ -35,6 +55,126 @@
       "size": "120 cm x 80 cm",
       "description": "Pada 13 Januari 1808, ia dipromosikan menjadi kolonel dan diangkat menjadi ajudan gubernur jenderal Albertus Henricus Wise. 11 April 1809 dipromosikan menjadi sersan dan diangkat menjadi komandan divisi di Semarang. 20 Januari 1810 menjadi Kepala Staf Umum Angkatan Laut Kerajaan dan Kolonial di Batavia. 1 September 1810 dipindahkan ke layanan Prancis. 10 Agustus 1811 diangkat menjadi Kepala Staf Umum Tentara Kerajaan Hindia Belanda.",
       "image": "/foto_lukisan/Hendrik_Merkus_Baron_de_Kock_by_Cornelis_Kruseman.jpg"
+    },
+    {
+      "id": "3809eaa5-3987-4920-8fca-7f95e62dcc8a",
+      "title": "Napoleon Crossing the Alps",
+      "Artist": "Jacques-Louis David",
+      "price": "150000000",
+      "category": "still life",
+      "material": "oil in canvas",
+      "size": "120 x 50 cm",
+      "description": "Napoleon Menyeberangi Pegunungan Alpen adalah serangkaian lima potret berkuda Napoleon Bonaparte di atas kanvas yang dilukis oleh seniman Prancis Jacques-Louis David antara tahun 1801 dan 1805.",
+      "image": "https://cdn.kastatic.org/ka-content-images/3be3262b5bb8f56a98163241d0f1f65e4e9e86d7.jpg"
+    },
+    {
+      "id": "1aa07174-e24b-4e9e-a7bb-7b7dd817ac40",
+      "title": "Ladang Gandum dengan Gagak-gagak",
+      "Artist": "Vincent Van Gogh",
+      "price": "3000000000",
+      "material": "oil in canvas",
+      "size": "120 x 50 cm",
+      "description": "Ladang Gandum dengan Gagak-gagak adalah sebuah lukisan Juli 1890 karya Vincent van Gogh. Karya tersebut dipuji oleh beberapa kritikus sebagai salah satu karya terbesarnya. Karya tersebut sering kali dikatakan sebagai lukisan terakhir Van Gogh.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Vincent_Van_Gogh_-_Wheatfield_with_Crows.jpg/450px-Vincent_Van_Gogh_-_Wheatfield_with_Crows.jpg"
+    },
+    {
+      "id": "3cf131a9-f1ad-4953-acaf-404ff5bf129c",
+      "title": "adad",
+      "Artist": "Vincent Van Gogh",
+      "price": "2000000000",
+      "category": "rantasy",
+      "material": "zcvzvc",
+      "size": "120 x 50 cm",
+      "description": "ffafdfafadfad",
+      "image": "sgfsrshsrsg"
+    },
+    {
+      "id": "eff3130c-a6ee-4725-8a80-809063aa4426",
+      "title": "fdffa",
+      "Artist": "dfadfa",
+      "price": "9000000000",
+      "category": "photography",
+      "material": "dfadf",
+      "size": "120 x 50 cm",
+      "description": "dfadfadfadf",
+      "image": "dfadfa"
+    },
+    {
+      "id": "a27afcdf-26da-4e16-be7e-93c5106c02f6",
+      "image": "afarghaaa",
+      "title": "fafa",
+      "Artist": "Leonardo Da Vinci",
+      "price": "2000000000",
+      "category": "impressionism",
+      "material": "oil in canvas",
+      "size": "120 x 50 cm",
+      "description": "dfaftgartvadaghrhada"
+    },
+    {
+      "id": "f894f8e1-2cc8-4665-9392-c4a68f6a666c",
+      "image": "dfad",
+      "title": "ddfad",
+      "Artist": "Leonardo Da Vinci",
+      "price": "2000000000",
+      "category": "rantasy",
+      "material": "dfadfa",
+      "size": "120 x 50 cm",
+      "description": "dfadfryhaga"
+    },
+    {
+      "id": "b60d5815-2d31-48c0-9ebb-4921b5796b2f",
+      "title": "dfad",
+      "Artist": "Leonardo Da Vinci",
+      "price": "20000000",
+      "category": "nature",
+      "material": "fadfa",
+      "size": "120 x 50 cm",
+      "description": "dfadtgadfdfa",
+      "image": "dfadfa"
+    },
+    {
+      "id": "3da6fff9-51f9-4180-9d79-da0d7c8c11df",
+      "title": "fgfgsf",
+      "Artist": "fgfgs",
+      "price": "2000000000",
+      "category": "digital art",
+      "material": "adfaa",
+      "size": "fgsfgs",
+      "description": "gsfgsfgs",
+      "image": "fgsfgsgsfgs111"
+    },
+    {
+      "id": "ce97b1b9-563b-4305-97b1-d82b0b264a76",
+      "title": "fdfadf",
+      "Artist": "Leonardo Da Vinci",
+      "price": "2000000000",
+      "category": "rantasy",
+      "material": "oil in canvas",
+      "size": "120 x 50 cm",
+      "description": "dfdafadfa",
+      "image": "dfadfadfafa"
+    },
+    {
+      "id": "b854ca5e-9e92-49b9-bff3-cd37a5153008",
+      "title": "gfgsf",
+      "Artist": "Leon Khannedy",
+      "price": "2000000000",
+      "category": "nature",
+      "material": "oil in canvas",
+      "size": "120 x 50 cm",
+      "description": "gfgfgs",
+      "image": "fgsgfgsgsfgs"
+    },
+    {
+      "id": "65f81884-3374-428f-96df-ba196dc11416",
+      "title": "rbee",
+      "Artist": "Kudaniel",
+      "price": "20000000",
+      "category": "contentporary",
+      "material": "oil in canvas",
+      "size": "120 x 50 cm",
+      "description": "fdfadfdgfrythha dgsfgryh  fgsfgsgsgf",
+      "image": "gsgsfgr"
     }
   ],
   "admin": [
@@ -72,12 +212,13 @@
       "username": "hafidz",
       "password": "owner01",
       "role": "owner"
-    }
-  ],
-  "artist": [
+    },
     {
-      "id": "3b24f195-bbe5-4801-84ec-7dea46807d1a",
-      "Name": "Leonardo Da Vinci"
+      "id": 10,
+      "name": "Tom Lea",
+      "username": "Tom Lea",
+      "password": "Tom Lea",
+      "role": "Artist"
     }
   ]
 }
