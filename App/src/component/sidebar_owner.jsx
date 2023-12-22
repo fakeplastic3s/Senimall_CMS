@@ -1,12 +1,13 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
 
-export default function SidebarOwner(props) {
-  const { name } = props;
+export default function SidebarOwner() {
   const navigate = useNavigate();
   const MySwal = withReactContent(Swal);
+  const name = localStorage.getItem("name");
+  const location = useLocation();
 
   const [menu, setMenu] = useState([
     {
@@ -39,6 +40,7 @@ export default function SidebarOwner(props) {
       if (result.isConfirmed) {
         navigate("/");
         localStorage.removeItem("token");
+        localStorage.removeItem("name");
       }
     });
   };

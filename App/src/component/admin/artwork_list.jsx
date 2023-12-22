@@ -4,11 +4,14 @@ import axios from "axios";
 import { Card, Table } from "flowbite-react";
 
 import { useNavigate, Link } from "react-router-dom";
+import withReactContent from "sweetalert2-react-content";
+import Swal from "sweetalert2";
 
 export default function ArtworkList({ sendDataAddButton }) {
   const [art, setArt] = useState([]);
   // const [id, setId] = useState();
   const navigate = useNavigate();
+  const MySwal = withReactContent(Swal);
 
   async function getArtworkList() {
     try {
@@ -28,18 +31,31 @@ export default function ArtworkList({ sendDataAddButton }) {
     navigate("/admin/artwork/artwork-add");
   };
 
-  const handleDeleteArtwork = async (id) => {
-    const shouldDelete = window.confirm("Are you sure you want to delete this Artwork?");
-
-    if (shouldDelete) {
-      try {
-        await axios.delete(`http://localhost:3000/artwork_list/${id}`);
-        getArtworkList();
-      } catch (error) {
-        console.log(error);
+  const handleButtonDelete = (id) => {
+    MySwal.fire({
+      title: "Peringatan!",
+      text: "Apakah Anda yakin ingin menghapus data ini?",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      cancelButtonText: "Batal",
+      confirmButtonText: "Hapus!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        deleteArtwork(id);
       }
+    });
+  };
+
+  const deleteArtwork = async (id) => {
+    try {
+      await axios.delete(`http://localhost:3000/artwork_list/${id}`);
+      getArtworkList();
+    } catch (error) {
+      console.log(error);
     }
-  }
+  };
 
   return (
     <Card className="max-w ">
@@ -74,7 +90,7 @@ export default function ArtworkList({ sendDataAddButton }) {
                   </Link>
 
                   {/* Trash Icon */}
-                  <svg onClick={() => handleDeleteArtwork(item.id)} xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="red" className="w-4 h-4 cursor-pointer">
+                  <svg onClick={() => handleButtonDelete(item.id)} xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="red" className="w-4 h-4 cursor-pointer">
                     <path
                       strokeLinecap="round"
                       strokeLinejoin="round"

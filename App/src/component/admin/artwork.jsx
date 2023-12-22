@@ -1,9 +1,6 @@
 import { useEffect, useState } from "react";
-import Add_Artwork from "./add_artworks";
-import ArtworkList from "./artwork_list";
-import DetailArtwork from "./detail_artwork";
+
 import { useNavigate, Outlet } from "react-router-dom";
-import Footer from "../footer";
 
 export default function Artwork(props) {
   const navigate = useNavigate();
@@ -22,9 +19,6 @@ export default function Artwork(props) {
     <div>
       <h1 className="font-franklin text-4xl text-[#232931] mb-9">Artwork</h1>
       <Outlet />
-      {/* <ArtworkList /> */}
-      {/* <Add_Artwork /> */}
-      {/* <DetailArtwork /> */}
     </div>
   );
 }

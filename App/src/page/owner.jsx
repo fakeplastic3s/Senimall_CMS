@@ -18,6 +18,7 @@ export default function Owner() {
       navigate("/");
     }
   }, [token]);
+
   return (
     <>
       <div className="w-full min-h-screen flex ">

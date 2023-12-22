@@ -36,7 +36,7 @@ export default function Admin() {
   }, [menu]);
 
   return (
-    <div className="w-full min-h-screen flex gap-2">
+    <div className="w-full min-h-screen flex">
       <Sidebar name={adminName} sendDataMenu={receiveMenuData} />
       <div className="min-h-screen w-[82%] ms-auto px-5 md:px-10 py-16">
         <Outlet />
