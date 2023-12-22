@@ -39,7 +39,7 @@ export default function ArtworkList({ sendDataAddButton }) {
         console.log(error);
       }
     }
-  };
+  }
 
   return (
     <Card className="max-w ">

@@ -5,7 +5,7 @@
       "title": "Full lorem tes",
       "Artist": "Raden Saleh",
       "price": 7000000,
-      "category": "landscape",
+      "category": "portrait",
       "material": "Oil in Canvas",
       "size": "120 cm x 80 cm",
       "description": "Pada 13 Januari 1808, ia dipromosikan menjadi kolonel dan diangkat menjadi ajudan gubernur jenderal Albertus Henricus Wise. 11 April 1809 dipromosikan menjadi sersan dan diangkat menjadi komandan divisi di Semarang. 20 Januari 1810 menjadi Kepala Staf Umum Angkatan Laut Kerajaan dan Kolonial di Batavia. 1 September 1810 dipindahkan ke layanan Prancis. 10 Agustus 1811 diangkat menjadi Kepala Staf Umum Tentara Kerajaan Hindia Belanda.",
@@ -33,15 +33,24 @@
       "id": 3
     },
     {
-      "title": "errr",
-      "Artist": "Raimon Salazar",
-      "price": "234400",
-      "category": "photography",
+      "id": "217bfac0-e4b4-48c4-bd58-fcff6c52c1fa",
+      "title": "awan putih",
+      "Artist": "Boomerang",
+      "price": "1800000",
       "material": "oil in canvas",
       "size": "120 x 50 cm",
-      "description": "gfgsfgsvhuhndyj",
-      "image": "dfadfa",
-      "id": 4
+      "description": "hanya tess aja",
+      "image": "tesss"
+    },
+    {
+      "id": "8ab0110c-e5f3-42de-8add-1b9af221c643",
+      "title": "Silent Hill",
+      "Artist": "Leonardo Da Vinci",
+      "price": "2000000000",
+      "material": "oil in canvas",
+      "size": "120 x 50 cm",
+      "description": "ya cuma tes aja sih",
+      "image": "inilinkkk"
     }
   ],
   "submission_list": [
