@@ -45,7 +45,7 @@ export default function Login() {
           console.log("Logging in as artist...");
           navigate("/artist", { state: data.name });
           localStorage.setItem("token", data.role);
-          // localStorage.setItem("name", data.name);
+          localStorage.setItem("name", data.name);
         } else {
           console.log("Logging in as admin...");
           navigate("/admin", { state: data.name });
