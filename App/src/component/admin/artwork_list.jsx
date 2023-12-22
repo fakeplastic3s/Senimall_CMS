@@ -10,12 +10,16 @@ export default function ArtworkList({ sendDataAddButton }) {
   // const [id, setId] = useState();
   const [currentPage, setCurrentPage] = useState(1);
   const [itemsPerPage] = useState(5); // Change this to the desired number of items per page
+  const [searchTerm, setSearchTerm] = useState("");
   const navigate = useNavigate();
 
   async function getArtworkList() {
     try {
       const data = await axios.get("http://localhost:3000/artwork_list");
-      setArt(data.data);
+      const filteredArt = data.data.filter((item) =>
+        item.title.toLowerCase().includes(searchTerm.toLowerCase())
+      );
+      setArt(filteredArt);
     } catch (error) {
       console.log(error);
     }
@@ -23,7 +27,7 @@ export default function ArtworkList({ sendDataAddButton }) {
 
   useEffect(() => {
     getArtworkList();
-  }, [currentPage]); // Reload when the current page changes
+  }, [currentPage, searchTerm]); // Reload when the current page changes
 
   const handleAddArtworkList = () => {
     // setMode('add');
@@ -60,6 +64,14 @@ export default function ArtworkList({ sendDataAddButton }) {
           <span className="font-unica text-white mt-1">Add</span>
         </button>
       </div>
+      <input
+        type="text"
+        placeholder="Search by title"
+        value={searchTerm}
+        onChange={(e) => setSearchTerm(e.target.value)}
+        className="p-2 border border-gray-300 rounded"
+      />
+
       <div className="overflow-x-auto">
         <Table hoverable>
           <Table.Head className="">
