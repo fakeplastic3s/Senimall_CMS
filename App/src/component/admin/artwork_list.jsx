@@ -19,9 +19,7 @@ export default function ArtworkList({ sendDataAddButton }) {
   async function getArtworkList() {
     try {
       const data = await axios.get("http://localhost:3000/artwork_list");
-      const filteredArt = data.data.filter((item) =>
-        item.title.toLowerCase().includes(searchTerm.toLowerCase())
-      );
+      const filteredArt = data.data.filter((item) => item.title.toLowerCase().includes(searchTerm.toLowerCase()));
       setArt(filteredArt);
     } catch (error) {
       console.log(error);
@@ -80,13 +78,7 @@ export default function ArtworkList({ sendDataAddButton }) {
           <span className="font-unica text-white mt-1">Add</span>
         </button>
       </div>
-      <input
-        type="text"
-        placeholder="Search by title"
-        value={searchTerm}
-        onChange={(e) => setSearchTerm(e.target.value)}
-        className="p-2 border border-gray-300 rounded"
-      />
+      <input type="text" placeholder="Search by title" value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)} className="p-2 border border-gray-300 rounded" />
 
       <div className="overflow-x-auto">
         <Table hoverable>
@@ -136,6 +128,7 @@ export default function ArtworkList({ sendDataAddButton }) {
             ))}
           </Table.Body>
         </Table>
+
         <Pagination itemsPerPage={itemsPerPage} totalItems={art.length} paginate={paginate} />
       </div>
     </Card>
@@ -151,9 +144,10 @@ const Pagination = ({ itemsPerPage, totalItems, paginate }) => {
 
   return (
     <nav>
-      <ul className="pagination">
+      <ul className="pagination flex gap-3 p-5">
+        Page
         {pageNumbers.map((number) => (
-          <li key={number} className="page-item">
+          <li key={number} className="page-item ">
             <a onClick={() => paginate(number)} href="#" className="page-link">
               {number}
             </a>

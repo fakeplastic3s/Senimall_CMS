@@ -23,7 +23,6 @@
       "image": "C:\\fakepath\\19366.jpg"
     },
     {
-
       "title": "LIFE and World War II",
       "Artist": "Tom Lea",
       "price": "2000000000",
@@ -53,42 +52,37 @@
       "size": "112 cm × 178 cm",
       "description": "Karya lukisan Penangkapan Pangeran Diponegoro merujuk pada peristiwa nyata yang memang terjadi masa lalu. Lukisan ini dibuat sebagai respon dari lukisan Nicolaas Pieneman (1809-1860) yang ditugaskan untuk mendokumentasikan momen penangkapan Pangeran Diponegoro oleh Pemerintah Belanda. Ketika peristiwa penangkapan Pangeran Diponegoro (28 Maret 1830), Raden Saleh tengah berada di Eropa. Diduga Raden Saleh melihat lukisan Pieneman tersebut saat ia tinggal di Eropa. Perbedaan lukisan antara Raden Saleh dengan Pieneman ini dipandang sebagai rasa nasionalisme pada diri Raden Saleh",
       "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Raden_Saleh_-_Diponegoro_arrest.jpg/1280px-Raden_Saleh_-_Diponegoro_arrest.jpg"
-    }
-  ],
-  "submission_list": [
-
+    },
     {
-      "title": "Full lorem tes",
+      "id": "d8cdf76e-4f59-427f-83a9-0b3ca4c9fb74",
+      "title": "asd",
+      "Artist": "asd",
+      "price": "asd",
+      "category": "abstract",
+      "material": "asd",
+      "size": "ad",
+      "description": "adsasd",
+      "image": "asdasd"
+    },
+    {
+      "id": "f092ab06-1855-4d5d-8501-c89de2315770",
       "Artist": "Raden Saleh",
-      "price": 7000000,
-      "category": "landscape",
-      "material": "Oil in Canvas",
-      "size": "120 cm x 80 cm",
-      "description": "Pada 13 Januari 1808, ia dipromosikan menjadi kolonel dan diangkat menjadi ajudan gubernur jenderal Albertus Henricus Wise. 11 April 1809 dipromosikan menjadi sersan dan diangkat menjadi komandan divisi di Semarang. 20 Januari 1810 menjadi Kepala Staf Umum Angkatan Laut Kerajaan dan Kolonial di Batavia. 1 September 1810 dipindahkan ke layanan Prancis. 10 Agustus 1811 diangkat menjadi Kepala Staf Umum Tentara Kerajaan Hindia Belanda.",
-
-      "image": "/foto_lukisan/Hendrik_Merkus_Baron_de_Kock_by_Cornelis_Kruseman.jpg"
+      "title": "asd",
+      "price": "asd",
+      "material": "asd",
+      "size": "asd",
+      "description": "asd",
+      "image": "ads"
     },
     {
-      "id": "3809eaa5-3987-4920-8fca-7f95e62dcc8a",
-      "title": "Napoleon Crossing the Alps",
-      "Artist": "Jacques-Louis David",
-      "price": "150000000",
-      "category": "still life",
-      "material": "oil in canvas",
-      "size": "120 x 50 cm",
-      "description": "Napoleon Menyeberangi Pegunungan Alpen adalah serangkaian lima potret berkuda Napoleon Bonaparte di atas kanvas yang dilukis oleh seniman Prancis Jacques-Louis David antara tahun 1801 dan 1805.",
-      "image": "https://cdn.kastatic.org/ka-content-images/3be3262b5bb8f56a98163241d0f1f65e4e9e86d7.jpg"
-    },
-    {
-      "id": "1aa07174-e24b-4e9e-a7bb-7b7dd817ac40",
-      "title": "Ladang Gandum dengan Gagak-gagak",
-      "Artist": "Vincent Van Gogh",
-      "price": "3000000000",
-      "material": "oil in canvas",
-      "size": "120 x 50 cm",
-      "description": "Ladang Gandum dengan Gagak-gagak adalah sebuah lukisan Juli 1890 karya Vincent van Gogh. Karya tersebut dipuji oleh beberapa kritikus sebagai salah satu karya terbesarnya. Karya tersebut sering kali dikatakan sebagai lukisan terakhir Van Gogh.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Vincent_Van_Gogh_-_Wheatfield_with_Crows.jpg/450px-Vincent_Van_Gogh_-_Wheatfield_with_Crows.jpg"
-
+      "title": "tes submission",
+      "Artist": "tes submission",
+      "price": "tes submission",
+      "material": "tes submission",
+      "size": "tes submission",
+      "description": "tes submission",
+      "image": "tes submission",
+      "id": 4
     }
   ],
   "submission_list": [],
