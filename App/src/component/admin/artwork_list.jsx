@@ -45,7 +45,7 @@ export default function ArtworkList({ sendDataAddButton }) {
         console.log(error);
       }
     }
-  };
+  }
 
   const indexOfLastItem = currentPage * itemsPerPage;
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;

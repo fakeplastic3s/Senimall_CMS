@@ -1,13 +1,14 @@
 import { useEffect, useState } from "react";
-import { v4 as uuidv4 } from "uuid";
 import axios from "axios";
-import { useLocation, useNavigate, useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
+import Swal from "sweetalert2"; 
 
 export default function Edit_Artwork() {
 
     const { id } = useParams()
-    
     const navigate = useNavigate();
+    const [submitStatus, setSubmitStatus] = useState(null);
+
     const [loadData, setLoadData] = useState({
         id: id,
         title:'',
@@ -34,20 +35,15 @@ export default function Edit_Artwork() {
                 description:data.data[0].description,
                 image:data.data[0].image
             });
-            
         }
         catch (error) {
-            console.log(error)
+            console.log('nih error: '+error)
         }
     };
 
     useEffect(() => {
-        load()
+        load();
     }, [])
-
-    const [payload, setPayload] = useState({
-        id: uuidv4(),
-    });
 
     const handleInput = (e) => {
         const { name, value } = e.target;
@@ -57,18 +53,44 @@ export default function Edit_Artwork() {
         });
     };
 
-    console.log(payload)
-
     async function handleSubmit() {
         try {
             await axios.put(`http://localhost:3000/artwork_list/${id}`, loadData);
+            setSubmitStatus('success')
         } catch (error) {
+            setSubmitStatus('error')
             console.log(error);
         }
-        navigate("/admin/artwork/artwork-list");
     }
 
-    console.log(loadData)
+    const handleModalClose = () => {
+        setSubmitStatus(null);
+        navigate("/admin/artwork/artwork-list");
+      };
+    
+        // Confirmation modal for form submission success
+        const handleSuccessModalClose = () => {
+          Swal.fire({
+            text: "Edit Data successfully!",
+            icon: "success",
+            confirmButtonColor: "#183D3D",
+            confirmButtonText: "OK",
+          }).then(() => {
+            handleModalClose();
+          });
+        };
+      
+        // Confirmation modal for form submission error
+        const handleErrorModalClose = () => {
+          Swal.fire({
+            text: "An error occurred. Please try again later.",
+            icon: "error",
+            confirmButtonColor: "#183D3D",
+            confirmButtonText: "OK",
+          }).then(() => {
+            handleModalClose();
+          });
+        };
 
     return ( 
         <>
@@ -127,13 +149,18 @@ export default function Edit_Artwork() {
                 </label>
                 <label htmlFor="image" className="w-full block mb-7">
                     <p className="font-unica text-lg">Image</p>
-                    <input type="file" id="image" name="image" onChange={handleInput} className="outline-none border-2 rounded-lg bg-transparent px-2 py-1 border-[#393E46]" />
+                    <input type="text" id="image" name="image" value={loadData.image} onChange={handleInput} className="w-full outline-none border-2 rounded-lg bg-transparent px-2 py-1 border-[#393E46]" />
                 </label>
                 <button onClick={handleSubmit} type="button" className="bg-[#183D3D] flex justify-center items-stretch gap-3 w-full py-1 rounded-lg">
                     <img src="/artwork_component/Vector (4).svg" alt="" className="w-4" />
                     <span className="font-unica text-white pt-1 ">Edit</span>
                 </button>
             </form>
+            {/* Success Modal */}
+            {submitStatus === "success" && handleSuccessModalClose()}
+
+            {/* Error Modal */}
+            {submitStatus === "error" && handleErrorModalClose()}
         </>
     );
 }
