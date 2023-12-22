@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { Card } from "flowbite-react";
-import { Navigate, useParams, useNavigate } from "react-router-dom";
+
+import { useParams, useNavigate } from "react-router-dom";
 
 export default function DetailArtwork() {
   const navigate = useNavigate();
@@ -18,22 +19,6 @@ export default function DetailArtwork() {
     description: "",
     image: null,
   });
-
-  // async function getArtworkList(){
-  //     try{
-  //         const data = await axios.get('http://localhost:3000/artwork_list')
-  //         setArt(data.data)
-  //         // console.log(art[0].image)
-  //         // console.log(data.data[0])
-  //     }
-  //     catch(error){
-  //         console(error)
-  //     }
-  // }
-
-  // useEffect(()=>{
-  //     getArtworkList();
-  // },[])
 
   async function load() {
     try {

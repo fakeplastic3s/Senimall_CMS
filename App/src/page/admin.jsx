@@ -5,7 +5,6 @@ import Footer from "../component/footer";
 
 export default function Admin() {
   const name = useLocation();
-
   const [menu, setMenu] = useState("Dashboard");
   const [adminName, setAdminName] = useState(name.state);
   const navigate = useNavigate();

@@ -21,9 +21,30 @@
       "size": "120 x 50 cm",
       "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perferendis deleniti officiis, alias nisi ab aliquam rem saepe. Praesentium harum dolores porro cupiditate aut fuga, delectus quis aliquid at. Facere, nam.",
       "image": "C:\\fakepath\\19366.jpg"
+    },
+    {
+      "title": "LIFE and World War II",
+      "Artist": "Tom Lea",
+      "price": "2000000000",
+      "category": "realism",
+      "material": "oil in canvas",
+      "size": "120 x 50 cm",
+      "description": "Seorang marinir yang mukanya di cat sedang berpegangan pada sisi baja dari sebuah kapal dia menatap asap dari ledakan yang terjadi di sekitarnya. Tom Lea menuliskan, \"Selama satu jam kami dipaksa menuju pantai, matahari turun di langit yang mending seperti bola terbakar yang berwarna kelabu, aku melihat seorang marinir yang wajahnya di cat untuk menghutan, matanya siap untuk memantau, dan mulutnya siap untuk membunuh\"",
+      "id": 3
+    },
+    {
+      "title": "errr",
+      "Artist": "Raimon Salazar",
+      "price": "234400",
+      "category": "photography",
+      "material": "oil in canvas",
+      "size": "120 x 50 cm",
+      "description": "gfgsfgsvhuhndyj",
+      "image": "dfadfa",
+      "id": 4
     }
   ],
-    "submission_list": [
+  "submission_list": [
     {
       "id": 2,
       "title": "Full lorem tes",
@@ -34,6 +55,27 @@
       "size": "120 cm x 80 cm",
       "description": "Pada 13 Januari 1808, ia dipromosikan menjadi kolonel dan diangkat menjadi ajudan gubernur jenderal Albertus Henricus Wise. 11 April 1809 dipromosikan menjadi sersan dan diangkat menjadi komandan divisi di Semarang. 20 Januari 1810 menjadi Kepala Staf Umum Angkatan Laut Kerajaan dan Kolonial di Batavia. 1 September 1810 dipindahkan ke layanan Prancis. 10 Agustus 1811 diangkat menjadi Kepala Staf Umum Tentara Kerajaan Hindia Belanda.",
       "image": "/foto_lukisan/Hendrik_Merkus_Baron_de_Kock_by_Cornelis_Kruseman.jpg"
+    },
+    {
+      "id": "3809eaa5-3987-4920-8fca-7f95e62dcc8a",
+      "title": "Napoleon Crossing the Alps",
+      "Artist": "Jacques-Louis David",
+      "price": "150000000",
+      "category": "still life",
+      "material": "oil in canvas",
+      "size": "120 x 50 cm",
+      "description": "Napoleon Menyeberangi Pegunungan Alpen adalah serangkaian lima potret berkuda Napoleon Bonaparte di atas kanvas yang dilukis oleh seniman Prancis Jacques-Louis David antara tahun 1801 dan 1805.",
+      "image": "https://cdn.kastatic.org/ka-content-images/3be3262b5bb8f56a98163241d0f1f65e4e9e86d7.jpg"
+    },
+    {
+      "id": "1aa07174-e24b-4e9e-a7bb-7b7dd817ac40",
+      "title": "Ladang Gandum dengan Gagak-gagak",
+      "Artist": "Vincent Van Gogh",
+      "price": "3000000000",
+      "material": "oil in canvas",
+      "size": "120 x 50 cm",
+      "description": "Ladang Gandum dengan Gagak-gagak adalah sebuah lukisan Juli 1890 karya Vincent van Gogh. Karya tersebut dipuji oleh beberapa kritikus sebagai salah satu karya terbesarnya. Karya tersebut sering kali dikatakan sebagai lukisan terakhir Van Gogh.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Vincent_Van_Gogh_-_Wheatfield_with_Crows.jpg/450px-Vincent_Van_Gogh_-_Wheatfield_with_Crows.jpg"
     }
   ],
   "admin": [
@@ -71,9 +113,13 @@
       "username": "hafidz",
       "password": "owner01",
       "role": "owner"
+    },
+    {
+      "id": 10,
+      "name": "Tom Lea",
+      "username": "Tom Lea",
+      "password": "Tom Lea",
+      "role": "Artist"
     }
-  ],
-  "artist": [
-    {}
   ]
 }

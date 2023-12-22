@@ -5,14 +5,13 @@ import Footer from "../footer";
 export default function Dashboard() {
   const [art, setArt] = useState([]);
   const [submissions, setSubmissions] = useState([]);
+
   const [artist, setArtist] = useState(0);
 
   async function getArtworkList() {
     try {
       const data = await axios.get("http://localhost:3000/artwork_list");
       setArt(data.data);
-      // console.log(data.data);
-      // console.log(art)
     } catch (error) {
       console.log(error);
     }
