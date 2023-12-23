@@ -1,28 +1,6 @@
 {
   "artwork_list": [
     {
-      "id": 2,
-      "title": "Full lorem tes",
-      "Artist": "Raden Saleh",
-      "price": 7000000,
-      "category": "portrait",
-      "material": "Oil in Canvas",
-      "size": "120 cm x 80 cm",
-      "description": "Pada 13 Januari 1808, ia dipromosikan menjadi kolonel dan diangkat menjadi ajudan gubernur jenderal Albertus Henricus Wise. 11 April 1809 dipromosikan menjadi sersan dan diangkat menjadi komandan divisi di Semarang. 20 Januari 1810 menjadi Kepala Staf Umum Angkatan Laut Kerajaan dan Kolonial di Batavia. 1 September 1810 dipindahkan ke layanan Prancis. 10 Agustus 1811 diangkat menjadi Kepala Staf Umum Tentara Kerajaan Hindia Belanda.",
-      "image": "/foto_lukisan/Hendrik_Merkus_Baron_de_Kock_by_Cornelis_Kruseman.jpg"
-    },
-    {
-      "id": "5a3e23e8-e471-4e02-a607-0e928a3d119a",
-      "title": "bougenville",
-      "Artist": "Hartono",
-      "price": "60000000",
-      "category": "street art",
-      "material": "oil in canvas",
-      "size": "120 x 50 cm",
-      "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perferendis deleniti officiis, alias nisi ab aliquam rem saepe. Praesentium harum dolores porro cupiditate aut fuga, delectus quis aliquid at. Facere, nam.",
-      "image": "C:\\fakepath\\19366.jpg"
-    },
-    {
       "title": "LIFE and World War II",
       "Artist": "Tom Lea",
       "price": "2000000000",
@@ -52,78 +30,6 @@
       "size": "112 cm × 178 cm",
       "description": "Karya lukisan Penangkapan Pangeran Diponegoro merujuk pada peristiwa nyata yang memang terjadi masa lalu. Lukisan ini dibuat sebagai respon dari lukisan Nicolaas Pieneman (1809-1860) yang ditugaskan untuk mendokumentasikan momen penangkapan Pangeran Diponegoro oleh Pemerintah Belanda. Ketika peristiwa penangkapan Pangeran Diponegoro (28 Maret 1830), Raden Saleh tengah berada di Eropa. Diduga Raden Saleh melihat lukisan Pieneman tersebut saat ia tinggal di Eropa. Perbedaan lukisan antara Raden Saleh dengan Pieneman ini dipandang sebagai rasa nasionalisme pada diri Raden Saleh",
       "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Raden_Saleh_-_Diponegoro_arrest.jpg/1280px-Raden_Saleh_-_Diponegoro_arrest.jpg"
-    },
-    {
-      "id": "d8cdf76e-4f59-427f-83a9-0b3ca4c9fb74",
-      "title": "asd",
-      "Artist": "asd",
-      "price": "asd",
-      "category": "abstract",
-      "material": "asd",
-      "size": "ad",
-      "description": "adsasd",
-      "image": "asdasd"
-    },
-    {
-      "id": "f092ab06-1855-4d5d-8501-c89de2315770",
-      "Artist": "Raden Saleh",
-      "title": "asd",
-      "price": "asd",
-      "material": "asd",
-      "size": "asd",
-      "description": "asd",
-      "image": "ads"
-    },
-    {
-      "title": "tes submission",
-      "Artist": "tes submission",
-      "price": "tes submission",
-      "material": "tes submission",
-      "size": "tes submission",
-      "description": "tes submission",
-      "image": "tes submission",
-      "id": 4
-    },
-    {
-      "title": "asd",
-      "Artist": "asd",
-      "price": "asd",
-      "category": "abstract",
-      "material": "asd",
-      "size": "asd",
-      "description": "asd",
-      "image": "asd",
-      "id": 5
-    },
-    {
-      "id": "fda7c437-36b5-4868-a235-a17eefb1d1f8",
-      "title": "asd",
-      "Artist": "asd",
-      "price": "asd",
-      "category": "abstract",
-      "size": "asd",
-      "material": "asd",
-      "description": "asd",
-      "image": "asd"
-    },
-    {
-      "title": "asdsad",
-      "price": "asdasd",
-      "material": "asdasd",
-      "size": "asd",
-      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
-      "image": "data:image/png;base64,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",
-      "id": 6
-    },
-    {
-      "title": "asdsad",
-      "Artist": "asd",
-      "price": "asdasd",
-      "material": "asdasd",
-      "size": "asd",
-      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.\n\nWhy do we use it? It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).",
-      "image": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAoGBxERExYTEhEYFhYYFhYYGhoaFhkWGBkYGRgaGRkYGhsaHysiGhwqHxkfIzYjKC8uMTExGSE3PDcwOyswMS4BCwsLDw4PHRERGjAfISEwLjAuLjAuMDAwMDAwLi4wMDAwMjAwMC4yMDAuMDAuLjEwLi4wLjAwMDAwMDAwMDA8MP/AABEIAK0BIwMBIgACEQEDEQH/xAAcAAEAAgMBAQEAAAAAAAAAAAAABAUCAwYBBwj/xABJEAACAQIEAwQFBwgIBQUAAAABAgMAEQQFEiETMUEGIlFhIzJxgZEUQlJykqGxBzNTYoKiwdEVQ3OTsrPC0iRUY4PhNESj0/H/xAAaAQEBAQEBAQEAAAAAAAAAAAAAAQIDBAUG/8QAJhEBAQACAgICAQMFAAAAAAAAAAECEQMhEjFBUWEEIpETFCMycf/aAAwDAQACEQMRAD8A+zUpSgUpSgUpSg8NeE17UWaS+w5UZyuorM2xZjlRwpsQUNvni99Nvpj1lHUFwNyLzIJVdQysGB5Ebik0SupVlDKeYO4NV65RpfUsrAHnz18rDvAgP+2GPnUee3ftZVX59IRHoAvxDoIBszAg3RP1mAtfkoLMfVrU2AxDbNNt9dm+6NYz99SsFl6R2O7MBpBNhpX6KAABF2GwG9he9EbMBhzGgUm7XLMRyLsSzWvyW5Nh0FhW+lKCvzOaUMFQuLrddCBiz3tpLMrKigbkkb32O2+OTYRx6eV2MkkcWtPVRWVRey9De/nv7KsqUUpSlEKUpQKUpQKUpQVvaZmGHcrzvH/mLt/D31KaOIQ6WtwhHY32Xh6bbnoLda2YqASIyNyYW25jwI8xz91VUuZ8M8PFx2F10uoJRyLEWXck3F9IuRyIsAzFWGVO5iUve++5FmZQSEZh0YrYkdCTWAQfKb2F+CLnqO+dPx732R4VrxGdRIt7O3QWjdQT4amAUHyvc9AeVa8pw0jO0",
-      "id": 7
     }
   ],
   "submission_list": [],

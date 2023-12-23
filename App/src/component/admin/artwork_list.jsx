@@ -11,7 +11,7 @@ export default function ArtworkList({ sendDataAddButton }) {
   const [art, setArt] = useState([]);
   // const [id, setId] = useState();
   const [currentPage, setCurrentPage] = useState(1);
-  const [itemsPerPage] = useState(7); // Change this to the desired number of items per page
+  const [itemsPerPage] = useState(5); // Change this to the desired number of items per page
   const [searchTerm, setSearchTerm] = useState("");
   const navigate = useNavigate();
   const MySwal = withReactContent(Swal);
@@ -43,8 +43,8 @@ export default function ArtworkList({ sendDataAddButton }) {
       text: "Apakah Anda yakin ingin menghapus data ini?",
       icon: "warning",
       showCancelButton: true,
-      confirmButtonColor: "#3085d6",
-      cancelButtonColor: "#d33",
+      confirmButtonColor: "red",
+      cancelButtonColor: "gray",
       cancelButtonText: "Batal",
       confirmButtonText: "Hapus!",
     }).then((result) => {
