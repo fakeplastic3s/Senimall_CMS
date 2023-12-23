@@ -34,6 +34,7 @@ export default function Edit_Artwork() {
         description: data.data[0].description,
         image: data.data[0].image,
       });
+      console.log(data.data[0])
     } catch (error) {
       console.log("nih error: " + error);
     }

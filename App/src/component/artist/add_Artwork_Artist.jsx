@@ -13,20 +13,27 @@ export default function AddArtworkArtist() {
   const imageRef = useRef();
   const [errors, setErrors] = useState({});
   const [payload, setPayload] = useState();
-  const [submitStatus, setSubmitStatus] = useState(null); // New state variable
-  const name_artist = localStorage.getItem("name");
+  const [submitStatus, setSubmitStatus] = useState(null); 
+  const [artistName, setArtistName] = useState(localStorage.getItem("name"))
 
   const handleInput = (e) => {
     const { name, value } = e.target;
     setPayload({
       ...payload,
       id: uuidv4(),
+      Artist : artistName,
       [name]: value,
     });
   };
 
   const handleModalClose = () => {
     setSubmitStatus("");
+    titleRef.current.value = "";
+    priceRef.current.value = "";
+    materialRef.current.value = "";
+    sizeRef.current.value = "";
+    descriptionRef.current.value = "";
+    imageRef.current.value = "";
   };
 
   const postData = async () => {
@@ -38,16 +45,11 @@ export default function AddArtworkArtist() {
       setSubmitStatus("error");
     }
   };
+
   const handleSubmit = (e) => {
     e.preventDefault();
     postData();
-    titleRef.current.value = "";
-    artistRef.current.value = "";
-    priceRef.current.value = "";
-    materialRef.current.value = "";
-    sizeRef.current.value = "";
-    descriptionRef.current.value = "";
-    imageRef.current.value = "";
+    console.log(payload)
   };
 
   // Confirmation modal for form submission success
@@ -90,22 +92,6 @@ export default function AddArtworkArtist() {
             onChange={handleInput}
             className={`w-full outline-none border-2 rounded-lg bg-transparent px-2 py-1 border-[#393E46] ${errors.title && "border-red-500"}`}
           />
-          {errors.title && <p className="text-red-500">{errors.title}</p>}
-        </label>
-        <label htmlFor="Artist" className="mb-7 block">
-          <p className="font-unica text-lg">Artist</p>
-          <input
-            type="text"
-            id="Artist"
-            onChange={handleInput}
-            required
-            ref={artistRef}
-            name="Artist"
-            onInvalid={(F) => F.target.setCustomValidity("form ini wajib terisi")}
-            onInput={(F) => F.target.setCustomValidity("")}
-            className={`w-full outline-none border-2 rounded-lg bg-transparent px-2 py-1 border-[#393E46] ${errors.Artist && "border-red-500"}`}
-          />
-          {errors.Artist && <p className="text-red-500">{errors.Artist}</p>}
         </label>
         <div className="flex justify-between mb-7">
           <label htmlFor="price" className="block w-[35%]">
@@ -121,7 +107,6 @@ export default function AddArtworkArtist() {
               onChange={handleInput}
               className={`w-full outline-none border-2 rounded-lg bg-transparent px-2 py-1 border-[#393E46] ${errors.price && "border-red-500"}`}
             />
-            {errors.price && <p className="text-red-500">{errors.price}</p>}
           </label>
           <label htmlFor="Category" className="w-[60%] block">
             <p className="font-unica text-lg">Category</p>
@@ -160,7 +145,6 @@ export default function AddArtworkArtist() {
               onChange={handleInput}
               className={`w-full outline-none border-2 rounded-lg bg-transparent px-2 py-1 border-[#393E46] ${errors.material && "border-red-500"}`}
             />
-            {errors.material && <p className="text-red-500">{errors.material}</p>}
           </label>
           <label htmlFor="size" className="w-[60%] block">
             <p className="font-unica text-lg">Size</p>
@@ -175,7 +159,6 @@ export default function AddArtworkArtist() {
               onChange={handleInput}
               className={`w-full outline-none border-2 rounded-lg bg-transparent px-2 py-1 border-[#393E46] ${errors.size && "border-red-500"}`}
             />
-            {errors.size && <p className="text-red-500">{errors.size}</p>}
           </label>
         </div>
         <label htmlFor="deskripsi" className="w-full block mb-7">
@@ -192,7 +175,6 @@ export default function AddArtworkArtist() {
             rows="10"
             className={`w-full outline-none border-2 rounded-lg bg-transparent px-2 py-1 border-[#393E46] ${errors.description && "border-red-500"}`}
           />
-          {errors.description && <p className="text-red-500">{errors.description}</p>}
         </label>
         <label htmlFor="image" className="w-full block mb-7">
           <p className="font-unica text-lg">Image</p>

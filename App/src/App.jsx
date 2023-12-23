@@ -16,6 +16,7 @@ import AddArtwork from "./component/admin/add_artworks";
 
 import Edit_Artwork from "./component/admin/edit_artwork";
 import Artist from "./page/artist";
+import Edit_user from "./component/owner/edit_user";
 
 function App() {
   return (
@@ -39,6 +40,7 @@ function App() {
             <Route path="users" Component={Users}>
               <Route path="" Component={UserList} />
               <Route path="add-user" Component={AddUser} />
+              <Route path="edit-user/:id" Component={Edit_user} />
             </Route>
           </Route>
           <Route path="/artist" Component={Artist} />

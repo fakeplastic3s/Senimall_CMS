@@ -168,7 +168,6 @@ export default function SubmissionList({ sendDataAddButton }) {
                   </Table.Row>
                 ))}
               </Table.Body>
-
               {/* Modal for viewing detailed artwork */}
               <Modal dismissible show={isModalOpen} onClose={closeModal}>
                 {selectedSubmission && (
@@ -188,7 +187,10 @@ export default function SubmissionList({ sendDataAddButton }) {
                             <p className="font-bold">Artist</p>
                             <p className="mb-2">{selectedSubmission.Artist}</p>
                             <p className="font-bold">Price</p>
-                            <p className="mb-2">Rp {selectedSubmission.price}</p>
+                              <p className="mb-2">{parseInt(selectedSubmission.price, 10).toLocaleString('id-ID', {
+                                style: 'currency',
+                                currency: 'IDR',
+                              })}</p>
                             <p className="font-bold">Category</p>
                             <p className="mb-2">{selectedSubmission.category}</p>
                             <p className="font-bold">Material</p>
