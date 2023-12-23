@@ -23,9 +23,21 @@ export default function add_user() {
             <input type="text" name="name" id="name" className={`w-full outline-none border-2 rounded-lg bg-transparent px-2 py-1 border-[#393E46] `} />
           </label>
           <label htmlFor="title" className="mb-7 block">
-            <p className="font-unica text-lg">Full Name</p>
-            <input type="text" name="name" id="name" className={`w-full outline-none border-2 rounded-lg bg-transparent px-2 py-1 border-[#393E46] `} />
+            <p className="font-unica text-lg">Username</p>
+            <input type="text" name="username" id="username" className={`w-full outline-none border-2 rounded-lg bg-transparent px-2 py-1 border-[#393E46] `} />
           </label>
+          <label htmlFor="title" className="mb-7 block">
+            <p className="font-unica text-lg">Password</p>
+            <input type="text" name="username" id="username" className={`w-full outline-none border-2 rounded-lg bg-transparent px-2 py-1 border-[#393E46] `} />
+          </label>
+          <label htmlFor="title" className="mb-7 block">
+            <p className="font-unica text-lg">Role</p>
+            <input type="text" name="role" id="role" value="admin" className={`w-full outline-none border-2 rounded-lg bg-transparent px-2 py-1 border-[#393E46] `} />
+          </label>
+          <button type="submit" className="bg-[#183D3D] flex justify-center items-stretch gap-3 w-full py-1 rounded-lg">
+            <img src="/artwork_component/Vector (4).svg" alt="" className="w-4" />
+            <span className="font-unica text-white pt-1 ">Submit</span>
+          </button>
         </form>
       </Card>
     </>
