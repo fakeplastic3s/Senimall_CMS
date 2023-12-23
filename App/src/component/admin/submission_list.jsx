@@ -1,49 +1,8 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Card, Table } from "flowbite-react";
-import { useNavigate, Link } from "react-router-dom";
-import Modal from "react-modal"; // Import the Modal component
-
-// Styles for the modal
-const modalStyle = {
-  content: {
-    top: "50%",
-    left: "50%",
-    right: "auto",
-    bottom: "auto",
-    marginRight: "-50%",
-    transform: "translate(-50%, -50%)",
-    padding: "20px",
-    borderRadius: "10px",
-    boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
-    maxWidth: "800px", // Set a maximum width
-    width: "100%", // Make the modal responsive
-    maxHeight: "700px",
-  },
-  overlay: {
-    backgroundColor: "rgba(0, 0, 0, 0.5)",
-  },
-};
-
-// Modal header styles
-const modalHeaderStyles = {
-  display: "flex",
-  justifyContent: "space-between",
-  alignItems: "center",
-  marginBottom: "20px",
-};
-
-// Close button styles
-const closeButtonStyles = {
-  cursor: "pointer",
-  paddingLeft: "15px",
-  borderRadius: "50px",
-  width: "50px",
-  height: "50px",
-  fontSize: "30px",
-  backgroundColor: "#F1EFEF",
-  color: "gray",
-};
+import { useNavigate } from "react-router-dom";
+import { Modal } from "flowbite-react";
 
 export default function SubmissionList({ sendDataAddButton }) {
   const [submissions, setSubmissions] = useState([]);
@@ -63,23 +22,6 @@ export default function SubmissionList({ sendDataAddButton }) {
   useEffect(() => {
     getSubmissionList();
   }, []);
-
-  const handleAddSubmission = () => {
-    navigate("/admin/submission-add");
-  };
-
-  const handleDeleteSubmission = async (id) => {
-    const shouldDelete = window.confirm("Are you sure you want to delete this Submission?");
-
-    if (shouldDelete) {
-      try {
-        await axios.delete(`http://localhost:3000/submission_list/${id}`);
-        getSubmissionList();
-      } catch (error) {
-        console.error(error);
-      }
-    }
-  };
 
   // Add these functions to your component
 
@@ -203,53 +145,47 @@ export default function SubmissionList({ sendDataAddButton }) {
             </Table.Body>
 
             {/* Modal for viewing detailed artwork */}
-            <Modal isOpen={isModalOpen} onRequestClose={closeModal} style={modalStyle} contentLabel="View Artwork">
+            <Modal dismissible show={isModalOpen} onClose={closeModal}>
               {selectedSubmission && (
                 <>
-                  {/* <h2 className="font-unica text-2xl font-semibold mb-2">{selectedSubmission.title}</h2>
-                <p className="font-unica text-gray-600 mb-4">By {selectedSubmission.Artist}</p> */}
-
-                  <div style={modalHeaderStyles}>
-                    <h2 className="text-2xl font-semibold">Detail Artwork</h2>
-                    <div style={closeButtonStyles} onClick={closeModal}>
-                      <span>&times;</span>
+                  <Modal.Header>Detail Artwork</Modal.Header>
+                  <Modal.Body>
+                    <div className="space-y-6">
+                      <div className="flex gap-3 mb-3 items-center">
+                        <img
+                          src={selectedSubmission.image} // Use the appropriate image URL or data
+                          alt={selectedSubmission.title}
+                          className="w-2/3 mb-4 rounded-lg me-4"
+                        />
+                        <div className="font-unica">
+                          <p className="font-bold">Title</p>
+                          <p className="mb-2">{selectedSubmission.title}</p>
+                          <p className="font-bold">Artist</p>
+                          <p className="mb-2">{selectedSubmission.Artist}</p>
+                          <p className="font-bold">Price</p>
+                          <p className="mb-2">Rp {selectedSubmission.price}</p>
+                          <p className="font-bold">Category</p>
+                          <p className="mb-2">{selectedSubmission.category}</p>
+                          <p className="font-bold">Material</p>
+                          <p className="mb-2">{selectedSubmission.material}</p>
+                          <p className="font-bold">Size</p>
+                          <p className="mb-2">{selectedSubmission.size}</p>
+                        </div>
+                      </div>
+                      <div className="font-unica w-full">
+                        <p className="font-bold">Description</p>
+                        <p className="text-gray-700">{selectedSubmission.description}</p>
+                      </div>
                     </div>
-                  </div>
-                  <div className="flex gap-3 mb-3 items-center">
-                    <img
-                      src={selectedSubmission.image} // Use the appropriate image URL or data
-                      alt={selectedSubmission.title}
-                      className="w-1/2 mb-4 rounded-lg me-4"
-                    />
-                    <div className="font-unica">
-                      <p className="font-bold">Title</p>
-                      <p className="mb-2">{selectedSubmission.title}</p>
-                      <p className="font-bold">Artist</p>
-                      <p className="mb-2">{selectedSubmission.Artist}</p>
-                      <p className="font-bold">Price</p>
-                      <p className="mb-2">Rp {selectedSubmission.price}</p>
-                      <p className="font-bold">Category</p>
-                      <p className="mb-2">{selectedSubmission.category}</p>
-                      <p className="font-bold">Material</p>
-                      <p className="mb-2">{selectedSubmission.material}</p>
-                      <p className="font-bold">Size</p>
-                      <p className="mb-2">{selectedSubmission.size}</p>
-                    </div>
-                  </div>
-                  <div className="font-unica">
-                    <p className="font-bold">Description</p>
-                    <p className="text-gray-700">{selectedSubmission.description}</p>
-                  </div>
-
-                  {/* Sticky buttons for Accept and Reject */}
-                  <div className="fixed bottom-0 left-0 w-full bg-white p-4 border-t border-gray-300">
+                  </Modal.Body>
+                  <Modal.Footer>
                     <button onClick={() => handleAcceptSubmission(selectedSubmission.id)} className="bg-green-500 text-white px-6 py-2 rounded-md mr-2">
                       Accept
                     </button>
                     <button onClick={() => handleRejectSubmission(selectedSubmission.id)} className="bg-red-500 text-white px-6 py-2 rounded-md">
                       Reject
                     </button>
-                  </div>
+                  </Modal.Footer>
                 </>
               )}
             </Modal>
