@@ -6,7 +6,6 @@ import { useParams, useNavigate } from "react-router-dom";
 
 export default function DetailArtwork() {
   const navigate = useNavigate();
-  const [art, setArt] = useState();
   const { id } = useParams();
   const [loadData, setLoadData] = useState({
     id: id,

@@ -238,7 +238,7 @@ export default function SubmissionList({ sendDataAddButton }) {
                   <img
                     src={selectedSubmission.image} // Use the appropriate image URL or data
                     alt={selectedSubmission.title}
-                    className="w-1/2 mb-4 rounded-lg me-4"
+                    className="w-1/2 mb-4  rounded-lg me-4"
                   />
                   <div className="font-unica">
                     <p className="font-bold">Title</p>
@@ -246,7 +246,10 @@ export default function SubmissionList({ sendDataAddButton }) {
                     <p className="font-bold">Artist</p>
                     <p className="mb-2">{selectedSubmission.Artist}</p>
                     <p className="font-bold">Price</p>
-                    <p className="mb-2">Rp {selectedSubmission.price}</p>
+                    <p className="mb-2">{parseInt(selectedSubmission.price, 10).toLocaleString('id-ID', {
+                      style: 'currency',
+                      currency: 'IDR',
+                    })}</p>
                     <p className="font-bold">Category</p>
                     <p className="mb-2">{selectedSubmission.category}</p>
                     <p className="font-bold">Material</p>
