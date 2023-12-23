@@ -1,12 +1,13 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
 
-export default function SidebarOwner(props) {
-  const { name } = props;
+export default function SidebarOwner() {
   const navigate = useNavigate();
   const MySwal = withReactContent(Swal);
+  const name = localStorage.getItem("name");
+  const location = useLocation();
 
   const [menu, setMenu] = useState([
     {
@@ -39,6 +40,7 @@ export default function SidebarOwner(props) {
       if (result.isConfirmed) {
         navigate("/");
         localStorage.removeItem("token");
+        localStorage.removeItem("name");
       }
     });
   };
@@ -78,10 +80,14 @@ export default function SidebarOwner(props) {
           })}
         </ul>
       </div>
-      <button onClick={handleLogout} className="flex py-3 px-5 rounded-l-xl justify-center gap-4 cursor-pointer items-center mu-auto mb-4">
-        <img src="/sidebar_component/logout.svg" alt="" className="h-[20px] w-[20px]" />
-        <span className="font-unica hidden lg:block transition-all transition-300">Logout</span>
-      </button>
+      <div>
+        <div className="mt-10 w-11/12 float-right flex flex-col justify-between gap-8">
+          <button onClick={handleLogout} className=" flex py-3 px-5 rounded-l-xl justify-center gap-4 cursor-pointer lg:justify-start items-stretch mu-auto mb-4 bg-[#D83F31] hover:bg-[#ba3529] text-[#EEEEEE]">
+            <img src="/sidebar_component/logout.svg" alt="" className="h-[20px] w-[20px]" />
+            <span className="font-unica hidden lg:block transition-all transition-300">Logout</span>
+          </button>
+        </div>
+      </div>
     </div>
   );
 }

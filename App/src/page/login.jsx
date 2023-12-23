@@ -3,6 +3,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
+import { Card } from "flowbite-react";
 
 export default function Login() {
   const navigate = useNavigate();
@@ -18,6 +19,8 @@ export default function Login() {
       navigate("/owner");
     } else if (token === "admin") {
       navigate("/admin");
+    } else if (token === "Artist") {
+      navigate("/artist");
     } else {
       navigate("/");
     }
@@ -27,19 +30,27 @@ export default function Login() {
     e.preventDefault();
 
     try {
-      const respon = await axios.get(`http://localhost:3000/admin?username=${userName}&&password=${password}`);
+      const response = await axios.get(`http://localhost:3000/admin?username=${userName}&&password=${password}`);
+      const data = response.data[0];
 
-      const data = respon.data[0];
+      console.log(data);
 
       if (data) {
-        // data.role === "owner" ? navigate("/owner", { state: data.name }) : navigate("/admin", { state: data.name });
-        // localStorage.setItem("token", data.role);
         if (data.role === "owner") {
+          console.log("Logging in as owner...");
           navigate("/owner", { state: data.name });
           localStorage.setItem("token", data.role);
+          localStorage.setItem("name", data.name);
+        } else if (data.role === "Artist") {
+          console.log("Logging in as artist...");
+          navigate("/artist", { state: data.name });
+          localStorage.setItem("token", data.role);
+          localStorage.setItem("name", data.name);
         } else {
+          console.log("Logging in as admin...");
           navigate("/admin", { state: data.name });
           localStorage.setItem("token", data.role);
+          // localStorage.setItem("name", data.name);
         }
       } else {
         MySwal.fire({
@@ -49,7 +60,7 @@ export default function Login() {
         });
       }
     } catch (error) {
-      console.log(error);
+      console.log("Login Error:", error);
     }
   };
 
@@ -59,16 +70,16 @@ export default function Login() {
   };
 
   return (
-    <div className="w-full h-screen relative">
-      <div className="bg-[#EEEEEE] w-[552px] h-[457px] rounded-3xl absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 border-2 border-[#393E46]">
-        <img src="../public/login_page/Senimall_logo.svg" className="mx-auto mt-10" alt="" />
+    <div className="w-full h-screen flex justify-center items-center bg-gray-200">
+      <div className="bg-white w-[552px] h-[457px] rounded-3xl flex flex-col justify-center ">
+        <img src="../public/login_page/Senimall_logo.svg" className="mx-auto " alt="" />
 
         <form action="" className="mt-5 w-3/4 mx-auto" onSubmit={handleLogin}>
           {/* Input Email */}
           <div className="flex">
             <label htmlFor="email" className=" flex mb-3 items-center gap-3">
-              <img src="/login_page/usernameicon.svg" alt="icon artis" className="w-6" />
-              <p className="text-2xl font-medium text-[#393E46]">Username</p>
+              <img src="/login_page/usernameicon.svg" alt="icon artis" className="w-5" />
+              <p className="text-lg font-medium text-[#393E46]">Username</p>
             </label>
           </div>
 
@@ -83,14 +94,14 @@ export default function Login() {
           {/* Input Password */}
           <div className="flex mt-5">
             <label htmlFor="password" className=" flex mb-3 items-center gap-3">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-6 h-6">
                 <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                   d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z"
                 />
               </svg>
-              <p className="text-2xl font-medium text-[#393E46]">Password</p>
+              <p className="text-lg font-medium text-[#393E46]">Password</p>
             </label>
           </div>
           <div className="border-2 border-[#393E46] rounded-xl flex items-center h-10 ">
@@ -112,27 +123,21 @@ export default function Login() {
               </svg>
             ) : (
               <svg onClick={handleShowPassword} width="23" height="23" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M2 2L22 22" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M2 2L22 22" stroke="#000000" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                 <path
                   d="M6.71277 6.7226C3.66479 8.79527 2 12 2 12C2 12 5.63636 19 12 19C14.0503 19 15.8174 18.2734 17.2711 17.2884M11 5.05822C11.3254 5.02013 11.6588 5 12 5C18.3636 5 22 12 22 12C22 12 21.3082 13.3317 20 14.8335"
                   stroke="#000000"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                 />
-                <path
-                  d="M14 14.2362C13.4692 14.7112 12.7684 15.0001 12 15.0001C10.3431 15.0001 9 13.657 9 12.0001C9 11.1764 9.33193 10.4303 9.86932 9.88818"
-                  stroke="#000000"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
+                <path d="M14 14.2362C13.4692 14.7112 12.7684 15.0001 12 15.0001C10.3431 15.0001 9 13.657 9 12.0001C9 11.1764 9.33193 10.4303 9.86932 9.88818" stroke="#000000" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
             )}
           </div>
-          <button className="bg-[#183D3D] hover:bg-[#225555] h-12 mt-6 mb-10 w-full rounded-2xl flex justify-center items-center gap-3">
-            <img src="../public/login_page/VectorLogout.svg" alt="" className="" />
-            <span className="text-white text-2xl font-semibold">Login</span>
+          <button className="bg-[#183D3D] hover:bg-[#225555] h-10 mt-6  w-full rounded-2xl flex justify-center items-center gap-3">
+            <img src="../public/login_page/VectorLogout.svg" alt="" className="h-5" />
+            <span className="text-white text-lg font-semibold">Login</span>
           </button>
         </form>
       </div>
