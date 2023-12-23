@@ -59,14 +59,17 @@ export default function DetailArtwork() {
         </div>
 
         <div className="flex gap-3 mb-5 items-center">
-          <img src="/foto_lukisan/Hendrik_Merkus_Baron_de_Kock_by_Cornelis_Kruseman.jpg" alt="abc" className="w-1/2 max-h-[300px] object-contain" />
+          <img src={loadData.image} alt="abc" className="w-1/2 max-h-[300px] object-contain" />
           <div className="font-unica">
             <p className="font-bold">Title</p>
             <p className="mb-2">{loadData.title}</p>
             <p className="font-bold">Artist</p>
             <p className="mb-2">{loadData.Artist}</p>
             <p className="font-bold">Price</p>
-            <p className="mb-2">Rp {loadData.price}</p>
+            <p className="mb-2">{parseInt(loadData.price, 10).toLocaleString('id-ID', {
+              style: 'currency',
+              currency: 'IDR',
+            })}</p>
             <p className="font-bold">Category</p>
             <p className="mb-2">{loadData.category}</p>
             <p className="font-bold">Material</p>
@@ -74,6 +77,10 @@ export default function DetailArtwork() {
             <p className="font-bold">Size</p>
             <p className="mb-2">{loadData.size}</p>
           </div>
+        </div>
+        <div className="font-unica">
+          <p className="font-bold">Description</p>
+          <p className="text-gray-700">{loadData.description}</p>
         </div>
       </Card>
     </>
