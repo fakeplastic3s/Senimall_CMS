@@ -6,7 +6,6 @@ import Swal from "sweetalert2";
 
 export default function AddArtwork() {
   const navigate = useNavigate();
-
   const [errors, setErrors] = useState({});
   const [payload, setPayload] = useState();
   const [submitStatus, setSubmitStatus] = useState(null); // New state variable
