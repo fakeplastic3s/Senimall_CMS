@@ -8,7 +8,7 @@ export default function Admin() {
   const [menu, setMenu] = useState("Dashboard");
   const [adminName, setAdminName] = useState(name.state);
   const navigate = useNavigate();
-  const token = localStorage.getItem("token"); // Ubah sesuai dengan cara penyimpanan token Anda
+  const token = localStorage.getItem("token");
 
   function receiveMenuData(data) {
     setMenu(data);
@@ -36,7 +36,7 @@ export default function Admin() {
   }, [menu]);
 
   return (
-    <div className="w-full min-h-screen flex gap-2">
+    <div className="w-full min-h-screen flex">
       <Sidebar name={adminName} sendDataMenu={receiveMenuData} />
       <div className="min-h-screen w-[82%] ms-auto px-5 md:px-10 py-16">
         <Outlet />

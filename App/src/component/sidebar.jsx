@@ -67,7 +67,7 @@ export default function Sidebar({ name, sendDataMenu }) {
   });
 
   return (
-    <div className="min-h-screen bg-[#EEEEEE] max-w-[18%] flex flex-col justify-between fixed">
+    <div className="min-h-screen bg-[#EEEEEE] w-[18%] flex flex-col justify-between fixed">
       <div>
         <img src="../public/sidebar_component/people.png" className="mx-auto mt-10 w-10 lg:w-20 transition-all transition-300" alt="" />
         <p className="font-unica  text-xs lg:text-base text-center mt-3 ">{name}</p>
