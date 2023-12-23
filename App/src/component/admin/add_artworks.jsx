@@ -118,12 +118,16 @@ export default function AddArtwork() {
         <div className="flex justify-between mb-7">
           <label htmlFor="material" className="block w-[35%]">
             <p className="font-unica text-lg">Material</p>
+
             <input type="text" id="material" name="material" required onInvalid={F => F.target.setCustomValidity('form ini wajib terisi')} onInput={F => F.target.setCustomValidity('')} onChange={handleInput} className={`w-full outline-none border-2 rounded-lg bg-transparent px-2 py-1 border-[#393E46] ${errors.material && 'border-red-500'}`} />
+
             {errors.material && <p className="text-red-500">{errors.material}</p>}
           </label>
           <label htmlFor="size" className="w-[60%] block">
             <p className="font-unica text-lg">Size</p>
+
             <input type="text" id="size" name="size" required onInvalid={F => F.target.setCustomValidity('form ini wajib terisi')} onInput={F => F.target.setCustomValidity('')} onChange={handleInput} className={`w-full outline-none border-2 rounded-lg bg-transparent px-2 py-1 border-[#393E46] ${errors.size && 'border-red-500'}`} />
+
             {errors.size && <p className="text-red-500">{errors.size}</p>}
           </label>
         </div>
