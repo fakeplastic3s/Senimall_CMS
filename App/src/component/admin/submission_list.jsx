@@ -11,6 +11,7 @@ export default function SubmissionList({ sendDataAddButton }) {
   const [selectedSubmission, setSelectedSubmission] = useState(null); // Track the selected submission
   const [isModalOpen, setIsModalOpen] = useState(false); // State to manage modal visibility
   const MySwal = withReactContent(Swal);
+  let number = 1;
 
   async function getSubmissionList() {
     try {
@@ -117,7 +118,7 @@ export default function SubmissionList({ sendDataAddButton }) {
     <>
       <h1 className="font-franklin text-4xl text-[#232931] mb-9">Submission</h1>
       <Card className="max-w ">
-        <h1 className="font-semibold font-unica">Submission List</h1>
+        <h1 className="font-semibold font-unica my-4">Submission List</h1>
         <div className="overflow-x-auto">
           {/* Jika tidak ada data maka akan muncul "No Data" */}
           {submissions.length === 0 ? (
@@ -127,8 +128,10 @@ export default function SubmissionList({ sendDataAddButton }) {
           ) : (
             <Table hoverable>
               <Table.Head className="">
+                <Table.HeadCell>#</Table.HeadCell>
                 <Table.HeadCell>Title</Table.HeadCell>
                 <Table.HeadCell>Artist</Table.HeadCell>
+                <Table.HeadCell>Image</Table.HeadCell>
                 <Table.HeadCell>
                   <span className="sr-only">Action</span>
                 </Table.HeadCell>
@@ -136,34 +139,40 @@ export default function SubmissionList({ sendDataAddButton }) {
               <Table.Body className="divide-y">
                 {submissions.map((item) => (
                   <Table.Row key={item.id} className="bg-white dark:border-gray-700 dark:bg-gray-800">
+                    <Table.Cell>{number++}</Table.Cell>
                     <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">{item.title}</Table.Cell>
                     <Table.Cell>{item.Artist}</Table.Cell>
-                    <Table.Cell className="flex gap-3 items-center">
-                      {/* Eye Icon */}
-                      <button onClick={() => openModal(item)}>
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-4 h-4">
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z"
-                          />
-                          <path strokeLinecap="round" strokeLinejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                        </svg>
-                      </button>
+                    <Table.Cell>
+                      <img src={item.image} alt="" width="150px" />
+                    </Table.Cell>
+                    <Table.Cell>
+                      <div className="flex gap-3 items-center justify-center">
+                        {/* Eye Icon */}
+                        <button onClick={() => openModal(item)}>
+                          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-4 h-4">
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z"
+                            />
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                          </svg>
+                        </button>
 
-                      {/* Accept Icon and Button */}
-                      <button onClick={() => handleAcceptSubmission(item.id)}>
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="green" className="w-4 h-4">
-                          <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-                        </svg>
-                      </button>
+                        {/* Accept Icon and Button */}
+                        <button onClick={() => handleAcceptSubmission(item.id)}>
+                          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="green" className="w-4 h-4">
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                          </svg>
+                        </button>
 
-                      {/* Reject Icon and Button */}
-                      <button onClick={() => handleRejectSubmission(item.id)}>
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="red" className="w-4 h-4">
-                          <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
-                        </svg>
-                      </button>
+                        {/* Reject Icon and Button */}
+                        <button onClick={() => handleRejectSubmission(item.id)}>
+                          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="red" className="w-4 h-4">
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+                          </svg>
+                        </button>
+                      </div>
                     </Table.Cell>
                   </Table.Row>
                 ))}
@@ -187,10 +196,12 @@ export default function SubmissionList({ sendDataAddButton }) {
                             <p className="font-bold">Artist</p>
                             <p className="mb-2">{selectedSubmission.Artist}</p>
                             <p className="font-bold">Price</p>
-                              <p className="mb-2">{parseInt(selectedSubmission.price, 10).toLocaleString('id-ID', {
-                                style: 'currency',
-                                currency: 'IDR',
-                              })}</p>
+                            <p className="mb-2">
+                              {parseInt(selectedSubmission.price, 10).toLocaleString("id-ID", {
+                                style: "currency",
+                                currency: "IDR",
+                              })}
+                            </p>
                             <p className="font-bold">Category</p>
                             <p className="mb-2">{selectedSubmission.category}</p>
                             <p className="font-bold">Material</p>

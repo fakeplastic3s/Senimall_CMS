@@ -11,31 +11,29 @@ export default function add_user() {
   const [payload, setPayload] = useState();
 
   const handleOnchangeInput = (e) => {
-    const {name, value} = e.target;
-    
-    setPayload(
-      {
-        ...payload,
-        id: uuidv4(),
-        [name] : value
-      }
-    )
+    const { name, value } = e.target;
+
+    setPayload({
+      ...payload,
+      id: uuidv4(),
+      [name]: value,
+    });
   };
 
   const handleBackButtonClick = () => {
     navigate("/owner/Users");
   };
 
-  const postData = async() => {
+  const postData = async () => {
     try {
       axios.post("http://localhost:3000/admin", payload);
       setSubmitStatus("success");
       console.log("berhasil");
     } catch (error) {
       setSubmitStatus("success");
-      console.log("gagal"+error);
+      console.log("gagal" + error);
     }
-  }
+  };
 
   const handleOnSubmit = (e) => {
     e.preventDefault();
@@ -97,12 +95,13 @@ export default function add_user() {
           <label htmlFor="title" className="mb-7 block">
             <p className="font-unica text-lg">Role</p>
             <select name="role" id="role" onChange={handleOnchangeInput} className={`outline-none border-2 rounded-lg bg-transparent px-2 py-1 border-[#393E46] `}>
+              <option value="">--Pilih Role--</option>
               <option value="admin">Admin</option>
               <option value="Artist">Artist</option>
               <option value="owner">Owner</option>
             </select>
           </label>
-          <button type="submit"  className="bg-[#183D3D] flex justify-center items-stretch gap-3 w-full py-1 rounded-lg">
+          <button type="submit" className="bg-[#183D3D] flex justify-center items-stretch gap-3 w-full py-1 rounded-lg">
             <img src="/artwork_component/Vector (4).svg" alt="" className="w-4" />
             <span className="font-unica text-white pt-1 ">Submit</span>
           </button>

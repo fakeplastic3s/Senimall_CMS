@@ -32,7 +32,6 @@ function App() {
               <Route path="edit-artworklist/:id" Component={Edit_Artwork} />
             </Route>
             <Route path="submission" Component={Submission} />
-            <Route path="submission-add" Component={Add_Submission} />
           </Route>
           <Route path="/owner" Component={Owner}>
             <Route path="/owner" Component={DashboardOwner} />
