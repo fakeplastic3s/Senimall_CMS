@@ -3,6 +3,8 @@ import { Card, Table } from "flowbite-react";
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Modal from "react-modal"; // Import the Modal component
+import withReactContent from "sweetalert2-react-content";
+import Swal from "sweetalert2";
 
 export default function UserList() {
   // Styles for the modal
@@ -50,6 +52,7 @@ export default function UserList() {
   const [selectedUsers, setSelectedUsers] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false); // State to manage modal visibility
   const navigate = useNavigate();
+  const MySwal = withReactContent(Swal);
 
   async function getUsers() {
     try {
@@ -81,6 +84,32 @@ export default function UserList() {
   const handleAddUserList = () => {
     // setMode('add');
     navigate("/owner/Users/add-user");
+  };
+
+  const handleButtonDelete = (id) => {
+    MySwal.fire({
+      title: "Peringatan!",
+      text: "Apakah Anda yakin ingin menghapus data ini?",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      cancelButtonText: "Batal",
+      confirmButtonText: "Hapus!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        deleteUser(id);
+      }
+    });
+  };
+
+  const deleteUser = async (id) => {
+    try {
+      await axios.delete(`http://localhost:3000/admin/${id}`);
+      getUsers();
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (
@@ -134,7 +163,7 @@ export default function UserList() {
                     </svg>
 
                     {/* Trash Icon */}
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="red" className="w-4 h-4">
+                    <svg onClick={() => handleButtonDelete(items.id)} xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="red" className="w-4 h-4 cursor-pointer">
                       <path
                         strokeLinecap="round"
                         strokeLinejoin="round"
@@ -143,6 +172,7 @@ export default function UserList() {
                     </svg>
                   </div>
                 </div>
+                <hr className="pt-4 mt-8" />
               </>
             );
           })}
@@ -182,9 +212,8 @@ export default function UserList() {
                       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="green" className="w-4 h-4">
                         <path strokeLinecap="round" strokeLinejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L6.832 19.82a4.5 4.5 0 01-1.897 1.13l-2.685.8.8-2.685a4.5 4.5 0 011.13-1.897L16.863 4.487zm0 0L19.5 7.125" />
                       </svg>
-
                       {/* Trash Icon */}
-                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="red" className="w-4 h-4">
+                      <svg onClick={() => handleButtonDelete(items.id)} xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="red" className="w-4 h-4 cursor-pointer">
                         <path
                           strokeLinecap="round"
                           strokeLinejoin="round"

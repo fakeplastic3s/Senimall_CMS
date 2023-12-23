@@ -101,7 +101,6 @@ export default function AddArtworkArtist() {
             required
             ref={artistRef}
             name="Artist"
-            value={name_artist}
             onInvalid={(F) => F.target.setCustomValidity("form ini wajib terisi")}
             onInput={(F) => F.target.setCustomValidity("")}
             className={`w-full outline-none border-2 rounded-lg bg-transparent px-2 py-1 border-[#393E46] ${errors.Artist && "border-red-500"}`}
