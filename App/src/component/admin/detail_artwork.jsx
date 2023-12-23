@@ -58,7 +58,7 @@ export default function DetailArtwork() {
         </div>
 
         <div className="flex gap-3 mb-5 items-center">
-          <img src={loadData.image} alt="abc" className="w-1/2 max-h-[300px] object-contain" />
+          <img src={loadData.image} alt={loadData.title} className="w-1/2 max-h-[300px] object-contain" />
           <div className="font-unica">
             <p className="font-bold">Title</p>
             <p className="mb-2">{loadData.title}</p>

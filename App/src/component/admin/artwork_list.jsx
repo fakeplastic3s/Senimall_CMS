@@ -4,21 +4,22 @@ import axios from "axios";
 import { Card, Table } from "flowbite-react";
 
 import { useNavigate, Link } from "react-router-dom";
+import withReactContent from "sweetalert2-react-content";
+import Swal from "sweetalert2";
 
 export default function ArtworkList({ sendDataAddButton }) {
   const [art, setArt] = useState([]);
   // const [id, setId] = useState();
   const [currentPage, setCurrentPage] = useState(1);
-  const [itemsPerPage] = useState(5); // Change this to the desired number of items per page
+  const [itemsPerPage] = useState(7); // Change this to the desired number of items per page
   const [searchTerm, setSearchTerm] = useState("");
   const navigate = useNavigate();
+  const MySwal = withReactContent(Swal);
 
   async function getArtworkList() {
     try {
       const data = await axios.get("http://localhost:3000/artwork_list");
-      const filteredArt = data.data.filter((item) =>
-        item.title.toLowerCase().includes(searchTerm.toLowerCase())
-      );
+      const filteredArt = data.data.filter((item) => item.title.toLowerCase().includes(searchTerm.toLowerCase()));
       setArt(filteredArt);
     } catch (error) {
       console.log(error);
@@ -34,18 +35,31 @@ export default function ArtworkList({ sendDataAddButton }) {
     navigate("/admin/artwork/artwork-add");
   };
 
-  const handleDeleteArtwork = async (id) => {
-    const shouldDelete = window.confirm("Are you sure you want to delete this Artwork?");
-
-    if (shouldDelete) {
-      try {
-        await axios.delete(`http://localhost:3000/artwork_list/${id}`);
-        getArtworkList();
-      } catch (error) {
-        console.log(error);
+  const handleButtonDelete = (id) => {
+    MySwal.fire({
+      title: "Peringatan!",
+      text: "Apakah Anda yakin ingin menghapus data ini?",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      cancelButtonText: "Batal",
+      confirmButtonText: "Hapus!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        deleteArtwork(id);
       }
+    });
+  };
+
+  const deleteArtwork = async (id) => {
+    try {
+      await axios.delete(`http://localhost:3000/artwork_list/${id}`);
+      getArtworkList();
+    } catch (error) {
+      console.log(error);
     }
-  }
+  };
 
   const indexOfLastItem = currentPage * itemsPerPage;
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
@@ -64,13 +78,7 @@ export default function ArtworkList({ sendDataAddButton }) {
           <span className="font-unica text-white mt-1">Add</span>
         </button>
       </div>
-      <input
-        type="text"
-        placeholder="Search by title"
-        value={searchTerm}
-        onChange={(e) => setSearchTerm(e.target.value)}
-        className="p-2 border border-gray-300 rounded"
-      />
+      <input type="text" placeholder="Search by title" value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)} className="p-2 border border-gray-300 rounded" />
 
       <div className="overflow-x-auto">
         <Table hoverable>
@@ -87,23 +95,6 @@ export default function ArtworkList({ sendDataAddButton }) {
                 <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">{item.title}</Table.Cell>
                 <Table.Cell>{item.Artist}</Table.Cell>
                 <Table.Cell className="flex gap-3 items-center">
-                  {/* Pencil Icon */}
-
-                  <Link to={`/admin/artwork/edit-artworklist/${item.id}`}>
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="green" className="w-4 h-4">
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L6.832 19.82a4.5 4.5 0 01-1.897 1.13l-2.685.8.8-2.685a4.5 4.5 0 011.13-1.897L16.863 4.487zm0 0L19.5 7.125" />
-                    </svg>
-                  </Link>
-
-                  {/* Trash Icon */}
-                  <svg onClick={() => handleDeleteArtwork(item.id)} xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="red" className="w-4 h-4 cursor-pointer">
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M14.74 9l-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 01-2.244 2.077H8.084a2.25 2.25 0 01-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 00-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 013.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 00-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 00-7.5 0"
-                    />
-                  </svg>
-
                   {/* Eye Icon */}
                   <Link to={`/admin/artwork/artwork-detail/${item.id}`}>
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-4 h-4">
@@ -115,11 +106,27 @@ export default function ArtworkList({ sendDataAddButton }) {
                       <path strokeLinecap="round" strokeLinejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                     </svg>
                   </Link>
+                  {/* Pencil Icon */}
+                  <Link to={`/admin/artwork/edit-artworklist/${item.id}`}>
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="green" className="w-4 h-4">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L6.832 19.82a4.5 4.5 0 01-1.897 1.13l-2.685.8.8-2.685a4.5 4.5 0 011.13-1.897L16.863 4.487zm0 0L19.5 7.125" />
+                    </svg>
+                  </Link>
+
+                  {/* Trash Icon */}
+                  <svg onClick={() => handleButtonDelete(item.id)} xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="red" className="w-4 h-4 cursor-pointer">
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M14.74 9l-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 01-2.244 2.077H8.084a2.25 2.25 0 01-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 00-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 013.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 00-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 00-7.5 0"
+                    />
+                  </svg>
                 </Table.Cell>
               </Table.Row>
             ))}
           </Table.Body>
         </Table>
+
         <Pagination itemsPerPage={itemsPerPage} totalItems={art.length} paginate={paginate} />
       </div>
     </Card>
@@ -135,9 +142,10 @@ const Pagination = ({ itemsPerPage, totalItems, paginate }) => {
 
   return (
     <nav>
-      <ul className="pagination">
+      <ul className="pagination flex gap-3 p-5">
+        Page
         {pageNumbers.map((number) => (
-          <li key={number} className="page-item">
+          <li key={number} className="page-item ">
             <a onClick={() => paginate(number)} href="#" className="page-link">
               {number}
             </a>
