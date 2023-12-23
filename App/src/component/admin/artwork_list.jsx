@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useState } from "react";
 import axios from "axios";
-import { Card, Table } from "flowbite-react";
+import { Card, Modal, Table } from "flowbite-react";
 
 import { useNavigate, Link } from "react-router-dom";
 import withReactContent from "sweetalert2-react-content";
@@ -11,10 +11,12 @@ export default function ArtworkList({ sendDataAddButton }) {
   const [art, setArt] = useState([]);
   // const [id, setId] = useState();
   const [currentPage, setCurrentPage] = useState(1);
-  const [itemsPerPage] = useState(7); // Change this to the desired number of items per page
+  const [itemsPerPage] = useState(5); // Change this to the desired number of items per page
   const [searchTerm, setSearchTerm] = useState("");
   const navigate = useNavigate();
   const MySwal = withReactContent(Swal);
+  const [isModalOpen, setIsModalOpen] = useState(false); // State to manage modal visibility
+  const [selectedArtwork, setSelectedArtwork] = useState(null); // Track the selected submission
 
   async function getArtworkList() {
     try {
@@ -41,8 +43,8 @@ export default function ArtworkList({ sendDataAddButton }) {
       text: "Apakah Anda yakin ingin menghapus data ini?",
       icon: "warning",
       showCancelButton: true,
-      confirmButtonColor: "#3085d6",
-      cancelButtonColor: "#d33",
+      confirmButtonColor: "red",
+      cancelButtonColor: "gray",
       cancelButtonText: "Batal",
       confirmButtonText: "Hapus!",
     }).then((result) => {
@@ -69,6 +71,17 @@ export default function ArtworkList({ sendDataAddButton }) {
     setCurrentPage(pageNumber);
   };
 
+  // Function to open the modal and set the selected submission
+  const openModal = (art) => {
+    setSelectedArtwork(art);
+    setIsModalOpen(true);
+  };
+
+  // Function to close the modal
+  const closeModal = () => {
+    setSelectedArtwork(null);
+    setIsModalOpen(false);
+  };
   return (
     <Card className="max-w ">
       <div className="flex justify-between items-center ">
@@ -96,7 +109,7 @@ export default function ArtworkList({ sendDataAddButton }) {
                 <Table.Cell>{item.Artist}</Table.Cell>
                 <Table.Cell className="flex gap-3 items-center">
                   {/* Eye Icon */}
-                  <Link to={`/admin/artwork/artwork-detail/${item.id}`}>
+                  <button onClick={() => openModal(item)}>
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-4 h-4">
                       <path
                         strokeLinecap="round"
@@ -105,7 +118,7 @@ export default function ArtworkList({ sendDataAddButton }) {
                       />
                       <path strokeLinecap="round" strokeLinejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                     </svg>
-                  </Link>
+                  </button>
                   {/* Pencil Icon */}
                   <Link to={`/admin/artwork/edit-artworklist/${item.id}`}>
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="green" className="w-4 h-4">
@@ -128,6 +141,46 @@ export default function ArtworkList({ sendDataAddButton }) {
         </Table>
 
         <Pagination itemsPerPage={itemsPerPage} totalItems={art.length} paginate={paginate} />
+        {/* Modal for viewing detailed artwork */}
+        <Modal dismissible show={isModalOpen} onClose={closeModal}>
+          {selectedArtwork && (
+            <>
+              <Modal.Header>Detail Artwork</Modal.Header>
+              <Modal.Body>
+                <div className="space-y-6">
+                  <div className="flex gap-3 mb-3 items-center">
+                    <img
+                      src={selectedArtwork.image} // Use the appropriate image URL or data
+                      alt={selectedArtwork.title}
+                      className="w-2/3 mb-4 rounded-lg me-4"
+                    />
+                    <div className="font-unica">
+                      <p className="font-bold">Title</p>
+                      <p className="mb-2">{selectedArtwork.title}</p>
+                      <p className="font-bold">Artist</p>
+                      <p className="mb-2">{selectedArtwork.Artist}</p>
+                      <p className="font-bold">Price</p>
+                      <p className="mb-2">{parseInt(selectedArtwork.price, 10).toLocaleString('id-ID', {
+                                style: 'currency',
+                                currency: 'IDR',
+                              })}</p>
+                      <p className="font-bold">Category</p>
+                      <p className="mb-2">{selectedArtwork.category}</p>
+                      <p className="font-bold">Material</p>
+                      <p className="mb-2">{selectedArtwork.material}</p>
+                      <p className="font-bold">Size</p>
+                      <p className="mb-2">{selectedArtwork.size}</p>
+                    </div>
+                  </div>
+                  <div className="font-unica w-full">
+                    <p className="font-bold">Description</p>
+                    <p className="text-gray-700">{selectedArtwork.description}</p>
+                  </div>
+                </div>
+              </Modal.Body>
+            </>
+          )}
+        </Modal>
       </div>
     </Card>
   );

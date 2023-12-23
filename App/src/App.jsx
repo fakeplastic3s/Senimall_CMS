@@ -13,7 +13,7 @@ import AddUser from "./component/owner/add_user";
 import { BrowserRouter as Router, Routes, Route, useParams } from "react-router-dom";
 import ArtworkList from "./component/admin/artwork_list";
 import AddArtwork from "./component/admin/add_artworks";
-import DetailArtwork from "./component/admin/detail_artwork";
+
 import Edit_Artwork from "./component/admin/edit_artwork";
 import Artist from "./page/artist";
 import Edit_user from "./component/owner/edit_user";
@@ -29,7 +29,6 @@ function App() {
             <Route path="artwork" Component={Artwork}>
               <Route path="artwork-list" Component={ArtworkList} />
               <Route path="artwork-add" Component={AddArtwork} />
-              <Route path="artwork-detail/:id" Component={DetailArtwork} />
               <Route path="edit-artworklist/:id" Component={Edit_Artwork} />
             </Route>
             <Route path="submission" Component={Submission} />
