@@ -2,7 +2,6 @@ import React, { useEffect } from "react";
 import { useState } from "react";
 import axios from "axios";
 import { Card, Modal, Table } from "flowbite-react";
-
 import { useNavigate, Link } from "react-router-dom";
 import withReactContent from "sweetalert2-react-content";
 import Swal from "sweetalert2";
@@ -13,6 +12,7 @@ export default function ArtworkList({ sendDataAddButton }) {
   const [currentPage, setCurrentPage] = useState(1);
   const [itemsPerPage] = useState(5); // Change this to the desired number of items per page
   const [searchTerm, setSearchTerm] = useState("");
+  const [sortOption, setSortOption] = useState(""); 
   const navigate = useNavigate();
   const MySwal = withReactContent(Swal);
   const [isModalOpen, setIsModalOpen] = useState(false); // State to manage modal visibility
@@ -22,7 +22,25 @@ export default function ArtworkList({ sendDataAddButton }) {
   async function getArtworkList() {
     try {
       const data = await axios.get("http://localhost:3000/artwork_list");
-      const filteredArt = data.data.filter((item) => item.title.toLowerCase().includes(searchTerm.toLowerCase()));
+      let filteredArt = data.data.filter((item) =>
+        item.title.toLowerCase().includes(searchTerm.toLowerCase())
+      );
+
+      // Sort berdasarkan option yang dipilih
+      if (sortOption === "artist-asc") {
+        filteredArt = filteredArt.sort((a, b) =>
+          a.Artist.localeCompare(b.Artist)
+        );
+      } else if (sortOption === "artist-desc") {
+        filteredArt = filteredArt.sort((a, b) =>
+          b.Artist.localeCompare(a.Artist)
+        );
+      } else if (sortOption === "price-asc") {
+        filteredArt = filteredArt.sort((a, b) => a.price - b.price);
+      } else if (sortOption === "price-desc") {
+        filteredArt = filteredArt.sort((a, b) => b.price - a.price);
+      }
+
       setArt(filteredArt);
     } catch (error) {
       console.log(error);
@@ -31,10 +49,9 @@ export default function ArtworkList({ sendDataAddButton }) {
 
   useEffect(() => {
     getArtworkList();
-  }, [currentPage, searchTerm]); // Reload when the current page changes
+  }, [currentPage, searchTerm, sortOption]);
 
   const handleAddArtworkList = () => {
-    // setMode('add');
     navigate("/admin/artwork/artwork-add");
   };
 
@@ -83,23 +100,58 @@ export default function ArtworkList({ sendDataAddButton }) {
     setSelectedArtwork(null);
     setIsModalOpen(false);
   };
+
   return (
     <Card className="max-w ">
       <div className="flex justify-between items-center ">
         <h1 className="font-semibold font-unica">Artwork List</h1>
-        <button title="Add Artwork" onClick={handleAddArtworkList} className="flex justify-between py-2 px-4 gap-5 items-center bg-[#4ECCA3] rounded-2xl">
-          <img src="/artwork_component/Vector (1).svg" alt="" className="h-4" />
+
+        <div className="flex gap-3">
+          <input
+            type="text"
+            placeholder="Search by title"
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+            className="p-2 border border-gray-300 rounded"
+            style={{ width: '200px' }} 
+          />
+
+          {/* Dropdown for sorting */}
+          <select
+            value={sortOption}
+            onChange={(e) => setSortOption(e.target.value)}
+            className="p-2 border border-gray-300 rounded"
+            style={{ width: '120px' }} 
+          >
+            <option value="">Sort by</option>
+            <option value="artist-asc">Artist A-Z</option>
+            <option value="artist-desc">Artist Z-A</option>
+            <option value="price-asc">Low Price</option>
+            <option value="price-desc">High Price</option>
+          </select>
+
+        <button
+          title="Add Artwork"
+          onClick={handleAddArtworkList}
+          className="flex justify-between py-2 px-4 gap-5 items-center bg-[#4ECCA3] rounded-2xl"
+        >
+          <img
+            src="/artwork_component/Vector (1).svg"
+            alt=""
+            className="h-4"
+          />
           <span className="font-unica text-white mt-1">Add</span>
         </button>
       </div>
-      <input type="text" placeholder="Search by title" value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)} className="p-2 border border-gray-300 rounded" />
-
+      </div>
+      
       <div className="overflow-x-auto">
         <Table hoverable>
           <Table.Head className="">
             <Table.HeadCell>#</Table.HeadCell>
             <Table.HeadCell>Title</Table.HeadCell>
             <Table.HeadCell>Artist</Table.HeadCell>
+            <Table.HeadCell>Price</Table.HeadCell>
             <Table.HeadCell>Image</Table.HeadCell>
             <Table.HeadCell>
               <span className="sr-only">Action</span>
@@ -111,6 +163,12 @@ export default function ArtworkList({ sendDataAddButton }) {
                 <Table.Cell>{number++}</Table.Cell>
                 <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">{item.title}</Table.Cell>
                 <Table.Cell>{item.Artist}</Table.Cell>
+                <Table.Cell>
+                  {parseInt(item.price, 10).toLocaleString("id-ID", {
+                    style: "currency",
+                    currency: "IDR",
+                  })}
+                </Table.Cell>
                 <Table.Cell>
                   <img src={item.image} alt="" width="150px" />
                 </Table.Cell>
