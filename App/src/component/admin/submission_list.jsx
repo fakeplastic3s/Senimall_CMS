@@ -131,6 +131,7 @@ export default function SubmissionList({ sendDataAddButton }) {
                 <Table.HeadCell>#</Table.HeadCell>
                 <Table.HeadCell>Title</Table.HeadCell>
                 <Table.HeadCell>Artist</Table.HeadCell>
+                <Table.HeadCell>Price</Table.HeadCell>
                 <Table.HeadCell>Image</Table.HeadCell>
                 <Table.HeadCell>
                   <span className="sr-only">Action</span>
@@ -142,6 +143,12 @@ export default function SubmissionList({ sendDataAddButton }) {
                     <Table.Cell>{number++}</Table.Cell>
                     <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">{item.title}</Table.Cell>
                     <Table.Cell>{item.Artist}</Table.Cell>
+                    <Table.Cell>
+                      {parseInt(item.price, 10).toLocaleString("id-ID", {
+                        style: "currency",
+                        currency: "IDR",
+                      })}
+                    </Table.Cell>
                     <Table.Cell>
                       <img src={item.image} alt="" width="150px" />
                     </Table.Cell>
