@@ -2,12 +2,12 @@ import React, { useEffect } from "react";
 import { useState } from "react";
 import axios from "axios";
 import { Card, Table } from "flowbite-react";
-
 import { useNavigate, Link } from "react-router-dom";
 
 export default function ArtworkList({ sendDataAddButton }) {
   const [art, setArt] = useState([]);
-  // const [id, setId] = useState();
+  const [sortOrder, setSortOrder] = useState("asc");
+  const [sortBy, setSortBy] = useState("title");
   const navigate = useNavigate();
 
   async function getArtworkList() {
@@ -41,11 +41,31 @@ export default function ArtworkList({ sendDataAddButton }) {
     }
   };
 
+  const handleSort = (columnName) => {
+    setSortBy(columnName);
+    setSortOrder((prevOrder) => (prevOrder === "asc" ? "desc" : "asc"));
+  };
+
+  const sortedArt = [...art].sort((a, b) => {
+    const aValue = a[sortBy].toLowerCase();
+    const bValue = b[sortBy].toLowerCase();
+
+    if (sortOrder === "asc") {
+      return aValue.localeCompare(bValue);
+    } else {
+      return bValue.localeCompare(aValue);
+    }
+  });
+
   return (
     <Card className="max-w ">
       <div className="flex justify-between items-center ">
         <h1 className="font-semibold font-unica">Artwork List</h1>
-        <button title="Add Artwork" onClick={handleAddArtworkList} className="flex justify-between py-2 px-4 gap-5 items-center bg-[#4ECCA3] rounded-2xl">
+        <button
+          title="Add Artwork"
+          onClick={handleAddArtworkList}
+          className="flex justify-between py-2 px-4 gap-5 items-center bg-[#4ECCA3] rounded-2xl"
+        >
           <img src="/artwork_component/Vector (1).svg" alt="" className="h-4" />
           <span className="font-unica text-white mt-1">Add</span>
         </button>
@@ -53,14 +73,18 @@ export default function ArtworkList({ sendDataAddButton }) {
       <div className="overflow-x-auto">
         <Table hoverable>
           <Table.Head className="">
-            <Table.HeadCell>Title</Table.HeadCell>
-            <Table.HeadCell>Artist</Table.HeadCell>
+            <Table.HeadCell onClick={() => handleSort("title")}>
+              Title {sortBy === "title" && <SortIndicator order={sortOrder} />}
+            </Table.HeadCell>
+            <Table.HeadCell onClick={() => handleSort("Artist")}>
+              Artist {sortBy === "Artist" && <SortIndicator order={sortOrder} />}
+            </Table.HeadCell>
             <Table.HeadCell>
               <span className="sr-only">Action</span>
             </Table.HeadCell>
           </Table.Head>
           <Table.Body className="divide-y">
-            {art.map((item) => (
+            {sortedArt.map((item) => (
               <Table.Row key={item.id} className="bg-white dark:border-gray-700 dark:bg-gray-800">
                 <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">{item.title}</Table.Cell>
                 <Table.Cell>{item.Artist}</Table.Cell>
@@ -102,3 +126,7 @@ export default function ArtworkList({ sendDataAddButton }) {
     </Card>
   );
 }
+
+const SortIndicator = ({ order }) => {
+  return order === "asc" ? <span>&uarr;</span> : <span>&darr;</span>;
+};

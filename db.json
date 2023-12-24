@@ -21,9 +21,19 @@
       "size": "120 x 50 cm",
       "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perferendis deleniti officiis, alias nisi ab aliquam rem saepe. Praesentium harum dolores porro cupiditate aut fuga, delectus quis aliquid at. Facere, nam.",
       "image": "C:\\fakepath\\19366.jpg"
+    },
+    {
+      "id": "08265e54-548c-434b-8c88-e23d33597059",
+      "title": "Harry Potter",
+      "Artist": "Hartono",
+      "price": "8000000",
+      "material": "Photo",
+      "size": "500x1000",
+      "description": "ini lukisan mahal",
+      "image": {}
     }
   ],
-    "submission_list": [
+  "submission_list": [
     {
       "id": 2,
       "title": "Full lorem tes",
