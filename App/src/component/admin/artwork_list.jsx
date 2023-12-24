@@ -2,7 +2,6 @@ import React, { useEffect } from "react";
 import { useState } from "react";
 import axios from "axios";
 import { Card, Modal, Table } from "flowbite-react";
-
 import { useNavigate, Link } from "react-router-dom";
 import withReactContent from "sweetalert2-react-content";
 import Swal from "sweetalert2";
@@ -12,7 +11,7 @@ export default function ArtworkList({ sendDataAddButton }) {
   const [currentPage, setCurrentPage] = useState(1);
   const [itemsPerPage] = useState(5);
   const [searchTerm, setSearchTerm] = useState("");
-  const [sortOption, setSortOption] = useState(""); // Add state for sorting option
+  const [sortOption, setSortOption] = useState(""); 
   const navigate = useNavigate();
   const MySwal = withReactContent(Swal);
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -100,7 +99,7 @@ export default function ArtworkList({ sendDataAddButton }) {
     setSelectedArtwork(null);
     setIsModalOpen(false);
   };
-  
+
   return (
     <Card className="max-w ">
       <div className="flex justify-between items-center ">
@@ -113,7 +112,7 @@ export default function ArtworkList({ sendDataAddButton }) {
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
             className="p-2 border border-gray-300 rounded"
-            style={{ width: '200px' }} // Adjust the width as needed
+            style={{ width: '200px' }} 
           />
 
           {/* Dropdown for sorting */}
@@ -121,7 +120,7 @@ export default function ArtworkList({ sendDataAddButton }) {
             value={sortOption}
             onChange={(e) => setSortOption(e.target.value)}
             className="p-2 border border-gray-300 rounded"
-            style={{ width: '120px' }} // Adjust the width as needed
+            style={{ width: '120px' }} 
           >
             <option value="">Sort by</option>
             <option value="artist-asc">Artist A-Z</option>

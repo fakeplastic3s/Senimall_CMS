@@ -27,7 +27,6 @@ export default function SubmissionList({ sendDataAddButton }) {
   }, []);
 
   // Add these functions to your component
-
   const handleAcceptSubmission = async (id) => {
     MySwal.fire({
       title: "Peringatan!",
