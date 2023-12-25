@@ -42,19 +42,29 @@
       "size": "500x1000",
       "description": "ini mahal",
       "image": "https://i.pinimg.com/originals/32/fe/72/32fe722d486f128e30e6080ea024d701.jpg"
-    }
-  ],
-  "submission_list": [
+    },
     {
-      "id": "ee19c710-d398-47d9-9913-c813b86d0790",
-      "Artist": "Desmond Doss",
       "title": "coba tes",
+      "Artist": "Desmond Doss",
       "price": "2000000000",
       "category": "landscape",
       "material": "oil in canvas",
       "size": "120 x 50 cm",
       "description": "coba tesss",
-      "image": "https://indopolitika.com/wp-content/uploads/2019/07/PDIP-3.jpg"
+      "image": "https://indopolitika.com/wp-content/uploads/2019/07/PDIP-3.jpg",
+      "id": "OpJAmdj"
+    }
+  ],
+  "submission_list": [
+    {
+      "id": "1ab81ba2-a3de-4780-be1e-442a3dfcdcc4",
+      "Artist": "William Schofield",
+      "title": "Harry Potter",
+      "price": "88000000",
+      "material": "Photo",
+      "size": "500x1000",
+      "image": "https://i.pinimg.com/originals/32/fe/72/32fe722d486f128e30e6080ea024d701.jpg",
+      "description": "ini mahallllllllllllllllllllllllllllllllll"
     }
   ],
   "admin": [
