@@ -21,19 +21,29 @@
       "size": "120 x 50 cm",
       "description": "Guernica adalah lukisan minyak besar di atas kanvas karya seniman Spanyol Pablo Picasso yang selesai dibuat pada Juni 1937. Lukisan ini sekarang berada di Museo Reina Sofía di Madrid. Lukisan dengan warna abu-abu, hitam, dan putih ini dibuat di rumah Picasso di Paris. ",
       "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRrlS4mh8B8rA1o_Y6sMgLjjTSHgFux-jIwuGw6qStd&s"
-    }
-  ],
-  "submission_list": [
+    },
     {
-      "id": "ee19c710-d398-47d9-9913-c813b86d0790",
-      "Artist": "Desmond Doss",
       "title": "coba tes",
+      "Artist": "Desmond Doss",
       "price": "2000000000",
       "category": "landscape",
       "material": "oil in canvas",
       "size": "120 x 50 cm",
       "description": "coba tesss",
-      "image": "https://indopolitika.com/wp-content/uploads/2019/07/PDIP-3.jpg"
+      "image": "https://indopolitika.com/wp-content/uploads/2019/07/PDIP-3.jpg",
+      "id": "kZK_dQu"
+    }
+  ],
+  "submission_list": [
+    {
+      "id": "c0a4a78d-70b4-40cd-a6dd-4b8d69cb1e35",
+      "Artist": "Tom Lea",
+      "title": "testing add artwork dari submission form",
+      "price": "2090903131",
+      "material": "Oil in Canvas",
+      "size": "2333",
+      "description": "asdasd",
+      "image": "data:image/jpeg;base64,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"
     }
   ],
   "admin": [
@@ -87,10 +97,10 @@
       "role": "Artist"
     },
     {
-      "id": "32d1717b-434d-4095-ad4f-1527d7226422",
-      "name": "Desmond Doss",
-      "username": "doss",
-      "password": "doss123",
+      "id": "cbe39875-9f99-4f1a-819b-f4c77c7b7e16",
+      "name": "Mega",
+      "username": "Mega",
+      "password": "Mega123",
       "role": "Artist"
     }
   ]

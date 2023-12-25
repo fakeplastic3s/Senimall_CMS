@@ -12,7 +12,7 @@ export default function ArtworkList({ sendDataAddButton }) {
   const [currentPage, setCurrentPage] = useState(1);
   const [itemsPerPage] = useState(5); // Change this to the desired number of items per page
   const [searchTerm, setSearchTerm] = useState("");
-  const [sortOption, setSortOption] = useState(""); 
+  const [sortOption, setSortOption] = useState("");
   const navigate = useNavigate();
   const MySwal = withReactContent(Swal);
   const [isModalOpen, setIsModalOpen] = useState(false); // State to manage modal visibility
@@ -22,19 +22,13 @@ export default function ArtworkList({ sendDataAddButton }) {
   async function getArtworkList() {
     try {
       const data = await axios.get("http://localhost:3000/artwork_list");
-      let filteredArt = data.data.filter((item) =>
-        item.title.toLowerCase().includes(searchTerm.toLowerCase())
-      );
+      let filteredArt = data.data.filter((item) => item.title.toLowerCase().includes(searchTerm.toLowerCase()));
 
       // Sort berdasarkan option yang dipilih
       if (sortOption === "artist-asc") {
-        filteredArt = filteredArt.sort((a, b) =>
-          a.Artist.localeCompare(b.Artist)
-        );
+        filteredArt = filteredArt.sort((a, b) => a.Artist.localeCompare(b.Artist));
       } else if (sortOption === "artist-desc") {
-        filteredArt = filteredArt.sort((a, b) =>
-          b.Artist.localeCompare(a.Artist)
-        );
+        filteredArt = filteredArt.sort((a, b) => b.Artist.localeCompare(a.Artist));
       } else if (sortOption === "price-asc") {
         filteredArt = filteredArt.sort((a, b) => a.price - b.price);
       } else if (sortOption === "price-desc") {
@@ -103,26 +97,14 @@ export default function ArtworkList({ sendDataAddButton }) {
 
   return (
     <Card className="max-w ">
-      <div className="flex justify-between items-center ">
+      <div className=" justify-between items-center md:flex ">
         <h1 className="font-semibold font-unica">Artwork List</h1>
 
-        <div className="flex gap-3">
-          <input
-            type="text"
-            placeholder="Search by title"
-            value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
-            className="p-2 border border-gray-300 rounded"
-            style={{ width: '200px' }} 
-          />
+        <div className="flex gap-3 flex-col md:flex-row">
+          <input type="text" placeholder="Search by title" value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)} className="p-2 border border-gray-300 rounded" style={{ width: "200px" }} />
 
           {/* Dropdown for sorting */}
-          <select
-            value={sortOption}
-            onChange={(e) => setSortOption(e.target.value)}
-            className="p-2 border border-gray-300 rounded"
-            style={{ width: '120px' }} 
-          >
+          <select value={sortOption} onChange={(e) => setSortOption(e.target.value)} className="p-2 border border-gray-300 rounded" style={{ width: "120px" }}>
             <option value="">Sort by</option>
             <option value="artist-asc">Artist A-Z</option>
             <option value="artist-desc">Artist Z-A</option>
@@ -130,21 +112,13 @@ export default function ArtworkList({ sendDataAddButton }) {
             <option value="price-desc">High Price</option>
           </select>
 
-        <button
-          title="Add Artwork"
-          onClick={handleAddArtworkList}
-          className="flex justify-between py-2 px-4 gap-5 items-center bg-[#4ECCA3] rounded-2xl"
-        >
-          <img
-            src="/artwork_component/Vector (1).svg"
-            alt=""
-            className="h-4"
-          />
-          <span className="font-unica text-white mt-1">Add</span>
-        </button>
+          <button title="Add Artwork" onClick={handleAddArtworkList} className="flex justify-between py-2 px-4 gap-5 items-center bg-[#4ECCA3] rounded-2xl w-24">
+            <img src="/artwork_component/Vector (1).svg" alt="" className="h-4" />
+            <span className="font-unica text-white mt-1">Add</span>
+          </button>
+        </div>
       </div>
-      </div>
-      
+
       <div className="overflow-x-auto">
         <Table hoverable>
           <Table.Head className="">
@@ -243,7 +217,7 @@ export default function ArtworkList({ sendDataAddButton }) {
                   </div>
                   <div className="font-unica w-full">
                     <p className="font-bold">Description</p>
-                    <p className="text-gray-700">{selectedArtwork.description}</p>
+                    <p className="text-gray-700 text-justify">{selectedArtwork.description}</p>
                   </div>
                 </div>
               </Modal.Body>

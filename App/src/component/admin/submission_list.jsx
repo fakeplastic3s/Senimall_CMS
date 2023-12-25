@@ -219,7 +219,7 @@ export default function SubmissionList({ sendDataAddButton }) {
                         </div>
                         <div className="font-unica w-full">
                           <p className="font-bold">Description</p>
-                          <p className="text-gray-700">{selectedSubmission.description}</p>
+                          <p className="text-gray-700 text-justify">{selectedSubmission.description}</p>
                         </div>
                       </div>
                     </Modal.Body>
