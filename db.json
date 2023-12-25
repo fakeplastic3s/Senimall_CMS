@@ -3,9 +3,9 @@
     {
       "id": "0f84111f-d232-4062-8134-7a85a62374cb",
       "title": "Penangkapan Pangeran Diponegoro",
-      "Artist": "tes edit artwork",
+      "Artist": "Jokowi",
       "price": "50000000",
-      "category": "romantisme",
+      "category": "street art",
       "material": "Oil in canvas",
       "size": "112 cm × 178 cm",
       "description": "Karya lukisan Penangkapan Pangeran Diponegoro merujuk pada peristiwa nyata yang memang terjadi masa lalu. Lukisan ini dibuat sebagai respon dari lukisan Nicolaas Pieneman (1809-1860) yang ditugaskan untuk mendokumentasikan momen penangkapan Pangeran Diponegoro oleh Pemerintah Belanda. Ketika peristiwa penangkapan Pangeran Diponegoro (28 Maret 1830), Raden Saleh tengah berada di Eropa. Diduga Raden Saleh melihat lukisan Pieneman tersebut saat ia tinggal di Eropa. Perbedaan lukisan antara Raden Saleh dengan Pieneman ini dipandang sebagai rasa nasionalisme pada diri Raden Saleh",
@@ -34,16 +34,6 @@
       "id": "QehFaWi"
     },
     {
-      "id": "d3810022-98a8-43b3-9f92-386f5defaf88",
-      "Artist": "Hartono",
-      "title": "Harry Potter",
-      "price": "8000000",
-      "material": "Photo",
-      "size": "500x1000",
-      "description": "ini mahal",
-      "image": "https://i.pinimg.com/originals/32/fe/72/32fe722d486f128e30e6080ea024d701.jpg"
-    },
-    {
       "title": "coba tes",
       "Artist": "Desmond Doss",
       "price": "2000000000",
@@ -53,18 +43,59 @@
       "description": "coba tesss",
       "image": "https://indopolitika.com/wp-content/uploads/2019/07/PDIP-3.jpg",
       "id": "OpJAmdj"
+    },
+    {
+      "id": "9e41ae95-8594-4ca0-8414-0bfba19cdeac",
+      "title": "Penangkapan Pangeran Didepok '98",
+      "Artist": "Prabobo",
+      "price": "50000000",
+      "material": "Oil in canvas",
+      "size": "112 cm × 178 cm",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Raden_Saleh_-_Diponegoro_arrest.jpg/1280px-Raden_Saleh_-_Diponegoro_arrest.jpg",
+      "description": "hahaha hihihi "
+    },
+    {
+      "id": "7256d985-4f79-49cc-b60d-e77296eec246",
+      "title": "Penangkapan Kanira Didepok '98",
+      "Artist": "Ganjay",
+      "price": "50000000",
+      "material": "Oil in canvas",
+      "size": "112 cm × 178 cm",
+      "image": "https://media.timeout.com/images/105671264/1372/1029/image.jpg",
+      "category": "street art",
+      "description": "ini lukisannnnn"
+    },
+    {
+      "id": "2a62c094-4cd4-4fef-a3f9-448a4ede397a",
+      "title": "Smile",
+      "Artist": "Picasso",
+      "price": "56700000",
+      "material": "Oil in canvas",
+      "size": "112 cm × 178 cm",
+      "image": "https://media.timeout.com/images/105671264/1372/1029/image.jpg",
+      "description": "MAHALLLLLLLLLLLLL"
+    },
+    {
+      "title": "Bumi",
+      "Artist": "Sestiana Carolina ",
+      "price": "88000000",
+      "material": "Photo",
+      "size": "500x1000",
+      "description": "INI BUMIIII",
+      "image": "https://th.bing.com/th/id/R.df21e5bcc6a497b806ee8e437f56d363?rik=HsQSKazsLIDe%2bQ&riu=http%3a%2f%2f3.bp.blogspot.com%2f_Nh5n_9JoFDg%2fTSgXEftD2NI%2fAAAAAAAAAG0%2fbyJTlxy79kc%2fs1600%2f02.jpg&ehk=xf5F9XDIBjkSMrr7T2pBf4T%2bD6lUrMts7Rc12ZCL3yY%3d&risl=&pid=ImgRaw&r=0",
+      "id": "3gPNe1o"
     }
   ],
   "submission_list": [
     {
-      "id": "1ab81ba2-a3de-4780-be1e-442a3dfcdcc4",
-      "Artist": "William Schofield",
-      "title": "Harry Potter",
+      "id": "4dc1228b-c349-4564-a6c2-ac633c951c05",
+      "Artist": "Mega",
+      "title": "Ron Potter",
       "price": "88000000",
       "material": "Photo",
       "size": "500x1000",
       "image": "https://i.pinimg.com/originals/32/fe/72/32fe722d486f128e30e6080ea024d701.jpg",
-      "description": "ini mahallllllllllllllllllllllllllllllllll"
+      "description": "NOQFBQBFOQVGOQVBOCBQO"
     }
   ],
   "admin": [
@@ -118,10 +149,10 @@
       "role": "Artist"
     },
     {
-      "id": "32d1717b-434d-4095-ad4f-1527d7226422",
-      "name": "Desmond Doss",
-      "username": "doss",
-      "password": "doss123",
+      "id": "d7befade-510f-4ca3-bfaf-e91fa75138cf",
+      "name": "Sestiana Carolina ",
+      "username": "sesii",
+      "password": "sesii",
       "role": "Artist"
     }
   ]
