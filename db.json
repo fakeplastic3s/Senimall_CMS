@@ -1,17 +1,6 @@
 {
   "artwork_list": [
     {
-      "id": "0f84111f-d232-4062-8134-7a85a62374cb",
-      "title": "Penangkapan Pangeran Diponegoro",
-      "Artist": "Trisakti M",
-      "price": "50000000",
-      "category": "romantisme",
-      "material": "Oil in canvas",
-      "size": "112 cm × 178 cm",
-      "description": "Karya lukisan Penangkapan Pangeran Diponegoro merujuk pada peristiwa nyata yang memang terjadi masa lalu. Lukisan ini dibuat sebagai respon dari lukisan Nicolaas Pieneman (1809-1860) yang ditugaskan untuk mendokumentasikan momen penangkapan Pangeran Diponegoro oleh Pemerintah Belanda. Ketika peristiwa penangkapan Pangeran Diponegoro (28 Maret 1830), Raden Saleh tengah berada di Eropa. Diduga Raden Saleh melihat lukisan Pieneman tersebut saat ia tinggal di Eropa. Perbedaan lukisan antara Raden Saleh dengan Pieneman ini dipandang sebagai rasa nasionalisme pada diri Raden Saleh",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Raden_Saleh_-_Diponegoro_arrest.jpg/1280px-Raden_Saleh_-_Diponegoro_arrest.jpg"
-    },
-    {
       "id": "0483a556-2aa6-4b08-8881-a3528472cdbb",
       "title": "Guernica",
       "Artist": "Pablo Picasso",
@@ -21,17 +10,6 @@
       "size": "120 x 50 cm",
       "description": "Guernica adalah lukisan minyak besar di atas kanvas karya seniman Spanyol Pablo Picasso yang selesai dibuat pada Juni 1937. Lukisan ini sekarang berada di Museo Reina Sofía di Madrid. Lukisan dengan warna abu-abu, hitam, dan putih ini dibuat di rumah Picasso di Paris. ",
       "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRrlS4mh8B8rA1o_Y6sMgLjjTSHgFux-jIwuGw6qStd&s"
-    },
-    {
-      "id": "kZK_dQu",
-      "title": "Persistence of Memory",
-      "Artist": "Salvador Dali",
-      "price": "590000000",
-      "category": "landscape",
-      "material": "oil in canvas",
-      "size": "120 x 50 cm",
-      "description": "Persistence Time adalah lukisan paling terkenal dan terkenal karya Salvador Dali. Lukisan ini menunjukkan berbagai jam dinding dan weker yang tampak meleleh. Dali membuat hal-hal yang seharusnya keras terlihat lembut.",
-      "image": "https://tumpi.id/wp-content/uploads/2023/06/Lukisan-Termahal-Karya-Salvador-Dali.jpg"
     },
     {
       "id": "4d700ee2-6930-4aa3-a4c7-bb8361747716",
@@ -53,28 +31,72 @@
       "size": "1300 x 2000",
       "description": "Lukisan mahallllllllll",
       "image": "https://th.bing.com/th/id/R.7d8e7a3abed3fd6ad519e72171f1bca6?rik=3Njqg61k5pY7yg&riu=http%3a%2f%2flh3.googleusercontent.com%2fyxZW-hQvbhqYomH574vSD8xupSYnUq-sqe5uLlJAl6qwlZ474WN6xWlIWzhYPdc0BTTzWaGE1iIv8BLMDYuzujrZD3YCu0_79DPStQ61rA%3ds600&ehk=yH9yaeHCuZqJNsagmFdS4me4%2fZfUqwsepNlFpO8Kf%2fk%3d&risl=&pid=ImgRaw&r=0"
+    },
+    {
+      "id": "232a571c-366f-4203-8c73-43de14c233d9",
+      "title": "Harry Potter",
+      "Artist": "Kanira senicrew",
+      "price": "88000000",
+      "size": "500 x 1000",
+      "material": "Canvas",
+      "description": "Lukisan mahallll",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Raden_Saleh_-_Diponegoro_arrest.jpg/1280px-Raden_Saleh_-_Diponegoro_arrest.jpg"
+    },
+    {
+      "title": "Bumi",
+      "Artist": "Mega",
+      "price": "74000000",
+      "material": "Photo",
+      "size": "500 x 1000",
+      "description": "Bumi bulat",
+      "image": "https://th.bing.com/th/id/R.df21e5bcc6a497b806ee8e437f56d363?rik=HsQSKazsLIDe%2bQ&riu=http%3a%2f%2f3.bp.blogspot.com%2f_Nh5n_9JoFDg%2fTSgXEftD2NI%2fAAAAAAAAAG0%2fbyJTlxy79kc%2fs1600%2f02.jpg&ehk=xf5F9XDIBjkSMrr7T2pBf4T%2bD6lUrMts7Rc12ZCL3yY%3d&risl=&pid=ImgRaw&r=0",
+      "id": "MTOTRnh"
+    },
+    {
+      "id": "09672dd9-ea9b-42ca-8d48-a77d184dda69",
+      "title": "Little Village",
+      "Artist": "Megan Duncanson",
+      "price": "88000000",
+      "material": "Painting",
+      "size": "500 x 1000",
+      "category": "impressionism",
+      "image": "https://static.greatbigcanvas.com/images/singlecanvas_thick_none/megan-aroon-duncanson/little-village-abstract-art-house-painting,1162125.jpg",
+      "description": "Sebuah desaaa"
+    },
+    {
+      "title": "Harry Potter",
+      "Artist": "Carol",
+      "price": "88000000",
+      "category": "portrait",
+      "material": "Digital",
+      "size": "500 x 1000",
+      "description": "ini lukisan potrait harry potter",
+      "image": "https://th.bing.com/th/id/OIP.rjyIUi2TbTAEKwm2P-uT6gHaJm?rs=1&pid=ImgDetMain",
+      "id": "5OP_3mR"
     }
   ],
   "submission_list": [
     {
-      "id": "114d88b5-0e2c-45fe-8871-42cead9eba58",
+      "id": "75621eab-ac17-4a40-867e-e14efbfe3aae",
       "Artist": "Mega",
-      "title": "Bumi",
-      "price": "74000000",
-      "material": "Photo",
-      "size": "500 x 1000",
-      "image": "https://th.bing.com/th/id/R.df21e5bcc6a497b806ee8e437f56d363?rik=HsQSKazsLIDe%2bQ&riu=http%3a%2f%2f3.bp.blogspot.com%2f_Nh5n_9JoFDg%2fTSgXEftD2NI%2fAAAAAAAAAG0%2fbyJTlxy79kc%2fs1600%2f02.jpg&ehk=xf5F9XDIBjkSMrr7T2pBf4T%2bD6lUrMts7Rc12ZCL3yY%3d&risl=&pid=ImgRaw&r=0",
-      "description": "Bumi bulat"
+      "title": "American",
+      "price": "29900099",
+      "material": "Canvas",
+      "size": "700x1000",
+      "image": "https://www.pomegranate.com/cdn/shop/products/NC001_03_1050x1493.jpg?v=1692282585",
+      "category": "portrait",
+      "description": "testttttttt"
     },
     {
-      "id": "47f24cf4-765e-4b62-bbc0-91c7f18e7db1",
-      "Artist": "William Schofield",
-      "title": "The Old Guitarist",
-      "image": "https://th.bing.com/th/id/R.f21e4d2b24e4a5c0d88afa59481f4b05?rik=sOWf1R1tzETmrg&riu=http%3a%2f%2fwww.pablopicasso.org%2fimages%2fpaintings%2fthe-old-guitarist.jpg&ehk=oQzpXktGV78ZFhGlULGNFQOLUYznuOKPCTvO5FgnoCc%3d&risl=&pid=ImgRaw&r=0",
-      "description": "The Old Guitarist adalah lukisan cat minyak karya Pablo Picasso, yang dibuatnya pada akhir tahun 1903 dan awal tahun 1904. Lukisan itu menggambarkan seorang musisi tua, pria kuyu dengan pakaian tipis, yang membungkuk di atas gitarnya saat bermain di jalanan Barcelona, ​​Spanyol.",
-      "price": "4000000",
-      "material": "Canvas",
-      "size": "500 x 1000"
+      "id": "39586aa0-81b7-4d91-8a64-7143535dce52",
+      "Artist": "Mega",
+      "title": "Best of best",
+      "price": "6700000",
+      "category": "abstract",
+      "material": "Oil in canvas",
+      "size": "500 x 1000",
+      "description": "Ini lukisann",
+      "image": "https://www.pomegranate.com/cdn/shop/products/NC001_03_1050x1493.jpg?v=1692282585"
     }
   ],
   "admin": [
@@ -132,6 +154,13 @@
       "name": "Mega",
       "username": "Mega",
       "password": "Mega123",
+      "role": "Artist"
+    },
+    {
+      "id": "8378ad70-3db2-4276-8d66-3d87d15af948",
+      "name": "Carol",
+      "username": "carol",
+      "password": "carol",
       "role": "Artist"
     }
   ]
