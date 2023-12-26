@@ -131,6 +131,7 @@ export default function AddArtworkArtist() {
                 <option value="realism">Realism</option>
                 <option value="digital art">Digital Art</option>
                 <option value="photography">Photography</option>
+                <option value="romantisme">Romantisme</option>
               </select>
             </label>
           </div>
