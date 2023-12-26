@@ -34,7 +34,7 @@ export default function Edit_Artwork() {
         description: data.data[0].description,
         image: data.data[0].image,
       });
-      console.log(data.data[0])
+      console.log(data.data[0]);
     } catch (error) {
       console.log("nih error: " + error);
     }
@@ -125,7 +125,7 @@ export default function Edit_Artwork() {
               <option value="cubism">Cubism</option>
               <option value="impressionism">Impressionism</option>
               <option value="minimalism">minimalism</option>
-              <option value="rantasy">Fantasi</option>
+              <option value="fantasy">Fantasi</option>
               <option value="realism">Realism</option>
               <option value="digital art">Digital Art</option>
               <option value="photography">Photography</option>

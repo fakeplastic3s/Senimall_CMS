@@ -31,16 +31,16 @@ export default function Add_Submission() {
     generateNewId();
 
     const newPayload = {
-        id: payload.id,
-        title: payload.title,
-        Artist: payload.Artist,
-        price: payload.price,
-        category: payload.category,
-        material: payload.material,
-        size: payload.size,
-        description: payload.description,
-        image: payload.image,
-      };
+      id: payload.id,
+      title: payload.title,
+      Artist: payload.Artist,
+      price: payload.price,
+      category: payload.category,
+      material: payload.material,
+      size: payload.size,
+      description: payload.description,
+      image: payload.image,
+    };
 
     try {
       // Replace the URL and payload fields based on your API endpoint and data structure
@@ -59,10 +59,7 @@ export default function Add_Submission() {
 
   return (
     <>
-      <button
-        className="bg-[#EEEEEE] flex items-center justify-center gap-3 py-[2px] px-4 mb-5 w-[100px] rounded-lg"
-        onClick={handleBackButtonClick}
-      >
+      <button className="bg-[#EEEEEE] flex items-center justify-center gap-3 py-[2px] px-4 mb-5 w-[100px] rounded-lg" onClick={handleBackButtonClick}>
         <img src="/submission_component/Vector (3).svg" alt="" className="h-[15px]" />
         <span className="font-unica mt-1">Back</span>
       </button>
@@ -70,13 +67,7 @@ export default function Add_Submission() {
         {/* Add form fields for submission */}
         <label htmlFor="title" className="mb-7 block">
           <p className="font-unica text-lg">Title</p>
-          <input
-            type="text"
-            name="title"
-            id="title"
-            onChange={handleInput}
-            className="w-full outline-none border-2 rounded-lg bg-transparent px-2 py-1 border-[#393E46]"
-          />
+          <input type="text" name="title" id="title" onChange={handleInput} className="w-full outline-none border-2 rounded-lg bg-transparent px-2 py-1 border-[#393E46]" />
         </label>
         <label htmlFor="Artist" className="mb-7 block">
           <p className="font-unica text-lg">Artist</p>
@@ -101,7 +92,7 @@ export default function Add_Submission() {
               <option value="cubism">Cubism</option>
               <option value="impressionism">Impressionism</option>
               <option value="minimalism">minimalism</option>
-              <option value="rantasy">Fantasi</option>
+              <option value="fantasy">Fantasi</option>
               <option value="realism">Realism</option>
               <option value="digital art">Digital Art</option>
               <option value="photography">Photography</option>
@@ -123,11 +114,7 @@ export default function Add_Submission() {
           <textarea type="text" id="deskripsi" name="description" onChange={handleInput} rows="10" className="w-full outline-none border-2 rounded-lg bg-transparent px-2 py-1 border-[#393E46]" />
         </label>
         {/* Add other fields for submission */}
-        <button
-          type="button"
-          className="bg-[#183D3D] flex justify-center items-stretch gap-3 w-full py-1 rounded-lg"
-          onClick={handleSubmit}
-        >
+        <button type="button" className="bg-[#183D3D] flex justify-center items-stretch gap-3 w-full py-1 rounded-lg" onClick={handleSubmit}>
           <img src="/submission_component/Vector (4).svg" alt="" className="w-4" />
           <span className="font-unica text-white pt-1 ">Submit</span>
         </button>
