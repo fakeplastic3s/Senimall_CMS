@@ -73,7 +73,7 @@ export default function Dashboard() {
           <div className="flex justify-between items-center bg-[#EEEEEE] w-[300px] h-[150px]  rounded-[30px] ">
             <div className="flex flex-col justify-center mx-auto items-center">
               <span className="text-[#232931] text-4xl font-extrabold">{artist}</span>
-              <span className="text-[#232931] text-[18px] font-base">Artis</span>
+              <span className="text-[#232931] text-[18px] font-base">Artist</span>
             </div>
             <div className=" flex items-center justify-center bg-[#183D3D] h-[150px] w-[150px] rounded-[30px] ">
               <img src="../public/content_component/Artis.svg" alt="icon artis" className="h-[50px] ml-2" />
